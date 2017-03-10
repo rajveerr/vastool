@@ -1,0 +1,45 @@
+body.agent-verify {
+  background-color: $lightest-gray;
+  .primary-content {
+    text-align: center;
+    padding: $small-spacing;
+  }
+  .aflac-logo {
+    margin: $small-spacing auto;
+  }
+  .card-center {
+    @extend %card;
+    margin: 0 auto;
+    padding: 3em $small-spacing;
+    min-width: 90%;
+    h1 {
+      text-align: center;
+    }
+    .input-and-button-container {
+      text-align: center;
+      input {
+        @include media($small) {
+          width: 20rem;
+        }
+      }
+    }
+
+    h1 {
+      margin-bottom: $small-spacing;
+      font-family: $semiBold-font-family;
+      line-height: 3rem;
+      font-size: 2.4rem;
+    }
+    @include media($above-small) {
+      min-width: 80%;
+      padding: 4em $base-spacing;
+    }
+    @include media($above-mid) {
+      min-width: 40%;
+      padding: 4em $base-spacing;
+    }
+  }
+  label.error {
+    left: 17%;
+  }
+}

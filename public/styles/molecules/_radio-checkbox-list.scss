@@ -1,0 +1,102 @@
+.radio-checkbox-list {
+  color: black;
+  &.engagement-choice {
+    padding: 0 $small-spacing/2;
+  }
+  .control__indicator,
+  input[type='radio'],
+  input[type='checkbox'], {
+    top: 40%;
+    left: 1.8rem;
+    @include media($above-small) {
+      left: $base-spacing;
+    }
+  }
+  .control {
+    display: block;
+    margin-right: 0;
+    position: relative;
+    margin-top: 0;
+    min-height: 1.8rem;
+    font-size: 1.6rem;
+    font-family: $base-font-family;
+    padding: $small-spacing $base-spacing $small-spacing/2 $base-spacing*2;
+    @include media($above-small) {
+      font-size: 1.8rem;
+      padding: $base-spacing $base-spacing $base-spacing/2 $base-spacing*3;
+    }
+    &.checked {
+      background-color: lighten(yellow, 48%);
+      &:hover {
+        background-color: lighten(yellow, 48%);
+      }
+    }
+    &:hover {
+      background-color: darken($lightest-gray, 5%)
+    }
+    .h4 {
+        color: $dark-gray;
+        font-size: 2.4rem;
+        font-family: $semiBold-font-family;
+    }
+    .price {
+      position: relative;
+      left: 1rem;
+      color: orange;
+      font-size: 2.2rem;
+      font-family: $semiBold-font-family;
+      @extend %dollar-sign;
+    }
+    .pemth {
+      padding-left: 1rem;
+      color: orange;
+      font-size: 2rem;
+      font-family: $base-font-family;
+    }
+    p {
+      margin-left: $small-spacing;
+    }
+    .productDesc,
+    .bullet {
+      display: block;
+    }
+    .productDesc {
+      padding: 0.8rem 0 $small-spacing 0;
+
+    }
+    .bullet {
+      padding: 0 0 $small-spacing/2 $small-spacing/2;
+    }
+    strong {
+    }
+    .see-more {
+      position: relative;
+      left: 1rem;
+  		@extend .icon-dot-3;
+  		&:before {
+  			position: absolute;
+        width: 4rem;
+        height: 4rem;
+  			font-family: "fontello";
+        font-size: 2.5rem;
+  		}
+    }
+  }
+  hr {
+    margin: 0;
+  }
+  .error {
+    left: $base-spacing*4;
+  }
+  .pemth {
+    margin-left: $small-spacing/3;
+  }
+}
+.free-benefits-selection {
+  .free {
+    font-family: $bold-font-family;
+    font-size: 2rem;
+    padding-left: $small-spacing/2;
+    color: orange;
+  }
+}

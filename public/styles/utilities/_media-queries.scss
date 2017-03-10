@@ -1,0 +1,9 @@
+/* Breakpoints */
+
+$small: new-breakpoint(max-width 568px);
+$mid: new-breakpoint(min-width 569px);
+$wide: new-breakpoint(min-width 1025px);
+
+$above-small: new-breakpoint(min-width 400px);
+$above-mid: new-breakpoint(min-width 1024px);
+$above-wide: new-breakpoint(min-width 1600px);

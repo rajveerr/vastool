@@ -1,0 +1,101 @@
+.wrapper,
+.flash .wrap,
+.header-container .wrap {
+  margin: 0 auto;
+  padding: 0 $small-spacing;
+  @include media($above-mid) {
+      width: 80%;
+  }
+  @include media($above-wide) {
+      width: 60%;
+  }
+}
+
+.wrapper {
+  @include outer-container;
+  padding: $small-spacing;
+}
+
+.content-head {
+  h1 {
+    padding-top: $small-spacing;
+  }
+  .above-title {
+    font-family: $thin-font-family;
+    color: black;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    position: absolute;
+    & ~ h1 {
+      padding-top: 1.8rem;
+      margin-top: $small-spacing;
+      margin-bottom: $small-spacing/2;
+    }
+  }
+}
+
+.primary-content {
+  @include media($above-mid) {
+    @include span-columns(9);
+    margin-bottom: $base-spacing;
+  }
+}
+
+.secondary-content {
+  @include media($above-mid) {
+    @include span-columns(3);
+  }
+}
+
+.card {
+  @include outer-container;
+  border: 1px solid lighten($light-gray, 60%);
+  padding: $small-spacing;
+  margin: $small-spacing $small-spacing 0 $small-spacing;
+}
+
+.card-gray {
+  position: relative;
+  padding: $base-spacing;
+  background-color: darken($lightest-gray, 1%);
+  .radio-checkbox-list & {
+    padding: 0;
+  }
+}
+
+.card-blue {
+  @include outer-container;
+  border: 5px solid $blue;
+  position: relative;
+  padding: $base-spacing;
+  background-color: lighten($blue, 36%);
+  color: $blue;
+  margin-top: $base-spacing;
+  h4 {
+    margin-bottom: $small-spacing/2;
+  }
+  .free-section,
+  .vas-section {
+    @extend %half-width;
+    ul {
+      margin-left: 2.4rem;
+      @extend .check-list;
+    }
+    li {
+      margin-bottom: $small-spacing/2;
+    }
+  }
+  @include media($above-mid) {
+    padding: $small-spacing $small-spacing $base-spacing;
+    margin-top: 0;
+    .free-section,
+    .vas-section {
+      @include span-columns(12);
+      margin-bottom: $base-spacing;
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}

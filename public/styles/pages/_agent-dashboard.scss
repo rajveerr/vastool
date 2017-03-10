@@ -1,0 +1,32 @@
+.agent-questions {
+  h1 {
+    margin-bottom: $small-spacing;
+  }
+}
+
+.agent-dashboard {
+  .input-and-button-container {
+    display: block;
+    margin-bottom: $base-spacing;
+    border-left: 3px solid $blue;
+    input {
+      width: 91%;
+      font-size: 2rem;
+    }
+    button {
+      position: absolute;
+      right: 0;
+    }
+    @include media($above-mid) {
+      @include span-columns(9);
+    }
+  }
+  .table-minimal {
+    th {
+      text-align: center;
+      &:first-child {
+        text-align: left;
+      }
+    }
+  }
+}

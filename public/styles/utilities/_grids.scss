@@ -1,0 +1,54 @@
+$visual_grid: false;
+$visual-grid-opacity: 0.4;
+
+/* responsive grid */
+
+$grid-columns:    24;
+$mobile-columns:  8;
+$tablet-columns:  16;
+$desktop-columns: 24;
+$gutter: 25em;
+$max-width: 100%;
+
+
+%half-width {
+  @include span-columns(12);
+}
+
+%one-third-width {
+  @include span-columns(8);
+}
+
+%two-thirds-width {
+  @include span-columns(16);
+}
+
+%one-fourth-width {
+  @include span-columns(6);
+}
+
+%one-fifth-width {
+  @include span-columns(5);
+}
+
+%three-fourths-width {
+  @include span-columns(18);
+}
+
+@include media($small) {
+  %one-third-width{
+    @include span-columns(24);
+  }
+
+  %two-thirds-width {
+    @include span-columns(24);
+  }
+
+  %one-fourth-width {
+    @include span-columns(24);
+  }
+
+  %three-fourths-width {
+    @include span-columns(24);
+  }
+}

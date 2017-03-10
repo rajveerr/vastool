@@ -1,0 +1,216 @@
+$base-border-color: gainsboro !default;
+$base-border-radius: 3px !default;
+$base-background-color: white !default;
+$base-spacing: 1.5em !default;
+$action-color: #477DCA !default;
+$dark-gray: #333 !default;
+$light-gray: #DDD !default;
+$medium-screen: 40em !default;
+$large-screen: 53.75em !default;
+$base-font-color: $dark-gray !default;
+$table-border-color: darken($lightest-gray, 10%);
+$table-border: 1px solid $table-border-color;
+$table-background: $lightest-gray;
+$table-hover-background: lighten($table-background, 1%);
+$table-stripe-background: darken($table-background, 4);
+$table-stripe-background-hover: darken($table-stripe-background, 5);
+$table-padding: $base-spacing 1rem;
+
+.table-container {
+  background-color: $table-background;
+  padding: $small-spacing/2 $small-spacing;
+  overflow-x: scroll;
+  @include media($above-small) {
+    padding: $small-spacing $base-spacing;
+  }
+  margin-bottom: $base-spacing;
+}
+.table-minimal {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 100%;
+  background-color: $table-background;
+  caption {
+    color: $gray;
+    text-align: left;
+    margin: $small-spacing 0 $small-spacing/3;
+    font-size: 2rem;
+  }
+  thead {
+    th,
+    td {
+      border-bottom: 0;
+      padding: $small-spacing $small-spacing $small-spacing/2;
+      text-align: left;
+      font-family: $base-font-family;
+      color: $gray;
+    }
+  }
+
+  tbody {
+    tr:hover > td, tr:hover > th {
+      background-color: $table-hover-background;
+    }
+    tr:first-child td,
+    tr:first-child th {
+      border-top-color: transparent;
+    }
+    th {
+      font-family: $semiBold-font-family;
+      &:first-of-type {
+        padding-left: $small-spacing;
+      }
+    }
+    th,
+    td {
+      border-bottom: 0;
+      border-top: 1px dashed $table-border-color;
+      vertical-align: middle;
+    }
+    td {
+      padding: $table-padding;
+      button {
+        display: inline-block;
+        outline: none;
+        padding: 0.3em 1em;
+      }
+      &:first-of-type {
+        padding-left: $small-spacing;
+      }
+    }
+  }
+  .btn-link {
+    font-weight: normal;
+    margin-left: $small-spacing;
+  }
+  &.benefits {
+    tbody td {
+      white-space: nowrap;
+    }
+  }
+}
+
+.form-table {
+  counter-reset: rowNumber;
+  th {
+    text-align: left;
+    color: black;
+  }
+  tbody {
+    tr {
+    counter-increment: rowNumber;
+    }
+    td {
+      position: relative;
+      &:first-child:before {
+        content: counter(rowNumber);
+        min-width: 1em;
+        margin-right: 0.5em;
+        position: absolute;
+        left: -10px;
+        top: 4px;
+      }
+    }
+  }
+  input[type='text'] {
+    min-width: 0;
+  }
+}
+
+td.dot {
+  vertical-align: middle;
+  text-align: center;
+  span {
+    display: inline-block;
+    border-radius: 100%;
+    width: 1rem;
+    height: 1rem;
+    background-color: $light-gray;
+  }
+  &.yes span {
+    background-color: $blue;
+  }
+}
+
+
+.table-summary {
+  background-color: transparent;
+  padding: 0 $small-spacing/2;
+  margin-bottom: $base-spacing*2;
+  @include media($small) {
+    padding: 0;
+  }
+  thead {
+    th, td {
+      padding: 0 1.8rem;
+    }
+    tr:last-of-type th {
+      padding-bottom: $small-spacing;
+    }
+    th {
+      font-family: $light-font-family;
+      color: black;
+      font-size: 2.6rem;
+      padding: $small-spacing/2 1.8rem 2rem;
+      @include media($small) {
+        font-size: 2rem;
+      }
+    }
+    .title {
+      font-size: 1.6rem;
+    }
+  }
+  tbody {
+    tr:hover > td, tr:hover > th {
+      background-color: transparent;
+    }
+    tr:last-of-type {
+      th, td {
+        border-bottom: 1px solid $table-border-color;
+      }
+    }
+    th, td {
+      border-style: solid;
+      &:first-of-type {
+        padding-left: 1.8rem;
+        border-top: 1px solid $table-border-color !important;
+      }
+    }
+    th {
+      font-family: $thin-font-family;
+      font-size: 2.2rem;
+      text-align: left;
+      color: $gray;
+    }
+    td {
+      text-align: right;
+    }
+  }
+  .title {
+    font-family: $thin-font-family;
+    padding-top: $small-spacing;
+  }
+  .free,
+  .price {
+    font-family: $base-font-family;
+    text-align: right;
+    color: orange;
+  }
+  .price {
+    text-align: right;
+    @extend %dollar-sign;
+  }
+  .pemth {
+    font-family: $thin-font-family;
+    color: orange;
+    padding-left: $small-spacing/3;
+  }
+  .grey {
+    display: inline-block;
+    color: $gray;
+    padding: 0 $small-spacing/2;
+  }
+  .total {
+    padding-left: $small-spacing;
+  }
+}

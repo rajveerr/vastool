@@ -9,11 +9,19 @@ var keystone = require('keystone');
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
+var bourbon = require("node-bourbon").includePaths,
+		neat = require("node-neat").includePaths,
+		refills = require("node-refills").includePaths;
+
 keystone.init({
 	'name': 'vas',
 	'brand': 'vas',
-
 	'sass': 'public',
+	'sass options': {
+		includePaths: bourbon,
+		includePaths: neat,
+		includePaths: refills
+	},
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',

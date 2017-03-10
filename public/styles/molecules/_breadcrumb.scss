@@ -1,0 +1,102 @@
+.breadcrumb-container {
+  padding-top: 50px;
+}
+.breadcrumb {
+  list-style: none;
+  overflow: hidden;
+  height: 3.9rem;
+  font-family: $semiBold-font-family;
+  font-size: 1.2rem;
+  background-color: $medium-gray;
+  margin-left: 0;
+  &.finished {
+    background-color: darken($medium-blue, 6%);
+  }
+  li {
+    float: left;
+    width: 27%;
+    margin-left: -6px;
+    a {
+      color: white;
+      text-decoration: none;
+      padding: $small-spacing 0 $small-spacing 29px;
+      background-color: darken($medium-blue, 6%);
+      position: relative;
+      display: block;
+      float: left;
+      line-height: 1;
+      &:after {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        /* Go big on the size, and let overflow hide */
+        border-bottom: 50px solid transparent;
+        border-left: 30px solid darken($medium-blue, 6%);
+        position: absolute;
+        top: 50%;
+        margin-top: -50px;
+        left: 84%;
+        z-index: 2;
+      }
+      &:before {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        /* Go big on the size, and let overflow hide */
+        border-bottom: 50px solid transparent;
+        border-left: 30px solid white;
+        position: absolute;
+        top: 50%;
+        margin-top: -50px;
+        margin-left: 1px;
+        left: 84%;
+        z-index: 1;
+      }
+      &.pending {
+        background-color: $medium-gray;
+        color: $light-gray;
+        &:after {
+          border-left: 30px solid $medium-gray;
+        }
+      }
+    }
+    span {
+      position: relative;
+      z-index: 3;
+    }
+    &:first-child a {
+      padding-left: 1.8rem;
+      // max-width: 8em;
+      // min-width: 8em;
+    }
+    &:nth-child(2) a,
+    &:nth-child(3) a,
+    &:nth-child(4) a,
+    &:nth-child(5) a {
+      line-height: 19px;
+      min-height: 39px;
+    }
+    &:nth-child(4) a {
+      max-width: 11em;
+    }
+    &:last-of-type{
+      width: 22%;
+      a {
+        padding-left: .6em;
+        padding-right: $small-spacing;
+        &:before,
+        &:after {
+          display: none
+        }
+      }
+    }
+
+    a:hover {
+
+    }
+  }
+}

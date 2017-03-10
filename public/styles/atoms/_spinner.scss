@@ -1,0 +1,75 @@
+
+.spinner-container {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 10px;
+}
+.spinner:before, 
+.spinner:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-radius: 100%;
+}
+.spinner:before {
+  left: 0;
+  background-color: $blue;
+  animation: spinner-left 1s infinite linear;
+}
+.spinner:after {
+  right: 0;
+  background-color: $green;
+  animation: spinner-right 1s infinite linear;
+}
+
+/* left ball */
+@keyframes spinner-left {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(8px, 0);
+  }
+
+  50% {
+    transform: translate(4px, -4px);
+  }
+
+  75% {
+    transform: translate(8px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* right ball */
+@keyframes spinner-right {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-8px, 0);
+  }
+
+  50% {
+    transform: translate(-4px, 4px);
+  }
+
+  75% {
+    transform: translate(-8px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}

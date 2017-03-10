@@ -1,0 +1,80 @@
+
+.css-dropdown-wrap {
+  display: inline-block;
+  padding: 0;
+  color: $light-gray;
+  background-color: $base-background-color;
+  cursor: pointer;
+  z-index: 15;
+
+  li {
+    display: inline-block;
+    font-size: 1.3rem;
+    line-height: 2.2;
+    padding: 0 $small-spacing*3 0 $small-spacing;
+  }
+  span {
+    color: lighten($light-gray, 20%);
+  }
+  .current-menu-item {
+    position: relative;
+    border: 1px solid lighten($light-gray, 50%);
+    border-radius: 2px;
+    height: 2.8rem;
+    min-width: 14rem;
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 4px solid rgba(0,0,0,.54);
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      position: absolute;
+      right: 8px;
+      top: 12px;
+    }
+    &.no-sibling {
+      padding-right: $small-spacing*2;
+      &:after {
+        display: none;
+      }
+    }
+    ul {
+      display: none;
+      position: absolute;
+      z-index: 5;
+      background-color: white;
+      width: calc(100% + 2px);
+      padding: 0;
+      border: 1px solid lighten($light-gray, 30%);
+      top: 26px;
+      left: -1px;
+      border-top: 0;
+      border-radius: 0 0 2px 2px;
+      line-height: 1;
+      li {
+        display: block;
+        width: 100%;
+        padding: 0 $small-spacing*2 0 $small-spacing;
+        &:hover {
+          background-color: darken($lightest-gray, 5%);
+        }
+        &.not-started {
+          color: lighten($light-gray, 50%);
+        }
+      }
+
+    }
+    &:hover {
+      border-color: lighten($light-gray, 30%);
+      border-bottom-color: transparent;
+      border-radius: 2px 2px 0 0;
+      ul {
+        display: block;
+      }
+      &:after {
+        border-top-color: rgba(0,0,0,.80);
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.input-and-button-container {
+	position: relative;
+	span {
+		display: none;
+	}
+	@include media($above-small) {
+		display: block;
+		span {
+			display: inline-block;
+		}
+	}
+	input,
+	button {
+		display: inline-block;
+	}
+	button:before {
+		@include media($small) {
+			display: none;
+		}
+	}
+}

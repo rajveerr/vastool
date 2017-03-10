@@ -1,0 +1,6 @@
+%card {
+  padding: $base-spacing;
+  background-color: white;
+  @include clearfix;
+  @include default-control-boxshadow;
+}

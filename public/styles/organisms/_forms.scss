@@ -1,0 +1,166 @@
+fieldset {
+  display: inline-block;
+  border-top: 1px dashed darken($lightest-gray, 10%);
+  margin: 0 0 $base-spacing;
+  padding: $small-spacing 0 0;
+  border-radius: 1px;
+  min-width: 100%;
+  .question {
+    margin-bottom: $base-spacing;
+    &:last-of-type {
+        margin-bottom: $small-spacing;
+    }
+  }
+}
+
+.question {
+  position: relative;
+  display: block;
+  margin-bottom: $base-spacing;
+  .hint {
+    padding-top: .75em;
+    display: block;
+  }
+  .icon-info-circled {
+    font-size: 1.8rem;
+    position: relative;
+    left: 1rem;
+    color: darken($medium-gray, 12%);
+  }
+}
+
+.sub-question {
+  clear: both;
+  border-left: 4px solid $medium-gray;
+  padding: $small-spacing/2 0 $small-spacing/2 $small-spacing;
+  margin: $base-spacing 0 $small-spacing $small-spacing;
+}
+
+.form-footer {
+  @include outer-container();
+  clear: both;
+  padding: $small-spacing 0;
+  border-top: 2px dotted darken($lightest-gray, 10%);
+  margin-top: $base-spacing;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  .primary-actions,
+  .secondary-actions {
+    display: block;
+    @extend %half-width;
+    margin-right: 0;
+    .link-btn,
+    a {
+      display: inline-block;
+      padding-right: $small-spacing;
+      margin-top: $small-spacing;
+    }
+  }
+  .primary-actions {
+    text-align: right;
+    float: right;
+  }
+  .ui-dialog & {
+    padding: $small-spacing 0 0;
+    margin-top: $base-spacing;
+    border-top: 2px dotted darken($lightest-gray, 10%);
+  }
+}
+
+legend {
+  font-weight: $base-font-family;
+  margin-bottom: $small-spacing / 2;
+  padding: 0;
+}
+
+label {
+  font-family: $semiBold-font-family;
+  display: block;
+  color: lighten($dark-gray, 10%);
+  padding-bottom: $small-spacing/2;  
+  &.error {
+    font-family: $thin-font-family;
+    font-size: 1.6rem;
+    color: $red;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: -3.5rem;
+  }
+}
+
+form label.error {
+    display: none;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  &.error {
+    // background-color: lighten($red, 51%)
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="search"] {
+  appearance: none;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+// input:focus:invalid,
+// textarea:focus:invalid,
+// select:focus:invalid,
+// select:focus:invalid {
+//   border-color: $red;
+//   outline: 0;
+// }
+
+.question-tip {
+  position: relative;
+  padding: $small-spacing/2 0 0 4rem;
+  font-family: $light-font-family;
+  font-size: $base-font-size-mobile;
+  margin-top: $small-spacing;
+  color: lighten($base-font-color, 35%);
+  &:before {
+    position: absolute;
+    font-size: 4rem;
+    left: -.4rem;
+    top: 0.4rem;
+    color: orange;
+  }
+  @include media($above-small) {
+    width: 45%;
+  }
+}
+
+%single-row-form {
+  label,
+  input,
+  select {
+    display: inline-block;
+    min-width: auto;
+  }
+  input {
+    border-color: lighten($light-gray, 60%);
+    margin-right: 0;
+      &:hover,
+      &:active {
+      border-color: lighten($light-gray, 50%);
+      }
+  }
+  button {
+    display: inline-block;
+      vertical-align: top;
+  }
+}

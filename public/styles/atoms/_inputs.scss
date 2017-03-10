@@ -1,0 +1,101 @@
+input[type='text'], input[type='number'], input[type='tel'],
+input[type='date'], input[type='password'], .file-upload,
+input[type='tel'], input[type='email'], input[type='search'], textarea {
+  border: 0;
+  background: $white;
+  font-family: $thin-font-family;
+  color: black;
+  padding: $small-spacing;
+  min-height: 4rem;
+  font-size: 2rem;
+  border-radius: 0;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+  &:hover{
+    cursor: text;
+  }
+  &:disabled {
+    background-color: $lightest-gray;
+  }
+  &.inline-edit {
+    width: 100%;
+    border-left: 3px solid $blue;
+    box-shadow: none;
+    font-size: 2.6rem;
+    font-family: $bold-font-family;
+    padding: $small-spacing/2;
+  }
+}
+
+@include media($small) {
+  input[type='number'] {
+    max-width: 15rem;
+  }
+}
+
+.file-upload {
+  position: relative;
+  padding: $base-spacing 0 $base-spacing $base-spacing*3.5;
+  margin-bottom: $small-spacing*2;
+  .icon-upload {
+    position: absolute;
+    font-size: 3.5rem;
+    top: 0.6rem;
+    left: 2rem;
+    color: darken($lightest-gray, 30%);
+  }
+  input {
+    font-family: $thin-font-family;
+    font-size: 1.4rem;
+  }
+}
+
+input:focus {
+  outline: none;
+}
+
+.control--radio, .control--checkbox {
+  position: relative;
+  padding: 0;
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.control--radio.selected {
+  // background-color: darken($lightest-gray, 10%);
+  // border-width: 1px 0;
+  // border-color: darken($lightest-gray, 10%);
+  // border-style: solid;
+}
+
+input[type='text'], input[type='number'], input[type='tel'],
+input[type='password'], input[type='file'],
+input[type='tel'], input[type='email'], input[type='search'], textarea, .control--radio, .control--checkbox {
+  -webkit-appearance:none;
+}
+
+input[type=date] {
+  height: 43px;
+  margin: 0 auto;
+  width: 300px;
+  outline: none;
+  border: 0;
+  background-color: $white;
+  font-family: $light-font-family;
+  color: lighten($dark-gray, 10%);
+  padding: $small-spacing;
+  min-width: 100%;
+  min-height: 2rem;
+  font-size: 1.4rem;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+// type file

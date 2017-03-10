@@ -1,0 +1,40 @@
+.flash {
+  padding: 2.3rem 0;
+  .wrap {
+    position: relative;
+  }
+  &.success {
+    background-color: lighten($green, 40%);
+  }
+  &.alert {
+    background-color: lighten(yellow, 46%);
+  }
+  &.warning {
+    background-color: lighten($red, 40%);
+  }
+	a {
+		color: lighten($gray, 15%);
+    font-size: 1.6rem;
+    margin-right: $small-spacing;
+    text-decoration: underline;
+    @include media($above-small) {
+      margin-right: $base-spacing;
+      &:first-child {
+        margin-left: $base-spacing;
+      }
+    }
+	}
+  p,
+  .link-options {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  .icon-cancel {
+    position: absolute;
+    right: 2rem;
+    top: -7px;
+    font-size: 3rem;
+    color: lighten(gray, 25%);
+    cursor: pointer;
+  }
+}

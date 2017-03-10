@@ -1,0 +1,105 @@
+/* items class */
+ul,
+ol {
+	margin: 0;
+}
+
+dl {
+  margin: 0 0 $base-spacing 0;
+}
+
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+ul {
+	list-style-type: initial;
+	margin-left: 3rem;
+}
+
+hr {
+    border-bottom: 1px solid #DDD;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: 1.5em 0;
+}
+
+.check-list {
+	list-style: none;
+	li {
+		position: relative;
+		@extend .icon-check;
+		&:before {
+			position: absolute;;
+			font-family: "fontello";
+			left: -2rem;
+		}
+	}
+}
+
+.graphis-list {
+	position: relative;
+	@include outer-container();
+	font-size: 1.5rem;
+	line-height: 1.9rem;
+	list-style: none;
+	text-align: center;
+	margin-left: 0;
+	.item {
+		@include span-columns(24);
+		margin-bottom: $base-spacing;
+		@include media($mid) {
+				@include span-columns(4);
+				@include omega;
+		}
+		&.robust-list {
+			margin-bottom: 5rem;
+		}
+		img {
+			display: block;
+			zoom: 40%;
+			margin: 0 auto;
+			margin-bottom: 1rem;
+		}
+	}
+	&.light-content {
+		margin: $base-spacing*2 0 $base-spacing;
+	}
+	.blue {
+		color: $blue;
+	}
+	.blue,
+	.reg {
+		display: block;
+		font-family: $semiBold-font-family;
+	}
+	.small {
+		font-size: 1.3rem;
+	}
+}
+
+.question-answer-list {
+	background-color: white;
+	// font-family: $semiBold-font-family;
+	color: lighten($dark-gray, 20%);
+	font-size: 1.5rem;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	dt {
+		padding: $small-spacing $small-spacing 0 $small-spacing;
+	}
+	dd {
+		padding: $small-spacing/4 $small-spacing $small-spacing $small-spacing;
+		color: lighten($dark-gray, 0);
+		border-bottom: 1px solid $lightest-gray;
+		font-family: $semiBold-font-family;
+		em {
+			display: block;
+		}
+	}
+}

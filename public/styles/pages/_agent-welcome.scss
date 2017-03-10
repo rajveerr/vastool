@@ -1,0 +1,34 @@
+body.agent-welcome {
+  background-color: $lightest-gray;
+  .primary-content {
+    text-align: center;
+    padding: $small-spacing;
+  }
+  .aflac-logo {
+    margin: $small-spacing auto;
+  }
+  .card-center {
+    @extend %card;
+    margin: 0 auto;
+    padding: $base-spacing;
+    width: 90%;
+    min-height: 430px;
+    h1 {
+      margin-bottom: $small-spacing;
+      background: transparent url('../images/stars.png') no-repeat 0 0;
+      padding-top: 5rem;
+    }
+    @include media($above-small) {
+      width: 80%;
+      padding: $base-spacing 4em $base-spacing 13em;
+      background: white url('../images/happy-duck.png') no-repeat 0 0;
+    }
+    @include media($above-mid) {
+      width: 60%;
+    }
+  }
+  .form-footer {
+    border-top: 2px dashed $lightest-gray;
+    margin-top: $base-spacing;
+  }
+}

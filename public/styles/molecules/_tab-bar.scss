@@ -1,0 +1,22 @@
+.tab-bar {
+	li {
+		display: inline-block;
+	}
+	padding: $small-spacing $small-spacing 0 0;
+	border-bottom: 1px solid darken($lightest-gray, 15%);
+	margin: 0 $small-spacing;
+	font-family: $light-font-family;
+	a {
+		display: inline-block;;
+		color: $base-font-color;
+		margin-right: $small-spacing;
+		border-bottom: 2px solid $white;
+		&:hover {
+			color: $blue;
+			text-decoration: none;
+		}
+		&.tab-bar_active {
+			border-color: $blue;
+		}
+	}
+}
