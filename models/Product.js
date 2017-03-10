@@ -5,14 +5,14 @@ var Types = keystone.Field.Types;
 
 var Product = new keystone.List('Product', {
   map: { name: 'title' },
-  singular:'Product',
-  plural:'Products',
-  autokey: { path: 'id', from: 'title', unique: true }
+  singular: 'Product',
+  plural: 'Products',
+  autokey: { from: 'title', path: 'slug', unique: true }
 });
 
 Product.add({
   title: { type: String, required: true },
-  price: { type: Number, required: true, initial: null},
+  price: { type: Types.Money, required: true, initial: true },
   free: { type: Boolean },
   shortDescription: { type: String },
   details: { type: Types.Html, wysiwyg: true, height: 400 },
