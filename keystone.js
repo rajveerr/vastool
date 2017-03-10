@@ -14,8 +14,8 @@ var bourbon = require("node-bourbon").includePaths,
 		refills = require("node-refills").includePaths;
 
 keystone.init({
-	'name': 'vas',
-	'brand': 'vas',
+	'name': 'vastool',
+	'brand': 'vastool',
 	'sass': 'public',
 	'sass options': {
 		includePaths: bourbon,
@@ -31,6 +31,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+  'cookie secret': 'w~K8=&5r%U2]EZ'
 });
 
 // Load your project's Models
