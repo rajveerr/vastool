@@ -9,18 +9,17 @@ exports = module.exports = function (req, res) {
 	// Set locals
 	locals.section = 'benefits';
   locals.filters = {
-    productId: req.params.product
+    productSlug: req.params.product
   };
   locals.data = {
     product: {}
   };
 
   view.on('init', function(next) {
-    console.log('>> loading product ' + locals.filters.productId);
     Product.model.findOne({
-      id: locals.filters.productId
-    }).exec(function(err, result) {
-      locals.data.product = result;
+      slug: locals.filters.productSlug
+    }).exec(function(err, product) {
+      locals.data.product = product;
       next(err);
     });
   });
