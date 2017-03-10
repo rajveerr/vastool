@@ -20,7 +20,7 @@ exports = module.exports = function (req, res) {
     Product.model.findOne({
       id: locals.filters.productId
     }).exec(function(err, result) {
-      locals.data.product = result
+      locals.data.product = result;
       next(err);
     });
   });

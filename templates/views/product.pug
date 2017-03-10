@@ -1,16 +1,25 @@
-doctype html
-html(lang="en")
-  head
-    title= TheProduct
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
-  body
-    h1 Pug - TheProduct
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
+div !{data.product.details}
+strong.title Services include but are not limited to:
+ul.check-list
+  each val in data.product.getServicesIncludedAsArray()
+    li= val
+
+.product-redlines
+  hr.content
+  strong Best for:
+  span !{data.product.bestFor}
+  hr.content
+  strong X
+  span out of  
+  strong XX
+  span employers pick this benefits
+
+h4 Benefits for employees
+ul.bullet
+  each val in data.product.getBenefitsForEmployeesAsArray()
+    li= val
+
+h4 Benefits for employer
+ul.bullet
+  each val in data.product.getBenefitsForEmployerAsArray()
+    li= val
