@@ -1,7 +1,7 @@
 extends ../layouts/default
 
 block content
-  .wrapper
+  .wrapper.radio-checkbox-list.free-benefits-selection
     .content-head
       span#employerName.above-title
       h1 Start by picking your FREE FOR ALL benefit choice
@@ -18,7 +18,7 @@ block content
                 span.h4 Health Advocate
                 span.free FREE!
                 span.productDesc 24/7 toll-free access to an assigned Personal Health Advocate providing expert assistance with navigating the complex health care and insurance systems
-                  span.see-more.modalOpner(href='dialogs/product-health-advocate.html', name='Health Advocate')
+                  span.see-more.modalOpner(href='products/health-advocate', name='Health Advocate')
                 span.bullet
                   strong &bull; Best for:
                   | Families, Ongoing or Complex Medical Situations
@@ -38,54 +38,3 @@ block content
           span.secondary-actions.link-btn
             a(href="employer-questions.html") Back
     .dialog
-  script(src='javascript/vendor/jquery-3.1.0.min.js')
-  script(src='javascript/vendor/jquery-ui.min.js')
-  script(src='javascript/vendor/jquery.validate.min.js')
-  script(src='javascript/global-scripts.js')
-  script.
-    $("#freeBenefitsSelection").validate({
-    // set form value to local storage
-    submitHandler: function(form) {
-      sessionStorage.setItem('selectedFreeBenefit', $('input[name="freeBenefitRadio"]:checked').val());
-      form.submit();
-    }
-    });
-
-    // get employerName
-    $('#employerName').text(sessionStorage.getItem('employerName'))
-
-    // dialog settings
-    $( ".dialog" ).dialog({
-    autoOpen: false,
-    show: {
-      effect: "blind",
-      duration: 10
-    },
-    hide: {
-      effect: "explode",
-      duration: 10
-    },
-    modal: true
-    });
-
-    // open dialog
-    $('.modalOpner').click(function(e){
-    e.preventDefault();
-    var url = $(this).attr('href');
-    $('.dialog').load(url);
-    $('.dialog').dialog({ title: $(this).attr('name') });
-    $('.dialog').dialog('open');
-    });
-
-
-    $('.control').click(function() {
-    if ($("input[name='freeBenefitRadio']").is(':checked')) {
-      $('.control').removeClass('checked');
-      $(this).addClass('checked');
-
-      // show chosen benefit
-      $('#benefitChosenCard').show();
-      $('#freeBenefitChosen li').remove();
-      $('#freeBenefitChosen').append('<li>' + $('.control.checked .h4').text() + '</li>')
-    }
-    })

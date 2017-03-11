@@ -10,9 +10,10 @@ ul.check-list
   span !{data.product.bestFor}
   hr.content
   strong X
-  span out of  
+  span out of
   strong XX
   span employers pick this benefits
+  hr.content
 
 h4 Benefits for employees
 ul.bullet
@@ -23,3 +24,6 @@ h4 Benefits for employer
 ul.bullet
   each val in data.product.getBenefitsForEmployerAsArray()
     li= val
+.form-footer
+  span.primary-actions
+    button.btn-secondary Got it!

@@ -92,7 +92,61 @@ html
 		//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 		//- you can upgrade to 2.1.4 (also bundled) for better performance.
+
 		script(src='/js/jquery/jquery-1.11.3.min.js')
+		script(src='/js/jquery-ui.min.js')
+		script(src='/js/jquery.validate.min.js')
+		script.
+			$("#freeBenefitsSelection").validate({
+				// set form value to local storage
+				submitHandler: function(form) {
+					sessionStorage.setItem('selectedFreeBenefit', $('input[name="freeBenefitRadio"]:checked').val());
+					form.submit();
+				}
+			});
+
+			// get employerName
+			$('#employerName').text(sessionStorage.getItem('employerName'))
+
+			// dialog settings
+			$( ".dialog" ).dialog({
+				autoOpen: false,
+				show: {
+					effect: "blind",
+					duration: 10
+				},
+				hide: {
+					effect: "explode",
+					duration: 10
+				},
+				modal: true
+			});
+
+			// open dialog
+			$('.modalOpner').click(function(e){
+				e.preventDefault();
+				var url = $(this).attr('href');
+				$('.dialog').load(url);
+				$('.dialog').dialog({ title: $(this).attr('name') });
+				$('.dialog').dialog('open');
+			});
+
+
+			$('.control').click(function() {
+				if ($("input[name='freeBenefitRadio']").is(':checked')) {
+					$('.control').removeClass('checked');
+					$(this).addClass('checked');
+
+					// show chosen benefit
+					$('#benefitChosenCard').show();
+					$('#freeBenefitChosen li').remove();
+					$('#freeBenefitChosen').append('<li>' + $('.control.checked .h4').text() + '</li>')
+					}
+			})
+
+
+
+
 
 
 
