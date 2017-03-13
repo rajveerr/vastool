@@ -10,9 +10,24 @@ exports = module.exports = function (req, res) {
 	locals.section = 'benefits';
 
   view.on('init', function(next) {
-		console.log('here!');
 		next();
   });
+
+	view.on('post', function(next) {
+		Employer.model({
+			name: req.body.employerName,
+			numberOfEmployees: req.body.numberOfEmployees,
+			averageAgeOfEmployees: req.body.everageAgeOfEmployees,
+			offersMajorInsurancePlan: req.body.majorMedicalRadio == 'Yes'
+		}).save(function(err) {
+			if (err) {
+				console.log('new-employer post failed!', err);
+				next(err);
+			}
+		});
+
+		next();
+	});
 
 	view.render('new-employer');
 };

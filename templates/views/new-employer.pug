@@ -1,10 +1,10 @@
 extends ../layouts/default
 
 block content
-  form#employerQuestions.wrapper(action='free-benefits-selection.html', novalidate='novalidate')
+  form#new-employer.wrapper(action='new-employer', method='POST', novalidate='novalidate')
       .content-head
         h1
-          input#employerName.inline-edit(type="text", required='required', data-msg-required='Employer name', data-msg='Please enter a valid name', minlength="2", value="Diggigi Innovations", placeholder="New employer name")
+          input#employerName.inline-edit(type="text", name='employerName', required='required', data-msg-required='Employer name', data-msg='Please enter a valid name', minlength="2", placeholder="New employer name")
           a.icon-pencil#editEmployerName(href='javascript:void(0)')
       .primary-content
         .card-gray
@@ -17,11 +17,11 @@ block content
           .question
             label(for='majorMedical') Do you offer your employees a Major Medical insurance plan?
             label.control.control--radio
-              input#majorMedicalRadioYes.radio(type='radio', name='majorMedicalRadio', value='Yes', required='required', data-msg='Choose Yes or No')
+              input#majorMedicalRadioYes.radio(type='radio', name='majorMedicalRadio', value='Yes', required='required', data-msg='Choose Yes or No', onclick="$('#majorMedicalYesContainer').show()")
               .control__indicator
               |  Yes
             label.control.control--radio
-              input#majorMedicalRadioNo.radio(type='radio', name='majorMedicalRadio', value='No')
+              input#majorMedicalRadioNo.radio(type='radio', name='majorMedicalRadio', value='No', onclick="$('#majorMedicalYesContainer').hide()")
               .control__indicator
               |  No
             label.error(for='majorMedicalRadio')
@@ -41,6 +41,6 @@ block content
               .question-tip#majorMedicalTip.icon-lightbulb(style="display: none;") We have a variety of new benefits to offer that your major medical does not cover.
         .form-footer
             span.primary-actions
-              button#primaryBtn.icon-right-open(type='submit') Next
+              button#primaryBtn.icon-right-open(type='submit', onclick='$("#new-employer").validate();') Next
             span.secondary-actions.link-btn
               a(href="agent-dashboard.html") Cancel
