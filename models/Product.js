@@ -36,7 +36,10 @@ Product.schema.methods.getBenefitsForEmployerAsArray = function() {
 };
 
 function splitBy(value, delimiter) {
-  return _.compact(value.split(delimiter));
+  if (value)
+    return _.compact(value.split(delimiter));
+  else
+    return [];
 }
 
 Product.register();
