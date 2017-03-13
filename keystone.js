@@ -57,8 +57,6 @@ keystone.set('nav', {
 	users: 'users',
 });
 
-// Start Keystone to connect to your database and initialise the web server
-
-
+keystone.set('mongo', 'mongodb://vas:Aflac2017@ds011860.mlab.com:11860/heroku_l3wq2whs');
 
 keystone.start();
