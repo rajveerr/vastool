@@ -9,21 +9,22 @@ block content
         span.note * After your Aflac representative reaches 70% of your employees
     form#freeBenefitsSelection(action='vas-selection.html', novalidate='novalidate')
       .primary-content
-        each val in products
-          .card-gray
-            label.control.control--radio
-              input#freeBenefitHealthAdvocate.radio(type='radio', name='freeBenefitRadio', value='Health Advocate', required='required', data-msg='Please choose a free benefit')
-              .control__indicator
-              p
-                span.h4 Health Advocate
-                span.free FREE!
-                span.productDesc 24/7 toll-free access to an assigned Personal Health Advocate providing expert assistance with navigating the complex health care and insurance systems
-                  span.see-more.modalOpner(href='products/health-advocate', name='Health Advocate')
-                span.bullet
-                  strong &bull; Best for:
-                  | Families, Ongoing or Complex Medical Situations
-                span.bullet &bull; 79% of employers pick this benefit
-            hr
+        each product in products
+          if product.free
+            .card-gray
+              label.control.control--radio
+                input#freeBenefitHealthAdvocate.radio(type='radio', name='freeBenefitRadio', value='Health Advocate', required='required', data-msg='Please choose a free benefit')
+                .control__indicator
+                p
+                  span.h4 #{product.title}
+                  span.free FREE!
+                  span.productDesc #{product.shortDescription}
+                    span.see-more.modalOpner(href='products/' + product.slug, name=`${product.title}`)
+                  span.bullet
+                    strong &bull; Best for:
+                    | #{product.bestFor}
+                  span.bullet &bull; 79% of employers pick this benefit
+              hr
 
           label.error(for='freeBenefitRadio')
 
