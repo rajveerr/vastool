@@ -13,7 +13,8 @@ Employer.add({
   name: {type: String, required: true},
   numberOfEmployees: {type: Number, required: true, format: '0,0'},
   averageAgeOfEmployees: {type: Number, required: true, format: '0,0'},
-  offersMajorInsurancePlan: {type: Boolean}
+  offersMajorInsurancePlan: {type: Boolean},
+  majorInsurancePlan: {type: String}
 });
 
 Employer.register();
