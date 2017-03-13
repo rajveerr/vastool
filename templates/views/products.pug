@@ -13,7 +13,7 @@ block content
           if product.free
             .card-gray
               label.control.control--radio
-                input#freeBenefitHealthAdvocate.radio(type='radio', name='freeBenefitRadio', value='Health Advocate', required='required', data-msg='Please choose a free benefit')
+                input#freeBenefitHealthAdvocate.radio(type='radio', name='freeBenefitRadio', value=`${product.slug}`, required='required', data-msg='Please choose a free benefit')
                 .control__indicator
                 p
                   span.h4 #{product.title}
