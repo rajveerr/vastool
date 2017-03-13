@@ -34,33 +34,24 @@ html
 
 	//- HTML BODY
 	body
-
 		//- HEADER
-		#header: .container
+		.header-container
+			.wrap
+				a(href='/')
+					h1(class='aflac-logo') Aflac : Employer Choice Tool
+				nav.global-nav
+					ul
+						each link in navLinks
+							li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+						if user
+							if user.canAccessKeystone
+								//- li: a(href='/keystone') Open Keystone
+							li: a(href='/keystone/signout') Sign Out
+						else
+							li: a(href='/keystone/signin') Sign In
 
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
-			//- ... or completely change this header to suit your design.
-
-			div(role="navigation").navbar.navbar-default
-				.container-fluid
-					.navbar-header
-						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-							span.sr-only Toggle navigation
-							span.icon-bar
-							span.icon-bar
-							span.icon-bar
-						a.navbar-brand(href='/') vas
-					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
-							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-						ul.nav.navbar-nav.navbar-right
-							if user
-								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-								li: a(href='/keystone/signout') Sign Out
-							else
-								li: a(href='/keystone/signin') Sign In
+			//- ... or completely change this header to suit your design.		
 
 		//- BODY
 		#body
@@ -81,7 +72,7 @@ html
 
 
 		//- FOOTER
-		.container: #footer
+		#footer
 
 			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
 			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
@@ -143,11 +134,6 @@ html
 					$('#freeBenefitChosen').append('<li>' + $('.control.checked .h4').text() + '</li>')
 					}
 			})
-
-
-
-
-
 
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
