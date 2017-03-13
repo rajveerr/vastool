@@ -22,17 +22,21 @@ exports = module.exports = function (req, res) {
   });
 
 	view.on('post', function(next) {
+		var newEmployer = newEmployerFromRequest();
+		save(newEmployer);
+		res.redirect('products');
+	});
+
+	function newEmployerFromRequest() {
 		var offersMajorInsurancePlan = req.body.majorMedicalRadio == 'Yes';
-		var newEmployer = {
+		return {
 			name: req.body.employerName,
 			numberOfEmployees: req.body.numberOfEmployees,
 			averageAgeOfEmployees: req.body.everageAgeOfEmployees,
 			offersMajorInsurancePlan: offersMajorInsurancePlan,
 			majorInsurancePlan: offersMajorInsurancePlan ? req.body.majorMedicalPlanName : null
 		};
-		save(newEmployer);
-		next();
-	});
+	}
 
 	function save(employer) {
 		Employer.model(employer).save(function(err) {
