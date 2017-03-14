@@ -10,8 +10,8 @@ var keystone = require('keystone');
 // and documentation.
 
 var bourbon = require("node-bourbon").includePaths,
-		neat = require("node-neat").includePaths,
-		refills = require("node-refills").includePaths;
+	neat = require("node-neat").includePaths,
+	refills = require("node-refills").includePaths;
 
 keystone.init({
 	'name': 'vastool',
@@ -31,7 +31,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-  'cookie secret': 'w~K8=&5r%U2]EZ'
+	'cookie secret': 'w~K8=&5r%U2]EZ'
 });
 
 // Load your project's Models
@@ -53,10 +53,11 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-	enquiries: 'enquiries',
-	users: 'users',
+	Benefits: 'products',
+	Employers: 'employers',
 });
 
-keystone.set('mongo', 'mongodb://vas:Aflac2017@ds011860.mlab.com:11860/heroku_l3wq2whs');
+keystone.set('mongo',
+	'mongodb://vas:Aflac2017@ds011860.mlab.com:11860/heroku_l3wq2whs');
 
 keystone.start();
