@@ -37,6 +37,7 @@ exports = module.exports = function (app) {
 	app.get('/', routes.views.index);
 	app.get('/products/:product', routes.views.product);
 	app.get('/products', routes.views.products);
+	app.get('/agent', routes.views['agent-login']);
 	app.get('/new-employer', routes.views['new-employer']);
 	app.post('/new-employer', routes.views['new-employer']);
 	app.all('/contact', routes.views.contact);
