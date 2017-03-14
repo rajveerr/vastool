@@ -86,11 +86,11 @@ table {
     margin-right: 0; }
 
 /* Atoms */
-body.agent-verify .card-center, body.agent-welcome .card-center {
+.agent-verify .card-center, .agent-welcome .card-center {
   padding: 1.69em;
   background-color: white;
   box-shadow: 3px 3px 2px #e5e8e9; }
-  body.agent-verify .card-center::after, body.agent-welcome .card-center::after {
+  .agent-verify .card-center::after, .agent-welcome .card-center::after {
     clear: both;
     content: "";
     display: table; }
@@ -1279,6 +1279,9 @@ textarea {
       width: 45%; } }
 
 /* Templates */
+.no-header {
+  background-color: #F8F8F8; }
+
 .wrapper,
 .flash .wrap,
 .header-container .wrap {
@@ -1398,67 +1401,75 @@ textarea {
   display: none !important; }
 
 /* Pages */
-body.agent-verify {
-  background-color: #F8F8F8; }
-  body.agent-verify .primary-content {
-    text-align: center;
-    padding: 0.845em; }
-  body.agent-verify .aflac-logo {
-    margin: 0.845em auto; }
-  body.agent-verify .card-center {
-    margin: 0 auto;
-    padding: 3em 0.845em;
-    min-width: 90%; }
-    body.agent-verify .card-center h1 {
-      text-align: center; }
-    body.agent-verify .card-center .input-and-button-container {
-      text-align: center; }
-      @media screen and (max-width: 568px) {
-        body.agent-verify .card-center .input-and-button-container input {
-          width: 20rem; } }
-    body.agent-verify .card-center h1 {
-      margin-bottom: 0.845em;
-      font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif;
-      line-height: 3rem;
-      font-size: 2.4rem; }
-    @media screen and (min-width: 400px) {
-      body.agent-verify .card-center {
-        min-width: 80%;
-        padding: 4em 1.69em; } }
-    @media screen and (min-width: 1024px) {
-      body.agent-verify .card-center {
-        min-width: 40%;
-        padding: 4em 1.69em; } }
-  body.agent-verify label.error {
-    left: 17%; }
+.agent-verify .primary-content {
+  text-align: center;
+  padding: 0.845em; }
 
-body.agent-welcome {
-  background-color: #F8F8F8; }
-  body.agent-welcome .primary-content {
-    text-align: center;
-    padding: 0.845em; }
-  body.agent-welcome .aflac-logo {
-    margin: 0.845em auto; }
-  body.agent-welcome .card-center {
-    margin: 0 auto;
-    padding: 1.69em;
-    width: 90%;
-    min-height: 430px; }
-    body.agent-welcome .card-center h1 {
-      margin-bottom: 0.845em;
-      background: transparent url("../images/stars.png") no-repeat 0 0;
-      padding-top: 5rem; }
-    @media screen and (min-width: 400px) {
-      body.agent-welcome .card-center {
-        width: 80%;
-        padding: 1.69em 4em 1.69em 13em;
-        background: white url("../images/happy-duck.png") no-repeat 0 0; } }
-    @media screen and (min-width: 1024px) {
-      body.agent-welcome .card-center {
-        width: 60%; } }
-  body.agent-welcome .form-footer {
-    border-top: 2px dashed #F8F8F8;
-    margin-top: 1.69em; }
+.agent-verify .aflac-logo {
+  margin: 0.845em auto; }
+
+.agent-verify .card-center {
+  margin: 0 auto;
+  padding: 3em 0.845em;
+  width: 90%; }
+  .agent-verify .card-center h1 {
+    text-align: center; }
+    .agent-verify .card-center h1 span {
+      font-family: "proximaNovaThin", Helvetica, Arial, sans-serif; }
+  .agent-verify .card-center .input-and-button-container {
+    text-align: center; }
+    @media screen and (max-width: 568px) {
+      .agent-verify .card-center .input-and-button-container input {
+        width: 20rem; } }
+  .agent-verify .card-center h1 {
+    margin-bottom: 0.845em;
+    font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif;
+    line-height: 3rem;
+    font-size: 2.4rem; }
+  @media screen and (min-width: 400px) {
+    .agent-verify .card-center {
+      width: 80%;
+      padding: 4em 1.69em; } }
+  @media screen and (min-width: 1024px) {
+    .agent-verify .card-center {
+      width: 60%;
+      padding: 4em 1.69em; } }
+
+.agent-verify label.error {
+  left: 22%; }
+
+.agent-verify .icon-right-open {
+  position: relative;
+  left: -5px; }
+
+.agent-welcome .primary-content {
+  text-align: center;
+  padding: 0.845em; }
+
+.agent-welcome .aflac-logo {
+  margin: 0.845em auto; }
+
+.agent-welcome .card-center {
+  margin: 0 auto;
+  padding: 1.69em;
+  width: 90%;
+  min-height: 430px; }
+  .agent-welcome .card-center h1 {
+    margin-bottom: 0.845em;
+    background: transparent url("../images/stars.png") no-repeat 0 0;
+    padding-top: 5rem; }
+  @media screen and (min-width: 400px) {
+    .agent-welcome .card-center {
+      width: 80%;
+      padding: 1.69em 4em 1.69em 13em;
+      background: white url("../images/happy-duck.png") no-repeat 0 0; } }
+  @media screen and (min-width: 1024px) {
+    .agent-welcome .card-center {
+      width: 60%; } }
+
+.agent-welcome .form-footer {
+  border-top: 2px dashed #F8F8F8;
+  margin-top: 1.69em; }
 
 .agent-questions h1 {
   margin-bottom: 0.845em; }

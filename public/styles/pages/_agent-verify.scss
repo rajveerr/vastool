@@ -1,5 +1,4 @@
-body.agent-verify {
-  background-color: $lightest-gray;
+.agent-verify {
   .primary-content {
     text-align: center;
     padding: $small-spacing;
@@ -11,9 +10,12 @@ body.agent-verify {
     @extend %card;
     margin: 0 auto;
     padding: 3em $small-spacing;
-    min-width: 90%;
+    width: 90%;
     h1 {
       text-align: center;
+      span {
+        font-family: $thin-font-family;
+      }
     }
     .input-and-button-container {
       text-align: center;
@@ -31,15 +33,19 @@ body.agent-verify {
       font-size: 2.4rem;
     }
     @include media($above-small) {
-      min-width: 80%;
+      width: 80%;
       padding: 4em $base-spacing;
     }
     @include media($above-mid) {
-      min-width: 40%;
+      width: 60%;
       padding: 4em $base-spacing;
     }
   }
   label.error {
-    left: 17%;
+    left: 22%;
+  }
+  .icon-right-open {
+    position: relative;
+    left: -5px;
   }
 }

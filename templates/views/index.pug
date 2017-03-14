@@ -1,12 +1,15 @@
 extends ../layouts/no-header
 
 block content
-  form#verifyAgent(action='agent', novalidate)
-    h1(class='aflac-logo') Aflac : Employer Choice Tool
-    .wrapper
-      .card-center
-        h1 Aflac’s ALL-EMPLOYEE choices for keeping a healthy lifestyle
-        .input-and-button-container.question
-          label.hidden(for='username') Agent ID
-          input#username(name="id", type="number", required='required', data-msg-required='Please enter your Agent ID', data-msg='Please enter a valid Agent ID', minlength="2", placeholder="Agent Writing Number")
-          button#BtnVerifyAgent.icon-right-open(onclick='$("#verifyAgent").validate();') Go
+  .agent-verify
+    form#verifyAgent(action='agent', novalidate)
+      h1(class='aflac-logo') Aflac : Employer Choice Tool
+      .wrapper
+        .card-center
+          h1 Aflac’s ALL-EMPLOYEE choices 
+            br 
+            span for keeping a healthy lifestyle
+          .input-and-button-container.question
+            label.hidden(for='username') Agent ID
+            input#username(name="id", type="number", required='required', data-msg-required='Please enter your Agent ID', data-msg='Please enter a valid Agent ID', minlength="2", placeholder="Agent Writing Number")
+            button#BtnVerifyAgent.icon-right-open(onclick='$("#verifyAgent").validate();') Go
