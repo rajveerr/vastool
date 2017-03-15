@@ -52,7 +52,6 @@ exports.flashMessages = function(req, res, next) {
 	Prevents people from accessing protected pages when they're not signed in
  */
 exports.requireUser = function(req, res, next) {
-	console.log('>>requireUser', req.session.user);
 	if (!req.session.userId) {
 		res.redirect('/keystone/signin');
 	} else {

@@ -39,7 +39,7 @@ exports = module.exports = function (req, res) {
 		var agent = findAgentBy(req.query.id);
     if (agent) {
 			signIn(agent, function (user) {
-				req.session.user = user;
+				req.session.user = res.locals.user = user;
 				res.render('agent-home');
 			});
     } else {
