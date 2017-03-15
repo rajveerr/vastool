@@ -134,6 +134,11 @@ html
 					$('#freeBenefitChosen').append('<li>' + $('.control.checked .h4').text() + '</li>')
 					}
 			})
+			
+			// feedback form
+			$('input[type=radio][name=feedbackEmotion]').click(function() {
+				$('#feedback .defaultHidden').show();
+			});
 
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,

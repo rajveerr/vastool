@@ -12,10 +12,17 @@ var Feedback = new keystone.List('Feedback', {
 });
 
 Feedback.add({
-	comment: {
+	emotion: {
 		type: String,
 		required: true
 	},
+	comment: {
+		type: Types.Textarea,
+		required: true
+	},
+	email: {
+		type: Types.Email
+	}
 });
 
 Feedback.register();

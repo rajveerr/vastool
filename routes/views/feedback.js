@@ -27,7 +27,9 @@ exports = module.exports = function(req, res) {
 
 	function newFeedbackFromRequest() {
 		return {
-			comment: req.body.feedbackComment
+			emotion: req.body.feedbackEmotion,
+			comment: req.body.feedbackComment,
+			email: req.body.feedbackProviderEmail
 		};
 	}
 

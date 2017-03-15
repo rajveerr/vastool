@@ -1241,6 +1241,8 @@ label {
     z-index: 2;
     left: 0;
     bottom: -3.5rem; }
+  label span {
+    font-family: "proximaNovaThin", Helvetica, Arial, sans-serif; }
 
 form label.error {
   display: none; }
@@ -1260,6 +1262,13 @@ textarea {
 [type="radio"] {
   display: inline;
   margin-right: 0.4225em; }
+
+#feedback textarea {
+  width: 100%;
+  min-height: 15rem; }
+  @media screen and (min-width: 400px) {
+    #feedback textarea {
+      width: 80%; } }
 
 .question-tip {
   position: relative;
