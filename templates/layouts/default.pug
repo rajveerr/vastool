@@ -77,7 +77,7 @@ html
 			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
 			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
 
-
+		img.feedbackButton.modalOpner(src='images/button-feedback-retina.png', href='feedback', name='Share your feedback')
 		//- JAVASCRIPT
 
 		//- jQuery 1.11.3 is included by default, and required by both Bootstrap
@@ -134,11 +134,6 @@ html
 					$('#freeBenefitChosen').append('<li>' + $('.control.checked .h4').text() + '</li>')
 					}
 			})
-			
-			// feedback form
-			$('input[type=radio][name=feedbackEmotion]').click(function() {
-				$('#feedback .defaultHidden').show();
-			});
 
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,

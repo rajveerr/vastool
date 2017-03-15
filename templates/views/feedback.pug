@@ -1,38 +1,37 @@
-extends ../layouts/default
-
-block content
-  form#feedback.wrapper(action='feedback', method='POST', novalidate='novalidate')
-    .content-head
-      h1 Share your feedback
-    .primary-content
-      .card-gray
-        .question.yes-no-choice
-            label(for='feedbackEmotion') What do you think of our new Benefits?
-            label.control.control--radio
-              input.radio(type='radio', name='feedbackEmotion', value='Love')
-              .control__indicator
-              |  Love 
-            label.control.control--radio
-              input.radio(type='radio', name='feedbackEmotion', value='like')
-              .control__indicator
-              |  Like
-            label.control.control--radio
-              input.radio(type='radio', name='feedbackEmotion', value='neutral')
-              .control__indicator
-              |  Neutral 
-            label.control.control--radio
-              input.radio(type='radio', name='feedbackEmotion', value='dislike', required='required', data-msg='Please choose your emotion')
-              .control__indicator
-              |  Dislike 
-        .question.defaultHidden(style='display: none;')
-          label What would you like to share with us?
-          textarea#comment(name='feedbackComment', required='required', data-msg-required='Please share your feedback')
-        .question.defaultHidden(style='display: none;')
-          label Email 
-            span (To follow-up if you have any question)
-          input#eMail(type='email', name='feedbackProviderEmail')
-      .form-footer.defaultHidden(style='display: none;')
-          span.primary-actions
-            button#primaryBtn.icon-right-open(type='submit', onclick='$("#feedback").validate();') Submit
-          span.secondary-actions.link-btn
-            a(href="/") Cancel    
+hr.head
+form#feedback.wrapper(action='feedback', method='POST', novalidate='novalidate')
+  .question.yes-no-choice
+      label(for='feedbackEmotion') What do you think of our new Benefits?
+      label.control.control--radio
+        input.radio(type='radio', name='feedbackEmotion', value='Love')
+        .control__indicator
+        |  Love 
+      label.control.control--radio
+        input.radio(type='radio', name='feedbackEmotion', value='like')
+        .control__indicator
+        |  Like
+      label.control.control--radio
+        input.radio(type='radio', name='feedbackEmotion', value='neutral')
+        .control__indicator
+        |  Neutral 
+      label.control.control--radio
+        input.radio(type='radio', name='feedbackEmotion', value='dislike', required='required', data-msg='Please choose your emotion')
+        .control__indicator
+        |  Dislike 
+  .question.defaultHidden(style='display: none')
+    label What would you like to share with us?
+    textarea#comment(name='feedbackComment', required='required', data-msg-required='Please share your feedback')
+  .question.defaultHidden(style='display: none')
+    label Email 
+      span (To follow-up if you have any question)
+    input#eMail(type='email', name='feedbackProviderEmail')
+  .form-footer.defaultHidden(style='display: none')
+      span.primary-actions
+        button#primaryBtn.icon-right-open(type='submit', onclick='$("#feedback").validate();') Submit
+      span.secondary-actions.link-btn
+        a(href="/") Cancel
+script.
+  console.log('>>init');
+  $("input[type=radio][name='feedbackEmotion']").on('click', function() {
+    $('.defaultHidden').show()
+  });
