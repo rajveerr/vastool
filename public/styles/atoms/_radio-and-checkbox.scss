@@ -53,10 +53,10 @@
   }
   input {
     &:checked:focus ~ .control__indicator {
-      background: white;
+      background-color: white;
     }
     &:disabled ~ .control__indicator {
-      background: $medium-gray;
+      background-color: $medium-gray;
       opacity: 0.6;
       pointer-events: none;
     }
@@ -70,10 +70,10 @@
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: $base-font-color;
+    background-color: $base-font-color;
   }
   input:disabled ~ .control__indicator:after {
-    background: #7b7b7b;
+    background-color: #7b7b7b;
   }
 }
 
@@ -113,4 +113,68 @@
 
 .control input:checked ~ .control__indicator:after {
   display: block;
+}
+
+
+// Feedback from
+
+.feedback-form {
+  .feedback-label {
+    padding-bottom: 1.5rem;
+  }
+  .control {
+    text-align: center;
+    padding: 0;
+    margin: 0 $small-spacing 0 0;
+    span {
+      display: block;
+      visibility: hidden;
+      position: absolute;
+      bottom: -1.7rem;
+      left: 0;
+      right: 0;
+      font-size: 1.4rem;
+      font-family: $thin-font-family;
+      text-transform: uppercase;
+    }
+    &:hover span {
+      visibility: visible;
+    }
+    &:hover input ~ .control__indicator {
+      border: 0;
+    }
+  }
+  .control__indicator {
+    position: static;
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    border: 0;
+    background-image: url('../images/feedback-emotion-sprite.png');
+    background-repeat: no-repeat;
+    background-size: 20.4rem;
+    &.like {
+      background-position: -5.1rem 0;
+    }
+    &.neutral {
+      background-position: -10.2rem 0;
+    }
+    &.dislike {
+      background-position: -15.3rem 0;
+    }
+    &:after {
+      display: none !important;
+    }
+  }
+  input {
+    &:hover ~ .control__indicator,
+    &:focus ~ .control__indicator,
+    &:checked ~ .control__indicator {
+      background-color: transparent;
+      border: 0;
+      span {
+        visibility: visible;
+      }
+    }
+  }
 }

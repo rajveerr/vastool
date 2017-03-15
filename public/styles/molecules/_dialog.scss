@@ -26,7 +26,6 @@
     min-height: 2.5rem;
     .ui-dialog-title {
         font-family: $bold-font-family;
-        text-align: center;
         display: block;
         font-size: 3rem;
         padding: $small-spacing 0;
@@ -58,7 +57,7 @@
     display: none;
   }
   hr.head {
-    margin: -1rem 20% 3rem 20%;
+    margin: -1rem 0 3rem;
     border-bottom: 2px dotted darken($lightest-gray, 10%);
   }
   ul {
