@@ -945,7 +945,6 @@ td.dot {
 
 .ui-dialog {
   position: fixed !important;
-  width: 100% !important;
   z-index: 4;
   top: 0;
   right: 0;
@@ -963,7 +962,7 @@ td.dot {
     @media screen and (min-width: 1024px) {
       .ui-dialog .ui-dialog-titlebar,
       .ui-dialog .ui-dialog-content {
-        padding: 0 13.52em; } }
+        margin: 0 13.52em; } }
   .ui-dialog .ui-dialog-content {
     padding-bottom: 1.69em; }
   .ui-dialog .ui-dialog-titlebar {
@@ -989,6 +988,10 @@ td.dot {
         top: 3.8rem;
         right: 4rem;
         font-size: 4rem; } }
+    @media screen and (min-width: 1024px) {
+      .ui-dialog .ui-dialog-titlebar-close {
+        top: 3.8rem;
+        right: 6.76em; } }
   .ui-dialog .ui-button-text {
     display: none; }
   .ui-dialog hr.head {
