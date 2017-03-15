@@ -26,7 +26,7 @@ exports.initLocals = function(req, res, next) {
 		// 	href: '/products'
 		// }
 	];
-	res.locals.user = req.user;
+	res.locals.user = req.user || req.session.user;
 	next();
 };
 
@@ -52,8 +52,8 @@ exports.flashMessages = function(req, res, next) {
 	Prevents people from accessing protected pages when they're not signed in
  */
 exports.requireUser = function(req, res, next) {
-	if (!req.user) {
-		req.flash('error', 'Please sign in to access this page.');
+	console.log('>>requireUser', req.session.user);
+	if (!req.session.userId) {
 		res.redirect('/keystone/signin');
 	} else {
 		next();

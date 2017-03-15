@@ -18,13 +18,6 @@ exports = module.exports = function(req, res) {
 		res.redirect('products');
 	});
 
-
-	view.on('post', function(next) {
-		var newFeedback = newFeedbackFromRequest();
-		save(newFeedback);
-		res.redirect('/');
-	});
-
 	function newFeedbackFromRequest() {
 		return {
 			emotion: req.body.feedbackEmotion,
