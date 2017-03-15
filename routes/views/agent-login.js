@@ -35,8 +35,8 @@ exports = module.exports = function (req, res) {
 		keystone.session.signinWithUser(user, req, res, success);
 	}
 
-  view.on('init', function(next) {
-		var agent = findAgentBy(req.query.id);
+  view.on('post', function(next) {
+		var agent = findAgentBy(req.body.id);
     if (agent) {
 			signIn(agent, function (user) {
 				req.session.user = res.locals.user = user;
@@ -48,5 +48,5 @@ exports = module.exports = function (req, res) {
     }
   });
 
-	view.render('agent-home');
+	view.render('agent-login');
 };

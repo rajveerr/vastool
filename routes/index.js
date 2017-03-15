@@ -34,8 +34,8 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function(app) {
 	// Views
-	app.get('/agent', routes.views['agent-login']);
-	app.get('/', routes.views.index);
+	app.get('/', routes.views['agent-login']);
+	app.post('/', routes.views['agent-login']);
 
 	// protected
 	app.get('/products/:product', middleware.requireUser, routes.views.product);

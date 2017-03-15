@@ -32,6 +32,7 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 	'session store': 'mongo',
+	'signout redirect': '/',
 	'cookie secret': 'w~K8=&5r%U2]EZ'
 });
 
