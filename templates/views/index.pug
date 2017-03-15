@@ -2,12 +2,12 @@ extends ../layouts/no-header
 
 block content
   .agent-verify
-    form#verifyAgent(action='agent', novalidate)
+    form#verifyAgent(action='agent-login', method='post', novalidate)
       h1(class='aflac-logo') Aflac : Employer Choice Tool
       .wrapper
         .card-center
-          h1 Aflac’s ALL-EMPLOYEE choices 
-            br 
+          h1 Aflac’s ALL-EMPLOYEE choices
+            br
             span for keeping a healthy lifestyle
           .input-and-button-container.question
             label.hidden(for='username') Agent ID

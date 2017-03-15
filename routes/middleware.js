@@ -56,9 +56,11 @@ exports.flashMessages = function(req, res, next) {
 	Prevents people from accessing protected pages when they're not signed in
  */
 exports.requireUser = function(req, res, next) {
+	console.log('>>requireUser', req);
 	if (!req.user) {
-		req.flash('error', 'Please sign in to access this page.');
-		res.redirect('/keystone/signin');
+		// req.flash('error', 'Please sign in to access this page.');
+		// res.redirect('/keystone/signin');
+		res.redirect('/');
 	} else {
 		next();
 	}

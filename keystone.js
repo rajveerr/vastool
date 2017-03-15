@@ -31,6 +31,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'signin url': '/login',
 	'cookie secret': 'w~K8=&5r%U2]EZ'
 });
 
