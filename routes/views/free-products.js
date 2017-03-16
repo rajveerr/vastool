@@ -7,11 +7,17 @@ exports = module.exports = function (req, res) {
 	var locals = res.locals;
 
 	locals.section = 'benefits';
+	locals.data = {};
 
-	// Load products
-	view.query('products', Product.model.find({
-		free: true
-	}));
+	view.on('get', function(next) {
+		Product.model.find({
+			free: true
+		}).exec(function(err, products) {
+			locals.data.products = products;
+			locals.data.employer = req.session.employer;
+			next(err);
+		});
+	});
 
 	view.on('post', function(next) {
 		req.session.employer.freeBenefitSlug = req.body.freeBenefit;

@@ -3,13 +3,13 @@ extends ../layouts/default
 block content
   .wrapper.radio-checkbox-list.free-benefits-selection
     .content-head
-      span#employerName.above-title
+      span#employerName.above-title #{locals.data.employer.name}
       h1 Choose additional ALL EMPLOYEE benefits
       p.sub-heading You’ve picked “Telemedicine” as your FREE FOR ALL benefit.
       p.sub-heading You can also choose as many of these Aflac group plan benefits for ALL your employees, regardless of whether they select other Aflac products.
     form#vasBenefitsSelection(action='selection-summary.html', novalidate='novalidate')
         .primary-content
-        each product in products
+        each product in data.products
 
           .card-gray
             label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees

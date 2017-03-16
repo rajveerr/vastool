@@ -7,6 +7,7 @@ exports = module.exports = function (req, res) {
 	var locals = res.locals;
 
 	locals.section = 'benefits';
+	locals.data = {};
 
 	view.on('get', function(next) {
 		Product.model.find({
@@ -14,7 +15,8 @@ exports = module.exports = function (req, res) {
 				'$ne': req.session.employer.freeBenefitSlug
 			}
 		}).exec(function(err, products) {
-			res.locals.products = products;
+			locals.data.products = products;
+			locals.data.employer = req.session.employer;
 			next(err);
 		});
 	});
