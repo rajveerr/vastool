@@ -53,7 +53,7 @@ exports.flashMessages = function(req, res, next) {
  */
 exports.requireUser = function(req, res, next) {
 	if (!req.session.userId) {
-		res.redirect('/keystone/signin');
+		res.redirect('/');
 	} else {
 		next();
 	}
