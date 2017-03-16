@@ -23,7 +23,6 @@ exports = module.exports = function (req, res) {
 
 	view.on('post', function(next) {
 		var newEmployer = newEmployerFromRequest();
-		save(newEmployer);
 		req.session.employer = newEmployer;
 		res.redirect('free-products');
 	});
@@ -37,15 +36,6 @@ exports = module.exports = function (req, res) {
 			offersMajorInsurancePlan: offersMajorInsurancePlan,
 			majorInsurancePlan: offersMajorInsurancePlan ? req.body.majorMedicalPlanName : null
 		};
-	}
-
-	function save(employer) {
-		Employer.model(employer).save(function(err) {
-			if (err) {
-				console.log('save failed', err);
-				next(err);
-			}
-		});
 	}
 
 	view.render('new-employer');
