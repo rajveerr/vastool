@@ -39,8 +39,15 @@ exports = module.exports = function(app) {
 
 	// protected
 	app.get('/products/:product', middleware.requireUser, routes.views.product);
-	app.get('/products', middleware.requireUser, routes.views.products);
+
+	app.get('/free-products', middleware.requireUser, routes.views['free-products']);
+	app.post('/free-products', middleware.requireUser, routes.views['free-products']);
+
+	app.get('/additional-products', middleware.requireUser, routes.views['additional-products']);
+	app.post('/additional-products', middleware.requireUser, routes.views['additional-products']);
+
 	app.get('/new-employer', middleware.requireUser, routes.views['new-employer']);
 	app.post('/new-employer', middleware.requireUser, routes.views['new-employer']);
+
 	app.all('/feedback', middleware.requireUser, routes.views.feedback);
 };

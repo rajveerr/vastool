@@ -24,7 +24,8 @@ exports = module.exports = function (req, res) {
 	view.on('post', function(next) {
 		var newEmployer = newEmployerFromRequest();
 		save(newEmployer);
-		res.redirect('products');
+		req.session.employer = newEmployer;
+		res.redirect('free-products');
 	});
 
 	function newEmployerFromRequest() {

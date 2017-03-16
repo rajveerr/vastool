@@ -1,0 +1,43 @@
+extends ../layouts/default
+
+block content
+  .wrapper.radio-checkbox-list.free-benefits-selection
+    .content-head
+      span#employerName.above-title
+      h1 Choose additional ALL EMPLOYEE benefits
+      p.sub-heading You’ve picked “Telemedicine” as your FREE FOR ALL benefit.
+      p.sub-heading You can also choose as many of these Aflac group plan benefits for ALL your employees, regardless of whether they select other Aflac products.
+    form#vasBenefitsSelection(action='selection-summary.html', novalidate='novalidate')
+        .primary-content
+        each product in products
+
+          .card-gray
+            label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
+            label.control.control--checkbox
+              input#vasBenefitStudentLoanRepayment(type='checkbox', name='vasBenefitCheckbox', value='Student Loan Repayment')
+              .control__indicator
+              p
+                span.h4 #{product.title}
+                span.price #{product.price}
+                span.pemth pe/mth
+                span.productDesc #{product.shortDescription}
+                  span.see-more.modalOpner(href='products/' + product.slug, name=`${product.title}`)
+                span.bullet
+                  strong &bull; Best for:
+                  | #{product.bestFor}
+                span.bullet &bull; 48% of employers pick this benefit
+            hr
+
+          label.error(for='freeBenefit')
+
+        .card-blue.secondary-content#benefitChosenCard(style='display: none')
+            .free-section
+              h4 Free Benefit
+              ul#freeBenefitChosen
+                li Telemedicine from MeMD
+        .form-footer
+            span.primary-actions
+              button#primaryBtn.icon-right-open(type='submit') Next
+            span.secondary-actions.link-btn
+              a(href="employer-questions.html") Back
+        .dialog

@@ -6,11 +6,17 @@ exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
-	// Set locals
 	locals.section = 'benefits';
 
 	// Load products
-	view.query('products', keystone.list('Product').model.find())
+	view.query('products', Product.model.find({
+		free: true
+	}));
 
-	view.render('products');
+	view.on('post', function(next) {
+		req.session.employer.freeBenefitSlug = req.body.freeBenefit;
+		res.redirect('additional-products');
+	});
+
+	view.render('free-products');
 };
