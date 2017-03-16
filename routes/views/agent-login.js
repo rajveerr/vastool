@@ -4,19 +4,19 @@ var keystone = require('keystone'),
 exports = module.exports = function (req, res) {
 
 	var WHITELISTED_AGENTS = [{
-		id: '5030167',
+		id: 'PDC503',
 		firstName: 'Shirley'
 	}, {
-		id: '7403455',
+		id: 'PDC740',
 		firstName: 'Rajveer'
 	}, {
-		id: '3664093',
+		id: 'PDC366',
 		firstName: 'Babs'
 	}, {
-		id: '9540002',
+		id: 'PDC954',
 		firstName: 'Alex'
 	}, {
-		id: '3134178',
+		id: 'PDC313',
 		firstName: 'Stefania'
 	}];
 
