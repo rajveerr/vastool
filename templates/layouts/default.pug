@@ -91,7 +91,7 @@ html
 			$("#freeBenefitsSelection").validate({
 				// set form value to local storage
 				submitHandler: function(form) {
-					sessionStorage.setItem('selectedFreeBenefit', $('input[name="freeBenefitRadio"]:checked').val());
+					sessionStorage.setItem('selectedFreeBenefit', $('input[name="freeBenefit"]:checked').val());
 					form.submit();
 				}
 			});
@@ -122,7 +122,7 @@ html
 
 
 			$('.control').click(function() {
-				if ($("input[name='freeBenefitRadio']").is(':checked')) {
+				if ($("input[name='freeBenefit']").is(':checked')) {
 					$('.control').removeClass('checked');
 					$(this).addClass('checked');
 
@@ -132,7 +132,34 @@ html
 					$('#freeBenefitChosen').append('<li>' + $('.control.checked .h4').text() + '</li>')
 					}
 			})
-
+			
+			// script for additional products page
+			
+			$('#freeBenefitChosen').html(sessionStorage.getItem('selectedFreeBenefit'))    
+			$('#vasBenefitsSelection input').on('change', function() {        
+				var checkedValues = $('#vasBenefitsSelection input:checkbox:checked').each(function() {
+					return this;
+				}).get();
+	      
+				// Add selected benefits to summary
+				$('.vas-section').show();
+				var elements = $();
+				for(x = 0; x < checkedValues.length; x++) {
+					elements = elements.add('<li>' + $(checkedValues[x]).parent().find('.h4').text() + '</li>');
+					}
+				$('#vasBenefitChosen').empty();
+				$('#vasBenefitChosen').append(elements);
+				if(checkedValues.length == 0) {
+					$('.vas-section').hide();
+				}
+	      
+				// highlight row by adding 'checked' class
+				if($(this).prop('checked')) {      
+					$(this).parent().addClass('checked');
+				} else {
+					$(this).parent().removeClass('checked');
+				}
+			})
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
