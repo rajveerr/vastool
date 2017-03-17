@@ -1526,6 +1526,7 @@ textarea {
   margin: 0.845em auto; }
 
 .agent-welcome .card-center {
+  position: relative;
   margin: 0 auto;
   padding: 1.69em;
   width: 90%;
@@ -1534,6 +1535,13 @@ textarea {
     margin-bottom: 0.845em;
     background: transparent url("../images/stars.png") no-repeat 0 0;
     padding-top: 5rem; }
+  .agent-welcome .card-center .sign-out {
+    position: absolute;
+    top: 0.845em;
+    right: 0.845em;
+    color: #A0AAAE;
+    font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
+    font-size: 1.6rem; }
   @media screen and (min-width: 400px) {
     .agent-welcome .card-center {
       width: 80%;
