@@ -13,11 +13,11 @@ block content
               tr
                 td.title(colspan='2') FREE FOR ALL Benefit
               tr
-                th#selectedFreeBenefit #{locals.data.freeBenefit.title}
+                th#selectedFreeBenefit #{locals.data.benefitsSummary.freeBenefit.title}
                 td.free FREE!
               tr#vasBenefitRowStart
                 td.title(colspan='2') New All Employee Benefits
-              each product in data.additionalBenefits
+              each product in data.benefitsSummary.additionalBenefits
                 tr
                   th #{product.title}
                   td.price
@@ -26,15 +26,15 @@ block content
             tbody
               tr
                 th Per employee per month
-                td.perEmployeePerMonth.price.pepp-total #{locals.data.totals.perEmployeePerMonth}
+                td.perEmployeePerMonth.price.pepp-total #{locals.data.benefitsSummary.totals.perEmployeePerMonth}
               tr
                 th Total premium per month
                 td.total-premium
                   span#numberOfEmployees.grey #{locals.data.employer.numberOfEmployees}
                   span.grey *
-                  span.perEmployeePerMonth.price.grey #{locals.data.totals.perEmployeePerMonth}
+                  span.perEmployeePerMonth.price.grey #{locals.data.benefitsSummary.totals.perEmployeePerMonth}
                   span.grey =
-                  span#totalPremiumAmount.price.total #{locals.data.totals.premium}
+                  span#totalPremiumAmount.price.total #{locals.data.benefitsSummary.totals.premium}
         .form-footer
             span.primary-actions
               button#primaryBtn(type='submit') Confirm

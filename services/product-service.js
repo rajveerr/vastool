@@ -21,8 +21,8 @@ var ProductService = function(Product) {
       var premium = totalPerEmployeePerMonth * numberOfEmployees;
 
       return benefitsSummary = {
-        freeProduct: freeProduct,
-        additionalProducts: additionalProducts,
+        freeBenefit: freeProduct,
+        additionalBenefits: additionalProducts,
         totals: {
           perEmployeePerMonth: parseFloat(totalPerEmployeePerMonth.toFixed(2)),
           premium : parseFloat(premium.toFixed(2))

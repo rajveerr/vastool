@@ -61,11 +61,11 @@ describe('product-service', function() {
       return productService
         .getBenefitsSummary(freeProduct, additionalProducts, numberOfEmployees)
         .then(function(benefitsSummary) {
-          expect(benefitsSummary.freeProduct).to.not.be.undefined;
-          expect(benefitsSummary.additionalProducts).to.not.be.undefined;
-          expect(benefitsSummary.additionalProducts).to.have.length(2);
-          expect(benefitsSummary.additionalProducts[0].slug).to.be.eql('add1');
-          expect(benefitsSummary.additionalProducts[1].slug).to.be.eql('add2');
+          expect(benefitsSummary.freeBenefit).to.not.be.undefined;
+          expect(benefitsSummary.additionalBenefits).to.not.be.undefined;
+          expect(benefitsSummary.additionalBenefits).to.have.length(2);
+          expect(benefitsSummary.additionalBenefits[0].slug).to.be.eql('add1');
+          expect(benefitsSummary.additionalBenefits[1].slug).to.be.eql('add2');
         });
     });
 

@@ -17,9 +17,7 @@ exports = module.exports = function (req, res) {
 												  req.session.employer.additionalBenefitsSlugs,
 													req.session.employer.numberOfEmployees)
 			.then(function(benefitsSummary) {
-				locals.data.freeBenefit = benefitsSummary.freeProduct;
-				locals.data.additionalBenefits = benefitsSummary.additionalProducts;
-				locals.data.totals = benefitsSummary.totals;
+				locals.data.benefitsSummary = benefitsSummary;
 				locals.data.employer = req.session.employer;
 				next();
 			})
