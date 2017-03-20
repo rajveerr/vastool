@@ -38,6 +38,10 @@ exports = module.exports = function(app) {
 	app.post('/', routes.views['agent-login']);
 
 	// protected
+	app.get('/agent-home', function(req, res) {
+		new keystone.View(req, res).render('agent-home');
+	});
+
 	app.get('/products/:product', middleware.requireUser, routes.views.product);
 
 	app.get('/free-products', middleware.requireUser, routes.views['free-products']);

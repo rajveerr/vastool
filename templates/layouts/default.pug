@@ -132,15 +132,14 @@ html
 					$('#freeBenefitChosen').append('<li>' + $('.control.checked .h4').text() + '</li>')
 					}
 			})
-			
+
 			// script for additional products page
-			
-			$('#freeBenefitChosen').html(sessionStorage.getItem('selectedFreeBenefit'))    
+
 			$('#vasBenefitsSelection input').on('change', function() {        
 				var checkedValues = $('#vasBenefitsSelection input:checkbox:checked').each(function() {
 					return this;
 				}).get();
-	      
+
 				// Add selected benefits to summary
 				$('.vas-section').show();
 				var elements = $();
