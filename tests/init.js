@@ -7,5 +7,6 @@ keystone.init({
 });
 
 keystone.import('../models');
+keystone.import('../services');
 
 chai.should();

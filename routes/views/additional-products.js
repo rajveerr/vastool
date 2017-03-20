@@ -23,6 +23,7 @@ exports = module.exports = function (req, res) {
 
 	view.on('post', function(next) {
 		req.session.employer.additionalBenefitsSlugs = req.body.additionalBenefits;
+		res.redirect('summary');
 	});
 
 	view.render('additional-products');

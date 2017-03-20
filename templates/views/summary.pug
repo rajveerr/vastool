@@ -1,0 +1,43 @@
+extends ../layouts/default
+
+block content
+  .wrapper.radio-checkbox-list.free-benefits-selection
+    .content-head
+      span#employerName.above-title #{locals.data.employer.name}
+      h1 Benefits summary
+      p.sub-heading Here’s what you have picked! Find out how this is going to help grow your organization in future.
+    form#vasBenefitsSummary(action='confirmation.html', novalidate='novalidate')
+        .primary-content
+          table.table-minimal.table-summary
+            thead
+              tr
+                td.title(colspan='2') FREE FOR ALL Benefit
+              tr
+                th#selectedFreeBenefit #{locals.data.freeBenefit.title}
+                td.free FREE!
+              tr#vasBenefitRowStart
+                td.title(colspan='2') New All Employee Benefits
+              each product in data.additionalBenefits
+                tr
+                  th #{product.title}
+                  td.price
+                    span.has-plus #{product.price}
+                    span.pemth pe/mth
+            tbody
+              tr
+                th Per employee per month
+                td.perEmployeePerMonth.price.pepp-total #{locals.data.totals.perEmployeePerMonth}
+              tr
+                th Total premium per month
+                td.total-premium
+                  span#numberOfEmployees.grey #{locals.data.employer.numberOfEmployees}
+                  span.grey *
+                  span.perEmployeePerMonth.price.grey #{locals.data.totals.perEmployeePerMonth}
+                  span.grey =
+                  span#totalPremiumAmount.price.total #{locals.data.totals.premium}
+        .form-footer
+            span.primary-actions
+              button#primaryBtn(type='submit') Confirm
+            span.secondary-actions.link-btn
+              a(href="additional-products") Back
+        .dialog

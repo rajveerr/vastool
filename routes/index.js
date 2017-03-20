@@ -42,6 +42,9 @@ exports = module.exports = function(app) {
 		new keystone.View(req, res).render('agent-home');
 	});
 
+	app.get('/new-employer', middleware.requireUser, routes.views['new-employer']);
+	app.post('/new-employer', middleware.requireUser, routes.views['new-employer']);
+
 	app.get('/products/:product', middleware.requireUser, routes.views.product);
 
 	app.get('/free-products', middleware.requireUser, routes.views['free-products']);
@@ -50,8 +53,8 @@ exports = module.exports = function(app) {
 	app.get('/additional-products', middleware.requireUser, routes.views['additional-products']);
 	app.post('/additional-products', middleware.requireUser, routes.views['additional-products']);
 
-	app.get('/new-employer', middleware.requireUser, routes.views['new-employer']);
-	app.post('/new-employer', middleware.requireUser, routes.views['new-employer']);
+	app.get('/summary', middleware.requireUser, routes.views.summary);
+	app.post('/summary', middleware.requireUser, routes.views.summary);
 
 	app.all('/feedback', middleware.requireUser, routes.views.feedback);
 };
