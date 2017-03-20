@@ -4,21 +4,23 @@ var ProductService = function(Product) {
 
   this.getBenefitsSummary = function(freeProductSlug,
                                      additionalProductSlugs,
-                                     numberOfEmployees,
-                                     callback) {
+                                     numberOfEmployees) {
     var slugs = [].concat(freeProductSlug)
                   .concat(additionalProductSlugs);
 
-    Product.model.find({
+    return Product.model.find({
   		slug: {
   			$in : slugs
   		}
-  	}).exec(function(err, products) {
+  	})
+    .exec()
+    .then(function(products) {
       var freeProduct = _.find(products, ['slug', freeProductSlug]);
       var additionalProducts = _.difference(products, [freeProduct]);
       var totalPerEmployeePerMonth = parseFloat(_.sumBy(additionalProducts, 'price'));
       var premium = totalPerEmployeePerMonth * numberOfEmployees;
-      var benefitsSummary = {
+
+      return benefitsSummary = {
         freeProduct: freeProduct,
         additionalProducts: additionalProducts,
         totals: {
@@ -26,7 +28,6 @@ var ProductService = function(Product) {
           premium : parseFloat(premium.toFixed(2))
         }
       };
-      callback(err, benefitsSummary);
     });
   }
 
