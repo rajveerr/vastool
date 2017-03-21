@@ -54,28 +54,9 @@ block content
         table.table-minimal.benefits
           caption Aflac All Employee Choices
           tbody
-            tr.modalOpner(href='products/health-advocate', name='Health Advocate')
-              th Health Advocate
-              td 19¢ 
-                abbr(title='Per employee per month') pe/mth
-            tr
-              th Telemedicine from MeMD
-              td 16¢ 
-                abbr(title='Per employee per month') pe/mth
-            tr
-              th Legal Services
-              td $2 
-                abbr(title='Per employee per month') pe/mth
-            tr
-              th Career and Talent Coaching
-              td 24¢ 
-                abbr(title='Per employee per month') pe/mth
-            tr
-              th Family Care Providers for Kids, Pets, and Parents
-              td 16¢ 
-                abbr(title='Per employee per month') pe/mth
-            tr
-              th Student Loan Repayment
-              td 31¢ 
-                abbr(title='Per employee per month') pe/mth    
+            each product in data.products
+              tr.modalOpner(href='products/' + product.slug, name=`${product.title}`)
+                th #{product.title}
+                td $#{product.price}
+                  abbr(title='Per employee per month')  pe/mth 
     .dialog
