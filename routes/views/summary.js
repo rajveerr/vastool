@@ -2,7 +2,7 @@ var keystone = require('keystone');
 var _ = require('lodash');
 var ProductService = require('../../services/product-service');
 
-exports = module.exports = function (req, res) {
+exports = module.exports = function(req, res) {
 
 	var view = new keystone.View(req, res);
 	var productService = new ProductService(keystone.list('Product'));
@@ -14,8 +14,8 @@ exports = module.exports = function (req, res) {
 
 		productService
 			.getBenefitsSummary(req.session.employer.freeBenefitSlug,
-												  req.session.employer.additionalBenefitsSlugs,
-													req.session.employer.numberOfEmployees)
+				req.session.employer.additionalBenefitsSlugs,
+				req.session.employer.numberOfEmployees)
 			.then(function(benefitsSummary) {
 				locals.data.benefitsSummary = benefitsSummary;
 				locals.data.employer = req.session.employer;
@@ -29,6 +29,7 @@ exports = module.exports = function (req, res) {
 
 	view.on('post', function(next) {
 		//TODO save everything!
+		res.redirect('confirmation');
 	});
 
 	view.render('summary');

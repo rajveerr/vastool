@@ -6,7 +6,7 @@ block content
       span#employerName.above-title #{locals.data.employer.name}
       h1 Benefits summary
       p.sub-heading Here’s what you have picked! Find out how this is going to help grow your organization in future.
-    form#vasBenefitsSummary(action='confirmation.html', novalidate='novalidate')
+    form#vasBenefitsSummary(action='summary', novalidate='novalidate')
         .primary-content
           table.table-minimal.table-summary
             thead
@@ -69,7 +69,7 @@ block content
                 span.productDesc Provide information on benefits attached to the paychecks
         .form-footer
             span.primary-actions
-              button#primaryBtn(type='submit') Confirm
+              button#primaryBtn(type='submit', onclick="$('#vasBenefitsSummary').validate()") Confirm
             span.secondary-actions.link-btn
               a(href="additional-products") Back
         .dialog
