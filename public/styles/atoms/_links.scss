@@ -7,4 +7,18 @@ a {
     text-decoration: underline;
     color: $medium-blue;
   }
+  &.external {
+    position: relative;
+    margin-right: $small-spacing;
+    &:after {
+      content: '';
+      display: block;
+      height: 8px;
+      width: 8px;
+      position: absolute;
+      right: -11px;
+      top: 3px;
+      background: url('http://www.aflac.com/_global-assets/images/sprites/footer/sprites-s89a37d4bd6.png') 0 -504px no-repeat;
+    }
+  }
 }

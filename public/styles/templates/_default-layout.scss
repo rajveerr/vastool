@@ -4,7 +4,8 @@
 
 .wrapper,
 .flash .wrap,
-.header-container .wrap {
+.header-container .wrap,
+.footer-content {
   margin: 0 auto;
   padding: 0 $small-spacing;
   @include media($above-mid) {

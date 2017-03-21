@@ -1,0 +1,23 @@
+.footer-content {
+
+  border-top: 5px solid $lightest-gray;
+  padding: $small-spacing 0 0 !important;
+  font-size: 1.2rem;
+  .copyright {
+    float: left;
+    font-family: $thin-font-family;
+    text-transform: uppercase;
+    color: $light-gray;
+  }
+}
+
+.footer-nav {
+  float: right;
+  list-style: none;
+  margin-left: 0;
+  font-family: $base-font-family;
+  li {
+    display: inline-block;
+    margin-left: $small-spacing;
+  }
+}

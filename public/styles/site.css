@@ -127,11 +127,11 @@ strong {
     margin-bottom: 0.845em; }
 
 a {
-  color: #4990E2;
+  color: #00a7e1;
   text-decoration: none;
   transition: color 150ms ease; }
   a:active, a:focus, a:hover {
-    color: #376caa; }
+    color: #007da9; }
 
 hr {
   border-bottom: 1px solid #A0AAAE;
@@ -225,7 +225,7 @@ input[type='tel'], input[type='email'], input[type='search'], textarea {
   input[type='date'].inline-edit, input[type='password'].inline-edit, .file-upload.inline-edit,
   input[type='tel'].inline-edit, input[type='email'].inline-edit, input[type='search'].inline-edit, textarea.inline-edit {
     width: 100%;
-    border-left: 3px solid #4990E2;
+    border-left: 3px solid #00a7e1;
     box-shadow: none;
     font-size: 2.6rem;
     font-family: "proximaNovaBold", Helvetica, Arial, sans-serif;
@@ -457,7 +457,7 @@ select {
     select {
       max-width: 21.5rem; } }
   select:focus {
-    border-color: #4990E2;
+    border-color: #00a7e1;
     outline: none; }
   select:disabled {
     background-color: #f2f2f2;
@@ -473,7 +473,7 @@ a.btn-link:visited {
   position: relative;
   padding: 0.4225em 0.845em;
   cursor: pointer;
-  background-color: #4990E2;
+  background-color: #00a7e1;
   text-transform: uppercase;
   font-size: 2rem;
   font-family: "proximaNovaLight", Helvetica, Arial, sans-serif;
@@ -502,7 +502,7 @@ a.btn-link:visited {
   a.btn-link:visited:hover,
   a.btn-link:visited:focus {
     text-decoration: none;
-    background-color: #2276d6; }
+    background-color: #0081ae; }
   button:active,
   input[type=submit]:active,
   a.btn-link:active,
@@ -569,11 +569,23 @@ a.btn-link:visited {
       font-size: 1.7rem; } }
 
 a {
-  color: #4990E2;
+  color: #00a7e1;
   text-decoration: none; }
   a:hover, a:focus {
     text-decoration: underline;
     color: #00C2EF; }
+  a.external {
+    position: relative;
+    margin-right: 0.845em; }
+    a.external:after {
+      content: '';
+      display: block;
+      height: 8px;
+      width: 8px;
+      position: absolute;
+      right: -11px;
+      top: 3px;
+      background: url("http://www.aflac.com/_global-assets/images/sprites/footer/sprites-s89a37d4bd6.png") 0 -504px no-repeat; }
 
 /* items class */
 ul,
@@ -654,7 +666,7 @@ hr {
   .graphis-list.light-content {
     margin: 3.38em 0 1.69em; }
   .graphis-list .blue {
-    color: #4990E2; }
+    color: #00a7e1; }
   .graphis-list .blue,
   .graphis-list .reg {
     display: block;
@@ -767,7 +779,7 @@ hr {
 
 .spinner:before {
   left: 0;
-  background-color: #4990E2;
+  background-color: #00a7e1;
   animation: spinner-left 1s infinite linear; }
 
 .spinner:after {
@@ -885,7 +897,7 @@ td.dot {
     height: 1rem;
     background-color: #A0AAAE; }
   td.dot.yes span {
-    background-color: #4990E2; }
+    background-color: #00a7e1; }
 
 .table-summary {
   background-color: transparent;
@@ -1339,24 +1351,46 @@ textarea {
     .question-tip {
       width: 45%; } }
 
+.footer-content {
+  border-top: 5px solid #F8F8F8;
+  padding: 0.845em 0 0 !important;
+  font-size: 1.2rem; }
+  .footer-content .copyright {
+    float: left;
+    font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #A0AAAE; }
+
+.footer-nav {
+  float: right;
+  list-style: none;
+  margin-left: 0;
+  font-family: "proximaNovaRegular", Helvetica, Arial, sans-serif; }
+  .footer-nav li {
+    display: inline-block;
+    margin-left: 0.845em; }
+
 /* Templates */
 .no-header {
   background-color: #F8F8F8; }
 
 .wrapper,
 .flash .wrap,
-.header-container .wrap {
+.header-container .wrap,
+.footer-content {
   margin: 0 auto;
   padding: 0 0.845em; }
   @media screen and (min-width: 1024px) {
     .wrapper,
     .flash .wrap,
-    .header-container .wrap {
+    .header-container .wrap,
+    .footer-content {
       width: 80%; } }
   @media screen and (min-width: 1600px) {
     .wrapper,
     .flash .wrap,
-    .header-container .wrap {
+    .header-container .wrap,
+    .footer-content {
       width: 60%; } }
 
 .wrapper {
@@ -1425,11 +1459,11 @@ textarea {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  border: 5px solid #4990E2;
+  border: 5px solid #00a7e1;
   position: relative;
   padding: 1.69em;
-  background-color: #e7f1fb;
-  color: #4990E2;
+  background-color: #9ae5ff;
+  color: #00a7e1;
   margin-top: 1.69em; }
   .card-blue::after {
     clear: both;
@@ -1561,7 +1595,7 @@ textarea {
 .agent-dashboard .input-and-button-container {
   display: block;
   margin-bottom: 1.69em;
-  border-left: 3px solid #4990E2; }
+  border-left: 3px solid #00a7e1; }
   .agent-dashboard .input-and-button-container input {
     width: 91%;
     font-size: 2rem; }
