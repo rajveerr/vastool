@@ -9,6 +9,7 @@ var Types = keystone.Field.Types;
 var Feedback = new keystone.List('Feedback', {
 	nocreate: true,
 	noedit: true,
+	defaultColumns: 'emotion,comment,email'
 });
 
 Feedback.add({
