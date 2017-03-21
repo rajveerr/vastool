@@ -42,6 +42,11 @@ exports = module.exports = function(app) {
 		new keystone.View(req, res).render('agent-home');
 	});
 
+	app.get('/agent-dashboard', middleware.requireUser, routes.views[
+		'agent-dashboard']);
+	app.post('/agent-dashboard', middleware.requireUser, routes.views[
+		'agent-dashboard']);
+
 	app.get('/new-employer', middleware.requireUser, routes.views['new-employer']);
 	app.post('/new-employer', middleware.requireUser, routes.views['new-employer']);
 

@@ -91,15 +91,7 @@ html
 		script(src='/js/jquery/jquery-1.11.3.min.js')
 		script(src='/js/jquery-ui.min.js')
 		script(src='/js/jquery.validate.min.js')
-		script.
-			$("#freeBenefitsSelection").validate({
-				// set form value to local storage
-				submitHandler: function(form) {
-					sessionStorage.setItem('selectedFreeBenefit', $('input[name="freeBenefit"]:checked').val());
-					form.submit();
-				}
-			});
-
+		script.			
 			// dialog settings
 			$( ".dialog" ).dialog({
 				autoOpen: false,

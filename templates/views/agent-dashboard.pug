@@ -1,0 +1,81 @@
+extends ../layouts/default
+
+block content
+  .wrapper.agent-dashboard
+    .content-head
+      h1 #{locals.user.name.first}'s Dashboard
+      form#startEmployee.input-and-button-container(action='agent-dashboard', method='POST', novalidate='novalidate')
+        label.hidden(for='username') Agent ID
+        input#employerName(type="text", name='employerName', required='required', data-msg-required='Please enter employer name', minlength="2", placeholder="Employer name")
+        button#primaryBtn.icon-right-open(type='submit', onclick='$("#startEmployee").validate();') Start
+    .primary-content        
+      .table-container
+        table.table-minimal
+          thead
+            tr
+              th Employers
+              th Choices complete 
+              th 75% POPS
+              th Submitted
+          tbody
+            tr.modalOpner(href='dialogs/employer-status.html', name='3Blades')
+              th 3Blades
+              td.dot.yes
+                span
+              td.dot
+                span
+              td.dot
+                span
+            tr
+              th Abate Solutions
+              td.dot.yes
+                span
+              td.dot.yes
+                span
+              td.dot.yes
+                span
+            tr
+              th Apogee Legal
+              td.dot
+                span
+              td.dot
+                span
+              td.dot
+                span
+            tr
+              th Bay Dynamics
+              td.dot.yes
+                span
+              td.dot
+                span
+              td.dot
+                span
+      .table-container
+        table.table-minimal.benefits
+          caption Aflac All Employee Choices
+          tbody
+            tr.modalOpner(href='products/health-advocate', name='Health Advocate')
+              th Health Advocate
+              td 19¢ 
+                abbr(title='Per employee per month') pe/mth
+            tr
+              th Telemedicine from MeMD
+              td 16¢ 
+                abbr(title='Per employee per month') pe/mth
+            tr
+              th Legal Services
+              td $2 
+                abbr(title='Per employee per month') pe/mth
+            tr
+              th Career and Talent Coaching
+              td 24¢ 
+                abbr(title='Per employee per month') pe/mth
+            tr
+              th Family Care Providers for Kids, Pets, and Parents
+              td 16¢ 
+                abbr(title='Per employee per month') pe/mth
+            tr
+              th Student Loan Repayment
+              td 31¢ 
+                abbr(title='Per employee per month') pe/mth    
+    .dialog
