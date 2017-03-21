@@ -47,14 +47,21 @@ exports = module.exports = function(app) {
 
 	app.get('/products/:product', middleware.requireUser, routes.views.product);
 
-	app.get('/free-products', middleware.requireUser, routes.views['free-products']);
-	app.post('/free-products', middleware.requireUser, routes.views['free-products']);
+	app.get('/free-products', middleware.requireUser, routes.views[
+		'free-products']);
+	app.post('/free-products', middleware.requireUser, routes.views[
+		'free-products']);
 
-	app.get('/additional-products', middleware.requireUser, routes.views['additional-products']);
-	app.post('/additional-products', middleware.requireUser, routes.views['additional-products']);
+	app.get('/additional-products', middleware.requireUser, routes.views[
+		'additional-products']);
+	app.post('/additional-products', middleware.requireUser, routes.views[
+		'additional-products']);
 
 	app.get('/summary', middleware.requireUser, routes.views.summary);
 	app.post('/summary', middleware.requireUser, routes.views.summary);
+
+	app.get('/confirmation', middleware.requireUser, routes.views.confirmation);
+	app.post('/confirmation', middleware.requireUser, routes.views.confirmation);
 
 	app.all('/feedback', middleware.requireUser, routes.views.feedback);
 };
