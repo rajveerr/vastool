@@ -52,25 +52,25 @@ exports = module.exports = function(req, res) {
 		});
 	}
 
-	function signInAgent(agent, success) {
-		var user = new User.model({
+	function newUser(id, firstName, lastName, type) {
+		return new User.model({
+			userID: id,
+			type: type,
 			name: {
-				first: agent.firstName,
-				last: agent.firstName
+				first: firstName,
+				last: lastName
 			},
 			canAccessKeystone: false
 		});
+	}
+
+	function signInAgent(agent, success) {
+		var user = newUser(agent.id, agent.firstName, agent.firstName, 'AGENT');
 		keystone.session.signinWithUser(user, req, res, success);
 	}
 
 	function signInEmployer(employer, success) {
-		var user = new User.model({
-			name: {
-				first: employer.firstName,
-				last: employer.firstName
-			},
-			canAccessKeystone: false
-		});
+		var user = newUser(employer.id, employer.firstName, employer.firstName, 'EMPLOYER');
 		keystone.session.signinWithUser(user, req, res, success);
 	}
 

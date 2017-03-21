@@ -9,10 +9,19 @@ var Types = keystone.Field.Types;
 var Feedback = new keystone.List('Feedback', {
 	nocreate: true,
 	noedit: true,
-	defaultColumns: 'emotion,comment,email'
+	defaultColumns: 'userType,userID,emotion,comment,email'
 });
 
 Feedback.add({
+	userType: {
+		type: String
+	},
+	userName: {
+		type: String
+	},
+	userID: {
+		type: String
+	},
 	emotion: {
 		type: String,
 		required: true
