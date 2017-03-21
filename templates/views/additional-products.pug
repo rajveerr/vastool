@@ -9,12 +9,12 @@ block content
       p.sub-heading You can also choose as many of these Aflac group plan benefits for ALL your employees, regardless of whether they select other Aflac products.
     form#vasBenefitsSelection(action='additional-products',method='post' , novalidate='novalidate')
         .primary-content
-          each product in data.products
+          each product in data.additionalProducts
 
             .card-gray
               label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
               label.control.control--checkbox
-                input#vasBenefitStudentLoanRepayment(type='checkbox', name='additionalBenefits', value=`${product.slug}`)
+                input(type='checkbox', name='additionalBenefits', value=`${product.slug}`, data-title=`${product.title}`)
                 .control__indicator
                 p
                   span.h4 #{product.title}
@@ -34,7 +34,7 @@ block content
           .free-section
             h4 Free Benefit
             ul
-              li#freeBenefitChosen
+              li#freeBenefitChosen #{locals.data.freeProduct.title}
           .vas-section(style='display: none')
             h4 VAS Benefit
             ul#vasBenefitChosen
@@ -44,3 +44,24 @@ block content
             span.secondary-actions.link-btn
               a(href="/free-products") Back
         .dialog
+block js
+  script.
+    $("input[name='additionalBenefits']").on('change', function() {
+      $('.control').removeClass('checked');
+      var checkedValues = $("input[name='additionalBenefits']:checkbox:checked");
+
+      if(checkedValues.length == 0) {
+        $('.vas-section').hide();
+        return;
+      }
+
+      var elements = $();
+      $.each(checkedValues, function(idx, selectedProduct) {
+        var $selectedProduct = $(selectedProduct);
+        elements = elements.add($('<li>').text($selectedProduct.data('title')));
+        $selectedProduct.parent().addClass('checked');
+      });
+      $('#vasBenefitChosen').html(elements);
+
+      $('.vas-section').show();
+    })

@@ -43,6 +43,7 @@ block js
     $("input[name='freeBenefit']").click(function() {
       var $selected = $(this);
       if ($selected.is(':checked')) {
+        $('.control').removeClass('checked');
         $selected.parent().addClass('checked');
         $('#freeBenefitChosen li').remove();
         $('#freeBenefitChosen').append('<li>' + $selected.data('title') + '</li>')

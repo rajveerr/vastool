@@ -79,7 +79,7 @@ html
 					li
 						a.external(href='https://www.aflac.com/about-aflac/default.aspx' target='_blank') About Aflac
 					li
-						a.external(href='https://www.aflac.com/about-aflac/privacy-policy.aspx' target='_blank') Privacy Policy &amp; Notifications	
+						a.external(href='https://www.aflac.com/about-aflac/privacy-policy.aspx' target='_blank') Privacy Policy &amp; Notifications
 
 		img.feedbackButton.modalOpner(src='images/button-feedback-retina.png', href='feedback', name='Share your feedback')
 		//- JAVASCRIPT
@@ -91,7 +91,7 @@ html
 		script(src='/js/jquery/jquery-1.11.3.min.js')
 		script(src='/js/jquery-ui.min.js')
 		script(src='/js/jquery.validate.min.js')
-		script.			
+		script.
 			// dialog settings
 			$( ".dialog" ).dialog({
 				autoOpen: false,
@@ -115,33 +115,7 @@ html
 				$('.dialog').dialog({ title: $(this).attr('name') });
 				$('.dialog').dialog('open');
 			});
-
-			// script for additional products page
-
-			$('#vasBenefitsSelection input').on('change', function() {
-				var checkedValues = $('#vasBenefitsSelection input:checkbox:checked').each(function() {
-					return this;
-				}).get();
-
-				// Add selected benefits to summary
-				$('.vas-section').show();
-				var elements = $();
-				for(x = 0; x < checkedValues.length; x++) {
-					elements = elements.add('<li>' + $(checkedValues[x]).parent().find('.h4').text() + '</li>');
-					}
-				$('#vasBenefitChosen').empty();
-				$('#vasBenefitChosen').append(elements);
-				if(checkedValues.length == 0) {
-					$('.vas-section').hide();
-				}
-	      
-				// highlight row by adding 'checked' class
-				if($(this).prop('checked')) {      
-					$(this).parent().addClass('checked');
-				} else {
-					$(this).parent().removeClass('checked');
-				}
-			})
+			
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
