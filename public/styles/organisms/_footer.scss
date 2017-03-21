@@ -1,7 +1,6 @@
 .footer-content {
-
   border-top: 5px solid $lightest-gray;
-  padding: $small-spacing 0 0 !important;
+  padding: $small-spacing $base-spacing 0 !important;
   font-size: 1.2rem;
   .copyright {
     float: left;
