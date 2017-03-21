@@ -1,0 +1,20 @@
+extends ../layouts/default
+
+block content
+  .wrapper.agent-dashboard
+    .content-head
+      h1 Now all your employees get Aflac benefits at our group rates and you can choose one free
+      p.sub-heading Introducing a new family of Aflac benefits
+      ul
+        li Career Counseling 
+        li Ethical and financially sound
+        li No cost to your company
+        li
+          a(href='javascript:void(0)') Just the facts!
+    h2 Offer Aflac Benefits 
+      span to ALL your employees  
+    form#startEmployee.input-and-button-container(action='agent-dashboard', method='POST', novalidate='novalidate')
+      label.hidden(for='username') Agent ID
+      input#employerName(type="text", name='employerName', required='required', data-msg-required='Please enter employer name', minlength="2", placeholder="Employer name")
+      button#primaryBtn.icon-right-open(type='submit', onclick='$("#startEmployee").validate();') Start    
+    .dialog

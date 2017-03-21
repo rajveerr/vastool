@@ -47,6 +47,11 @@ exports = module.exports = function(app) {
 	app.post('/agent-dashboard', middleware.requireUser, routes.views[
 		'agent-dashboard']);
 
+	app.get('/employer-home', middleware.requireUser, routes.views[
+		'employer-home']);
+	app.post('/employer-home', middleware.requireUser, routes.views[
+		'employer-home']);
+
 	app.get('/new-employer', middleware.requireUser, routes.views['new-employer']);
 	app.post('/new-employer', middleware.requireUser, routes.views['new-employer']);
 
