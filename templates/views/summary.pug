@@ -35,6 +35,38 @@ block content
                   span.perEmployeePerMonth.price.grey #{locals.data.benefitsSummary.totals.perEmployeePerMonth}
                   span.grey =
                   span#totalPremiumAmount.price.total #{locals.data.benefitsSummary.totals.premium}
+          h2 Help us engage with your employees (POPS)
+          p.sub-heading Chose the best option for an Aflac representative to reach 75% of your employees. We want to make sure each one of them is encouraged to keep a healthy lifestyle.
+          
+          .radio-checkbox-list.engagement-choice
+            label.hidden(for='popsEngagement') Please select the made of engagament for Aflac agent to engage with your employees
+            label.control.control--checkbox
+              input#popsEngagementGroupEmail.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementGroupEmail', required='required', data-msg='Please select', data-msg-required='Please select')
+              .control__indicator
+              p 
+                span.h4 Group email
+                span.productDesc We will share Aflac benefits information via a group Email
+            hr
+            label.control.control--checkbox
+              input#popsEngagementOfficeVisit.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementOfficeVisit')
+              .control__indicator
+              p 
+                span.h4 Office visit
+                span.productDesc Come to our office. We will provide space to schedule appointments with employees.
+            hr
+            label.control.control--checkbox
+              input#popsEngagementTeleconferenceOrWebcasts.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementTeleconferenceOrWebcasts')
+              .control__indicator
+              p 
+                span.h4 Teleconference/Webcasts
+                span.productDesc Connect through teleconference or webcasts remotely
+            hr
+            label.control.control--checkbox
+              input#popsEngagementPaycheckAttachment.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementPaycheckAttachment')
+              .control__indicator
+              p 
+                span.h4 Paycheck attachment
+                span.productDesc Provide information on benefits attached to the paychecks
         .form-footer
             span.primary-actions
               button#primaryBtn(type='submit') Confirm
