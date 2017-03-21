@@ -1,6 +1,5 @@
 var keystone = require('keystone');
 var User = keystone.list(keystone.get('user model'));
-var Employer = keystone.list('Employer');
 var Product = keystone.list('Product');
 
 exports = module.exports = function(req, res) {
@@ -17,25 +16,11 @@ exports = module.exports = function(req, res) {
 	});
 
 	view.on('get', function(next) {
-		Product.model.find({
-
-		}).exec(function(err, products) {
+		Product.model.find().exec(function(err, products) {
 			locals.data.products = products;
 			next(err);
 		});
 	});
-
-	view.on('post', function(next) {
-		var newEmployer = startNewEmployer();
-		req.session.employer = newEmployer;
-		res.redirect('new-employer');
-	});
-
-	function startNewEmployer() {
-		return {
-			name: req.body.employerName
-		};
-	}
 
 	view.render('agent-dashboard');
 };

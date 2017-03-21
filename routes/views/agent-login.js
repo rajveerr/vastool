@@ -76,13 +76,12 @@ exports = module.exports = function(req, res) {
 
 	view.on('post', function(next) {
 		var agent = findAgentBy(req.body.id);
-		var employer = findEmployerBy(req.body.id);
 		if (agent) {
 			signInAgent(agent, function(user) {
 				req.session.user = res.locals.user = user;
 				res.render('agent-home');
 			});
-		} else if (employer) {
+		} else if (employer = findEmployerBy(req.body.id)) {
 			signInEmployer(employer, function(user) {
 				req.session.user = res.locals.user = user;
 				res.render('employer-home');

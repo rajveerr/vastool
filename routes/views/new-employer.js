@@ -22,14 +22,13 @@ exports = module.exports = function(req, res) {
 	});
 
 	view.on('get', function(next) {
-		Employer.model.find({
-			free: true
-		}).exec(function(err) {
-			locals.data.employer = req.session.employer;
-			next(err);
-		});
+		if (req.query.employerName) {
+			locals.data.employer = newEmployer(req.query.employerName);
+		} else {
+			locals.data.employer = newEmployer('');
+		}
+		next();
 	});
-
 
 	view.on('post', function(next) {
 		var newEmployer = newEmployerFromRequest();
@@ -45,6 +44,12 @@ exports = module.exports = function(req, res) {
 			averageAgeOfEmployees: req.body.everageAgeOfEmployees,
 			offersMajorInsurancePlan: offersMajorInsurancePlan,
 			majorInsurancePlan: offersMajorInsurancePlan ? req.body.majorMedicalPlanName : null
+		};
+	}
+
+	function newEmployer(name) {
+		return {
+			name: name
 		};
 	}
 
