@@ -1,9 +1,9 @@
 var keystone = require('keystone');
 var Employer = keystone.list('Employer');
 
-exports = module.exports = function (req, res) {
+exports = module.exports = function(req, res) {
 
-  //TODO get this from the database
+	//TODO get this from the database
 	var MEDICAL_PLANS = [
 		'Blue Cross Blue Shield of Georgia'
 	];
@@ -15,11 +15,21 @@ exports = module.exports = function (req, res) {
 	locals.section = 'benefits';
 	locals.data = {};
 
-  view.on('init', function(next) {
+	view.on('init', function(next) {
 		locals.data.medicalPlans = MEDICAL_PLANS;
 
 		next();
-  });
+	});
+
+	view.on('get', function(next) {
+		Employer.model.find({
+			free: true
+		}).exec(function(err) {
+			locals.data.employer = req.session.employer;
+			next(err);
+		});
+	});
+
 
 	view.on('post', function(next) {
 		var newEmployer = newEmployerFromRequest();

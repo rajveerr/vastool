@@ -5,7 +5,7 @@ block content
       .primary-content
         .content-head
           h1
-            input#employerName.inline-edit(type="text", name='employerName', required='required', data-msg-required='Employer name', data-msg='Please enter a valid name', minlength="2", placeholder="New employer name")
+            input#employerName.inline-edit(type="text", name='employerName', value=`${locals.data.employer.name}`, required='required', data-msg-required='Employer name', data-msg='Please enter a valid name', minlength="2", placeholder="New employer name")
             a.icon-pencil#editEmployerName(href='javascript:void(0)')
         .card-gray
           .question

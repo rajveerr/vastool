@@ -18,8 +18,7 @@ exports = module.exports = function(req, res) {
 	view.on('post', function(next) {
 		var newEmployer = startNewEmployer();
 		req.session.employer = newEmployer;
-		req.session.user = res.locals.user = user;
-		res.redirect('free-products');
+		res.redirect('new-employer');
 	});
 
 	function startNewEmployer() {
