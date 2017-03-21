@@ -15,7 +15,7 @@ exports = module.exports = function(req, res) {
 	view.on('post', function(next) {
 		var newFeedback = newFeedbackFromRequest();
 		save(newFeedback);
-		res.redirect('products');
+		next();
 	});
 
 	function newFeedbackFromRequest() {

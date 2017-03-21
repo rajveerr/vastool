@@ -1,11 +1,11 @@
 hr.head
-form#feedback.feedback-form(action='feedback', method='POST', novalidate='novalidate')
+form#feedback.feedback-form(novalidate='novalidate')
   .question.yes-no-choice(style='margin-bottom: 4rem')
       label.feedback-label(for='feedbackEmotion') How do you feel about our new Benefits?
       label.control.control--radio
         input.radio(type='radio', name='feedbackEmotion', value='Love')
         .control__indicator.love
-          span Love 
+          span Love
       label.control.control--radio
         input.radio(type='radio', name='feedbackEmotion', value='like')
         .control__indicator.like
@@ -13,21 +13,21 @@ form#feedback.feedback-form(action='feedback', method='POST', novalidate='novali
       label.control.control--radio
         input.radio(type='radio', name='feedbackEmotion', value='neutral')
         .control__indicator.neutral
-          span Neutral 
+          span Neutral
       label.control.control--radio
         input.radio(type='radio', name='feedbackEmotion', value='dislike', required='required', data-msg='Please choose your emotion')
         .control__indicator.dislike
-          span Dislike 
+          span Dislike
   .question.defaultHidden(style='display: none')
     label What would you like to share with us?
     textarea#comment(name='feedbackComment', placeholder='Type your comments...', required='required', data-msg-required='Please share your feedback')
   .question.defaultHidden(style='display: none')
-    label Email 
+    label Email
       span (To follow-up if you have any question)
     input#eMail(type='email', name='feedbackProviderEmail')
   .form-footer.defaultHidden(style='display: none')
       span.primary-actions
-        button#primaryBtn.icon-right-open(type='submit', onclick='$("#feedback").validate();') Submit
+        button#primaryBtn.icon-right-open(type='submit') Submit
       span.secondary-actions.link-btn
         a(href="/") Cancel
 script.
@@ -35,4 +35,16 @@ script.
     $('.defaultHidden').show()
     $('.control__indicator').fadeTo('fast', 1);
     $('#feedback input[type="radio"]:not(:checked)').next('.control__indicator').fadeTo('fast', 0.25);
+  });
+
+  $('#feedback').validate({
+    submitHandler: function() {
+      $.post('feedback', {
+        feedbackEmotion: $("input[name='feedbackEmotion']:checked").val(),
+        feedbackComment: $("#comment").val(),
+        feedbackProviderEmail: $("#eMail").val()
+      });
+      $('.dialog').dialog('close');
+      return false;
+    }
   });
