@@ -11,12 +11,15 @@ exports = module.exports = function (req, res) {
 
 	view.on('get', function(next) {
 		Product.model
-			.find()
+			.find({
+				slug: {
+					'$ne': req.session.employer.freeBenefit.slug
+				}
+			})
 			.exec()
 			.then(function(products) {
-				var freeProduct = _.find(products, ['slug', req.session.employer.freeBenefitSlug]);
-				locals.data.additionalProducts = _.difference(products, [freeProduct]);
-				locals.data.freeProduct = freeProduct;
+				locals.data.additionalProducts = products;
+				locals.data.freeProduct = req.session.employer.freeBenefit;
 				locals.data.employer = req.session.employer;
 				next();
 			})
@@ -26,8 +29,23 @@ exports = module.exports = function (req, res) {
 	});
 
 	view.on('post', function(next) {
-		req.session.employer.additionalBenefitsSlugs = req.body.additionalBenefits;
-		res.redirect('summary');
+		Product.model
+			.find({
+				slug: {
+					$in: req.body.additionalBenefits
+				}
+			})
+			.exec()
+			.then(function(additionalProducts) {
+				req.session.employer.additionalBenefits =
+					_.map(additionalProducts, function(additionalProduct) {
+						return _.pick(additionalProduct, ['slug', 'title', 'price']);
+					});
+				res.redirect('summary');
+			})
+			.catch(function(err) {
+				next(err);
+			});
 	});
 
 	view.render('additional-products');

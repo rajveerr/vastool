@@ -70,8 +70,7 @@ exports = module.exports = function(app) {
 	app.get('/summary', middleware.requireUser, routes.views.summary);
 	app.post('/summary', middleware.requireUser, routes.views.summary);
 
-	app.get('/confirmation', middleware.requireUser, routes.views.confirmation);
-	app.post('/confirmation', middleware.requireUser, routes.views.confirmation);
+	app.post('/confirm', middleware.requireUser, routes.views.confirmation);
 
 	app.all('/feedback', middleware.requireUser, routes.views.feedback);
 };

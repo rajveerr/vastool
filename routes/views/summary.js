@@ -11,10 +11,10 @@ exports = module.exports = function(req, res) {
 	locals.data = {};
 
 	view.on('get', function(next) {
-
 		productService
-			.getBenefitsSummary(req.session.employer.freeBenefitSlug,
-				req.session.employer.additionalBenefitsSlugs,
+			.getBenefitsSummary(
+				req.session.employer.freeBenefit.slug,
+				_.map(req.session.employer.additionalBenefits, 'slug'),
 				req.session.employer.numberOfEmployees)
 			.then(function(benefitsSummary) {
 				locals.data.benefitsSummary = benefitsSummary;
@@ -24,12 +24,6 @@ exports = module.exports = function(req, res) {
 			.catch(function(err) {
 				next(err);
 			});
-
-	});
-
-	view.on('post', function(next) {
-		//TODO save everything!
-		res.redirect('confirmation');
 	});
 
 	view.render('summary');

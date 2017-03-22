@@ -14,7 +14,9 @@ Employer.add({
   numberOfEmployees: {type: Number, required: true, format: '0,0'},
   averageAgeOfEmployees: {type: Number, required: true, format: '0,0'},
   offersMajorInsurancePlan: {type: Boolean},
-  majorInsurancePlan: {type: String}
+  majorInsurancePlan: {type: String},
+  freeBenefit: {type: Types.Code, language: 'json'},
+  additionalBenefits: {type: Types.Code, language: 'json'}
 });
 
 Employer.register();

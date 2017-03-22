@@ -1,27 +1,30 @@
 var keystone = require('keystone');
-var _ = require('lodash');
-var ProductService = require('../../services/product-service');
 
 exports = module.exports = function(req, res) {
 
 	var view = new keystone.View(req, res);
-	var productService = new ProductService(keystone.list('Product'));
+	var Employer = keystone.list('Employer');
 
 	var locals = res.locals;
 	locals.data = {};
 
-	view.on('get', function(next) {
+	view.on('post', function(next) {
+		var employer = req.session.employer;
 
-		productService
-			.getBenefitsSummary(req.session.employer.freeBenefitSlug)
-			.then(function() {
-				locals.data.employer = req.session.employer;
-				next();
-			})
-			.catch(function(err) {
-				next(err);
-			});
+		var employer = new Employer.model({
+			name: employer.name,
+			numberOfEmployees: employer.numberOfEmployees,
+			averageAgeOfEmployees: employer.averageAgeOfEmployees,
+			offersMajorInsurancePlan: employer.offersMajorInsurancePlan,
+			majorInsurancePlan: employer.majorInsurancePlan,
+			freeBenefit: JSON.stringify(employer.freeBenefit),
+			additionalBenefits: JSON.stringify(employer.additionalBenefits)
+		});
 
+		employer.save(function(err) {
+			locals.data.employer = req.session.employer;
+			next(err);
+		});
 	});
 
 	view.render('confirmation');
