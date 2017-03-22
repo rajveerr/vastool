@@ -19,7 +19,6 @@ exports = module.exports = function(req, res) {
 	});
 
 	function newFeedbackFromRequest() {
-		console.log(req.session.user);
 		return {
 			emotion: req.body.feedbackEmotion,
 			comment: req.body.feedbackComment,

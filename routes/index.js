@@ -73,4 +73,6 @@ exports = module.exports = function(app) {
 	app.post('/confirm', middleware.requireUser, routes.views.confirmation);
 
 	app.all('/feedback', middleware.requireUser, routes.views.feedback);
+
+	app.get('/tips/:tip', middleware.requireUser, routes.views['producer_tip']);
 };

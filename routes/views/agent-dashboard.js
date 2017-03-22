@@ -1,17 +1,23 @@
 var keystone = require('keystone');
 var User = keystone.list(keystone.get('user model'));
-var Product = keystone.list('Product');
 
 exports = module.exports = function(req, res) {
 
 	var view = new keystone.View(req, res);
-	var locals = res.locals;
+	var Product = keystone.list('Product');
+	var ProducerTip = keystone.list('ProducerTip');
 
-	// Set locals
-	locals.section = 'benefits';
+	var locals = res.locals;
 	locals.data = {};
 
 	view.on('init', function(next) {
+		ProducerTip.model
+			.find()
+			.exec()
+			.then(function(tips) {
+				locals.data.tips = tips;
+			});
+
 		next();
 	});
 
