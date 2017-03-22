@@ -1,9 +1,52 @@
 #tipContent
   hr.head
-  p.left !{data.tip.subtitle}
-  p !{data.tip.details}
+  p#subtitle.left !{data.tip.subtitle}
+  #details !{data.tip.details}
+  input#currentTip(type='hidden', value=`${data.tip.slug}`)
 .form-footer
     span.primary-actions
-      button.btn-secondary.modalOpner(href='tips/', name='Tip of the day') Next Tip
+      button#next.btn-secondary(href='javascript:void(0)', onclick='next()', name='Tip of the day') Next Tip
     span.secondary-actions
-      button.btn-secondary Previous Tip
+      button#prev.btn-secondary(href='javascript:void(0)', onclick='previous()', name='Tip of the day', style='display:none') Previous Tip
+
+script.
+  var tips = $('#tipsModal').data('more-tips').split(',');
+
+  function loadTip(tip) {
+    $.getJSON('tips/' + tip)
+    .success(function(tip) {
+      console.log('done!');
+      $('#subtitle').html(tip.subtitle);
+      $('#details').html(tip.details);
+
+      $('#currentTip').val(tip.slug);
+    });
+  }
+
+  function next() {
+    var $currentTip = $('#currentTip');
+    var nextTipIndex = tips.indexOf($currentTip.val()) + 1;
+
+    if (tips[nextTipIndex]) {
+      loadTip(tips[nextTipIndex]);
+      $('#prev').show();
+
+      if (!tips[nextTipIndex + 1]) {
+        $('#next').hide();
+      }
+    }
+  }
+
+  function previous() {
+    var $currentTip = $('#currentTip');
+    var prevTipIndex = tips.indexOf($currentTip.val()) - 1;
+
+    if (tips[prevTipIndex]) {
+      loadTip(tips[prevTipIndex]);
+      $('#next').show();
+
+      if (!tips[prevTipIndex - 1]) {
+        $('#prev').hide();
+      }
+    }
+  }

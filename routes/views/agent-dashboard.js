@@ -1,5 +1,5 @@
 var keystone = require('keystone');
-var User = keystone.list(keystone.get('user model'));
+var _ = require('lodash');
 
 exports = module.exports = function(req, res) {
 
@@ -15,7 +15,7 @@ exports = module.exports = function(req, res) {
 			.find()
 			.exec()
 			.then(function(tips) {
-				locals.data.tips = tips;
+				locals.data.tips = _.map(tips, 'slug');
 			});
 
 		next();

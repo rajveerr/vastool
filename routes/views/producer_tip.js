@@ -13,8 +13,12 @@ exports = module.exports = function (req, res) {
     })
     .exec()
     .then(function(tip) {
-      locals.data.tip = tip;
-      next();
+      if (req.headers.accept.split(',').includes('application/json')) {
+        res.send(JSON.stringify(tip));
+      } else {
+        locals.data.tip = tip;
+        next();
+      }
     }).catch(function(err) {
       next(err);
     });

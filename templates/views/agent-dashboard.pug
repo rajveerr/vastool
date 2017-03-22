@@ -6,7 +6,7 @@ block content
       .wrap
         p We have a new producer tip!
         .link-options
-          a.modalOpner(href='tips/' + locals.data.tips[0].slug, name='Tip of the day') See now
+          a#tipsModal.modalOpner(href='tips/' + locals.data.tips[0], name='Tip of the day', data-more-tips=`${locals.data.tips}`) See now
           a.close-banner(href='javascript:void(0)', onClick="$('#flashBanner').fadeOut('fast')") Save for later
         span.close-banner.icon-cancel(href='javascript:void(0)', onClick="$('#flashBanner').fadeOut('fast')", title='Close this alert')
   .wrapper.agent-dashboard
