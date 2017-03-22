@@ -16,7 +16,8 @@ Employer.add({
   offersMajorInsurancePlan: {type: Boolean},
   majorInsurancePlan: {type: String},
   freeBenefit: {type: Types.Code, language: 'json'},
-  additionalBenefits: {type: Types.Code, language: 'json'}
+  additionalBenefits: {type: Types.Code, language: 'json'},
+  userId: {type: String}
 });
 
 Employer.register();

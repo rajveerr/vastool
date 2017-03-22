@@ -18,7 +18,8 @@ exports = module.exports = function(req, res) {
 			offersMajorInsurancePlan: employer.offersMajorInsurancePlan,
 			majorInsurancePlan: employer.majorInsurancePlan,
 			freeBenefit: JSON.stringify(employer.freeBenefit),
-			additionalBenefits: JSON.stringify(employer.additionalBenefits)
+			additionalBenefits: JSON.stringify(employer.additionalBenefits),
+			userId: req.session.user.userID
 		});
 
 		employer.save(function(err) {
