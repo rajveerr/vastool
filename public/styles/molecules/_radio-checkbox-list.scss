@@ -72,6 +72,7 @@
     .see-more {
       position: relative;
       display: inline;
+      left: $small-spacing;
   		@extend .icon-dot-3;
   		&:before {
   			position: absolute;

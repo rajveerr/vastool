@@ -1157,7 +1157,8 @@ td.dot {
       padding: 0 0 0.4225em 0.4225em; }
     .radio-checkbox-list .control .see-more {
       position: relative;
-      display: inline; }
+      display: inline;
+      left: 0.845em; }
       .radio-checkbox-list .control .see-more:before {
         position: absolute;
         width: 4rem;
@@ -1317,7 +1318,7 @@ label {
     z-index: 2;
     left: 0;
     bottom: -3.5rem; }
-  label span {
+  label > span {
     font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
     display: inline-block;
     padding-left: 0.845em; }
