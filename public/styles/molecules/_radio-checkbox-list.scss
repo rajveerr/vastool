@@ -71,7 +71,7 @@
     }
     .see-more {
       position: relative;
-      left: 1rem;
+      display: inline;
   		@extend .icon-dot-3;
   		&:before {
   			position: absolute;

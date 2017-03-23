@@ -1154,7 +1154,7 @@ td.dot {
       padding: 0 0 0.4225em 0.4225em; }
     .radio-checkbox-list .control .see-more {
       position: relative;
-      left: 1rem; }
+      display: inline; }
       .radio-checkbox-list .control .see-more:before {
         position: absolute;
         width: 4rem;
