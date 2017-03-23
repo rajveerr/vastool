@@ -12,9 +12,10 @@ var Employer = new keystone.List('Employer', {
 Employer.add({
   name: {type: String, required: true},
   numberOfEmployees: {type: Number, required: true, format: '0,0'},
-  averageAgeOfEmployees: {type: Number, required: true, format: '0,0'},
+  averageAgeOfEmployees: {type: Number, format: '0,0'},
   offersMajorInsurancePlan: {type: Boolean},
   majorInsurancePlan: {type: String},
+  newMajorMedicalPlanName: {type: String},
   freeBenefit: {type: Types.Code, language: 'json'},
   additionalBenefits: {type: Types.Code, language: 'json'},
   userId: {type: String}

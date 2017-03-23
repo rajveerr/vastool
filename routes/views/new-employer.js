@@ -43,7 +43,8 @@ exports = module.exports = function(req, res) {
 			numberOfEmployees: req.body.numberOfEmployees,
 			averageAgeOfEmployees: req.body.everageAgeOfEmployees,
 			offersMajorInsurancePlan: offersMajorInsurancePlan,
-			majorInsurancePlan: offersMajorInsurancePlan ? req.body.majorMedicalPlanName : null
+			majorInsurancePlan: offersMajorInsurancePlan ? req.body.majorMedicalPlanName : null,
+			newMajorMedicalPlanName: req.body.newMajorMedicalPlanName
 		};
 	}
 

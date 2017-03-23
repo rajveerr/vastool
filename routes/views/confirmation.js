@@ -17,6 +17,7 @@ exports = module.exports = function(req, res) {
 			averageAgeOfEmployees: employer.averageAgeOfEmployees,
 			offersMajorInsurancePlan: employer.offersMajorInsurancePlan,
 			majorInsurancePlan: employer.majorInsurancePlan,
+			newMajorMedicalPlanName: employer.newMajorMedicalPlanName,
 			freeBenefit: JSON.stringify(employer.freeBenefit),
 			additionalBenefits: JSON.stringify(employer.additionalBenefits),
 			userId: req.session.user.userID
