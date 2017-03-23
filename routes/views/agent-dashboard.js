@@ -19,14 +19,18 @@ exports = module.exports = function(req, res) {
 
 	function fetchEmployersFor(userId) {
 		return Employer.model
-			.find({ userId: userId })
+			.find({
+				userId: userId
+			})
 			.exec();
 	}
 
 	view.on('init', function(next) {
 		ProducerTip.model
 			.find()
-			.sort({date: 'desc'})
+			.sort({
+				date: 'desc'
+			})
 			.exec()
 			.then(function(tips) {
 				locals.data.tips = _.map(tips, 'slug');
@@ -39,9 +43,7 @@ exports = module.exports = function(req, res) {
 		fetchProducts()
 			.then(function(products) {
 				locals.data.products = products;
-
-				return
-					fetchEmployersFor(req.session.user.userID)
+				fetchEmployersFor(req.session.user.userID)
 					.then(function(employers) {
 						locals.data.employers = employers;
 						next();

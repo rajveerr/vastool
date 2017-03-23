@@ -17,24 +17,25 @@ block content
         input#employerName(type="text", name='employerName', required='required', data-msg-required='Please enter employer name', minlength="2", placeholder="Employer name")
         button#primaryBtn.icon-right-open(type='submit', onclick='$("#startEmployee").validate();') Start
     .primary-content
-      .table-container
-        table.table-minimal
-          thead
-            tr
-              th Employers
-              th Choices complete
-              th 75% POPS
-              th Submitted
-          tbody
-            each employer in data.employers
-              tr.modalOpner(href='dialogs/employer-status.html', name='3Blades')
-                th #{employer.name}
-                td.dot.yes
-                  span
-                td.dot
-                  span
-                td.dot
-                  span
+      if data.employers && data.employers.length > 0
+        .table-container      
+          table.table-minimal
+            thead
+              tr
+                th Employers
+                th Choices complete
+                th 75% POPS
+                th Submitted
+            tbody
+              each employer in data.employers
+                tr.modalOpner(href='application-status', name=`${employer.name}`)
+                  th #{employer.name}
+                  td.dot.yes
+                    span
+                  td.dot
+                    span
+                  td.dot
+                    span
       .table-container
         table.table-minimal.benefits
           caption Aflac All Employee Choices
