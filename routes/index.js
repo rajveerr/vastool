@@ -75,4 +75,11 @@ exports = module.exports = function(app) {
 	app.all('/feedback', middleware.requireUser, routes.views.feedback);
 
 	app.get('/tips/:tip', middleware.requireUser, routes.views['producer_tip']);
+
+	app.get('/employee-preference', middleware.requireUser, routes.views[
+		'employee-preference']);
+	app.post('/employee-preference', middleware.requireUser, routes.views[
+		'employee-preference']);
+
+	app.post('/thank-you', middleware.requireUser, routes.views['thank-you']);
 };

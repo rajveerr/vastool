@@ -48,4 +48,7 @@ h3 {
   &:last-child {
       margin-bottom: $base-spacing;
   }
+  @include media($above-mid) {
+      @include span-columns(9);
+  }
 }

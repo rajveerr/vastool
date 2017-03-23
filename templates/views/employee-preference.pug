@@ -1,0 +1,61 @@
+extends ../layouts/default
+
+block content
+  .wrapper.radio-checkbox-list.free-benefits-selection
+    .content-head
+      span#employerName.above-title COMPANY NAME
+      h1 Aflac's ALL EMPLOYEE choices
+      p.sub-heading We are excited to share a new range of health benefits that you can take advantage of. Help us understand which of the following benefits will help you most by chosing them below.
+      p.sub-heading We will offer the benefits which get prefered by majority of our employees.
+    form#vasBenefitsSelection(action='thank-you',method='post' , novalidate='novalidate')
+        .primary-content
+          each product in data.products
+
+            .card-gray
+              label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
+              label.control.control--checkbox
+                input(type='checkbox', name='additionalBenefits', value=`${product.slug}`, required='required', data-msg='Please choose the benefits you prefer to have', data-title=`${product.title}`)
+                .control__indicator
+                p
+                  span.h4 #{product.title}
+                  span.price #{product.price}
+                  span.pemth pe/mth
+                  span.productDesc #{product.shortDescription}
+                    span.see-more.modalOpner(href='products/' + product.slug, name=`${product.title}`)
+                  span.bullet
+                    strong &bull; Best for:
+                    | #{product.bestFor}
+                  span.bullet &bull; 48% of employers pick this benefit
+              hr
+
+          label.error(for='freeBenefit')
+
+        .card-blue.secondary-content#benefitChosenCard(style='display: none')
+          .vas-section
+            h4 I want
+            ul#vasBenefitChosen
+        .form-footer
+            span.primary-actions
+              button#primaryBtn(type='submit', onclick='$("#vasBenefitsSelection").validate();') Confirm
+        .dialog
+block js
+  script.
+    $("input[name='additionalBenefits']").on('change', function() {
+      $('.control').removeClass('checked');
+      var checkedValues = $("input[name='additionalBenefits']:checkbox:checked");
+
+      if(checkedValues.length == 0) {
+        $('.vas-section').hide();
+        return;
+      }
+
+      var elements = $();
+      $.each(checkedValues, function(idx, selectedProduct) {
+        var $selectedProduct = $(selectedProduct);
+        elements = elements.add($('<li>').text($selectedProduct.data('title')));
+        $selectedProduct.parent().addClass('checked');
+      });
+      $('#vasBenefitChosen').html(elements);
+
+      $('#benefitChosenCard').show();
+    })

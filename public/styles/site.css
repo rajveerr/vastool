@@ -201,6 +201,15 @@ h3 {
 .sub-heading:last-child {
   margin-bottom: 1.69em; }
 
+@media screen and (min-width: 1024px) {
+  .sub-heading {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    .sub-heading:last-child {
+      margin-right: 0; } }
+
 input[type='text'], input[type='number'], input[type='tel'],
 input[type='date'], input[type='password'], .file-upload,
 input[type='tel'], input[type='email'], input[type='search'], textarea {
@@ -1462,7 +1471,7 @@ textarea {
   border: 5px solid #00a7e1;
   position: relative;
   padding: 1.69em;
-  background-color: #9ae5ff;
+  background-color: #e1f7ff;
   color: #00a7e1;
   margin-top: 1.69em; }
   .card-blue::after {
