@@ -26,38 +26,15 @@ block content
               th 75% POPS
               th Submitted
           tbody
-            tr.modalOpner(href='dialogs/employer-status.html', name='3Blades')
-              th 3Blades
-              td.dot.yes
-                span
-              td.dot
-                span
-              td.dot
-                span
-            tr
-              th Abate Solutions
-              td.dot.yes
-                span
-              td.dot.yes
-                span
-              td.dot.yes
-                span
-            tr
-              th Apogee Legal
-              td.dot
-                span
-              td.dot
-                span
-              td.dot
-                span
-            tr
-              th Bay Dynamics
-              td.dot.yes
-                span
-              td.dot
-                span
-              td.dot
-                span
+            each employer in data.employers
+              tr.modalOpner(href='dialogs/employer-status.html', name='3Blades')
+                th #{employer.name}
+                td.dot.yes
+                  span
+                td.dot
+                  span
+                td.dot
+                  span
       .table-container
         table.table-minimal.benefits
           caption Aflac All Employee Choices
