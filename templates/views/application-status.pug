@@ -1,0 +1,47 @@
+hr.head
+//- p.left Employer information
+form#employerStatus(action='', novalidate='novalidate')
+  .question
+    label(for='selectedBenefits') Has the employer selected benefits?
+    label.control.control--radio
+      input#selectedBenefitsYes.radio(type='radio', name='selectedBenefits', value='Yes', checked='checked')
+      .control__indicator
+      |  Yes
+    label.control.control--radio
+      input#selectedBenefitsNo.radio(type='radio', name='selectedBenefits', value='No')
+      .control__indicator
+      |  No
+    label.error(for='selectedBenefits')
+  hr
+  .question
+    label(for='pops') Have you met their 75% employees?
+    label.control.control--radio
+      input#popsYes.radio(type='radio', name='pops', value='Yes', required='required', data-msg='Please choose Yes or No')
+      .control__indicator
+      |  Yes
+    label.control.control--radio
+      input#popsNo.radio(type='radio', name='pops', value='No')
+      .control__indicator
+      |  No
+    label.error(for='pops')
+  hr
+  .question
+    label(for='submitted') Has the benefits application been submitted?
+    label.control.control--radio
+      input#submittedYes.radio(type='radio', name='submitted', value='Yes', required='required', data-msg='Please choose Yes or No')
+      .control__indicator
+      |  Yes
+    label.control.control--radio
+      input#submittedNo.radio(type='radio', name='submitted', value='No')
+      .control__indicator
+      |  No
+    label.error(for='pops')
+  hr
+  .question
+    label(for='employerNotes') Notes
+    textarea#employerNotes
+  .form-footer
+    span.primary-actions
+      button.btn-primary Update
+    span.secondary-actions
+      a(href="") Cancel
