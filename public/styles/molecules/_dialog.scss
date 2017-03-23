@@ -18,6 +18,9 @@
     @include media($above-mid) {
       margin: 0 $base-spacing*8;
     }
+    img {
+      max-width: 100%;
+    }
   }
   .ui-dialog-content {
     padding-bottom: $base-spacing;

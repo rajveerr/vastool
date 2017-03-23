@@ -1034,6 +1034,9 @@ td.dot {
       .ui-dialog .ui-dialog-titlebar,
       .ui-dialog .ui-dialog-content {
         margin: 0 13.52em; } }
+    .ui-dialog .ui-dialog-titlebar img,
+    .ui-dialog .ui-dialog-content img {
+      max-width: 100%; }
   .ui-dialog .ui-dialog-content {
     padding-bottom: 1.69em; }
   .ui-dialog .ui-dialog-titlebar {
