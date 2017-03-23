@@ -202,12 +202,12 @@ h3 {
   margin-bottom: 1.69em; }
 
 @media screen and (min-width: 1024px) {
-  .sub-heading {
+  .content-head .sub-heading {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 74.41059%; }
-    .sub-heading:last-child {
+    .content-head .sub-heading:last-child {
       margin-right: 0; } }
 
 input[type='text'], input[type='number'], input[type='tel'],
@@ -1315,7 +1315,9 @@ label {
     left: 0;
     bottom: -3.5rem; }
   label span {
-    font-family: "proximaNovaThin", Helvetica, Arial, sans-serif; }
+    font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    padding-left: 0.845em; }
 
 form label.error {
   display: none; }

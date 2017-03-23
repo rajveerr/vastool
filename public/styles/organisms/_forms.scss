@@ -90,6 +90,8 @@ label {
   }
   span {
     font-family: $thin-font-family;
+    display: inline-block;
+    padding-left: $small-spacing;
   }
 }
 

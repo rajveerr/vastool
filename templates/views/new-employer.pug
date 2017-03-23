@@ -5,7 +5,7 @@ block content
       .primary-content
         .content-head
           h1
-            input#employerName.inline-edit(type="text", name='employerName', value=`${locals.data.employer.name}`, required='required', data-msg-required='Employer name', data-msg='Please enter a valid name', minlength="2", placeholder="New employer name")
+            input#employerName.inline-edit(type="text", name='employerName', value=`${locals.data.employer.name}`, required='required', data-msg-required='Employer name', data-msg='Please enter a valid name', minlength="2", placeholder="Employer name")
             a.icon-pencil#editEmployerName(href='javascript:void(0)')
         .card-gray
           .question
@@ -13,7 +13,8 @@ block content
             input#numberOfEmployees(type='number', name='numberOfEmployees', required='required', data-msg='Number of employees')
           .question
             label Estimated average age of Employees?
-            input#everageAgeOfEmployees(type='number', name='everageAgeOfEmployees', required='required', data-msg='Everage age of employees')
+              span (Optional)
+            input#everageAgeOfEmployees(type='number', name='everageAgeOfEmployees')
           .question
             label(for='majorMedical') Do you offer your employees a Major Medical insurance plan?
             label.control.control--radio
@@ -33,6 +34,9 @@ block content
                   option(value='none') Select your Major Medical name
                   for medicalPlan in data.medicalPlans
                     option #{medicalPlan}
+                  option(value='notListed')#notInTheList Not listed
+                label.hidden(for='newMajorMedicalPlanName') Type your major medical plan name here.
+                input#newMajorMedicalPlanName(type='text', name='newMajorMedicalPlanName', placeholder='Plan name', style='width: 100%; margin-top: 1rem; display: none')
 
               .question-tip#majorMedicalTip.icon-lightbulb(style="display: none;") We have a variety of new benefits to offer that your major medical does not cover.
         .form-footer
@@ -41,3 +45,12 @@ block content
           span.secondary-actions.link-btn
             a(href="/agent-home") Cancel
   .dialog
+block js
+  script.
+    $('#majorMedicalPlanName').change(function(){
+        if($(this).val() == 'notListed') {
+            $('#newMajorMedicalPlanName').show(); 
+        } else {
+            $('#newMajorMedicalPlanName').hide(); 
+        } 
+    });
