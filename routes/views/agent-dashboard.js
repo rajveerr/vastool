@@ -13,6 +13,7 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		ProducerTip.model
 			.find()
+			.sort({date: 'desc'})
 			.exec()
 			.then(function(tips) {
 				locals.data.tips = _.map(tips, 'slug');
