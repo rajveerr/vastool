@@ -5,7 +5,7 @@ block content
     .content-head
       span#employerName.above-title #{locals.data.employer.name}
       h1 Choose additional ALL EMPLOYEE benefits
-      p.sub-heading You’ve picked “Telemedicine” as your FREE FOR ALL benefit.
+      p.sub-heading You’ve picked “#{locals.data.freeProduct.title}” as your FREE FOR ALL benefit.
       p.sub-heading You can also choose as many of these Aflac group plan benefits for ALL your employees, regardless of whether they select other Aflac products.
     form#vasBenefitsSelection(action='additional-products',method='post' , novalidate='novalidate')
         .primary-content
