@@ -14,8 +14,8 @@ var bourbon = require("node-bourbon").includePaths,
 	refills = require("node-refills").includePaths;
 
 keystone.init({
-	'name': 'vastool',
-	'brand': 'vastool',
+	'name': 'VAS Admin',
+	'brand': 'VAS Admin',
 	'sass': 'public',
 	'sass options': {
 		includePaths: bourbon,
@@ -56,7 +56,8 @@ keystone.set('routes', require('./routes'));
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
 	Benefits: 'products',
-	Employers: 'employers'
+	Employers: 'employers',
+	Tips: 'producer-tips'
 });
 
 keystone.set('mongo',
