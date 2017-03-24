@@ -47,9 +47,9 @@ exports = module.exports = function(app) {
 	app.post('/agent-dashboard', middleware.requireUser, routes.views[
 		'agent-dashboard']);
 
-	app.get('/application-status', middleware.requireUser, routes.views[
+	app.get('/employer/:slug/application-status', middleware.requireUser, routes.views[
 		'application-status']);
-	app.post('/application-status', middleware.requireUser, routes.views[
+	app.post('/employer/:slug/application-status', middleware.requireUser, routes.views[
 		'application-status']);
 
 	app.get('/employer-home', middleware.requireUser, routes.views[

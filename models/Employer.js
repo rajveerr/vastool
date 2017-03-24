@@ -18,6 +18,11 @@ Employer.add({
   newMajorMedicalPlanName: {type: String},
   freeBenefit: {type: Types.Code, language: 'json'},
   additionalBenefits: {type: Types.Code, language: 'json'},
+  popsEngagement: {type: String},
+  selectedBenefits: {type: Boolean, default: true},
+  popsDone: {type: Boolean},
+  applicationSubmitted: {type: Boolean},
+  notesFromProducer: {type: Types.Textarea},
   userId: {type: String}
 });
 

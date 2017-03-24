@@ -20,6 +20,7 @@ exports = module.exports = function(req, res) {
 			newMajorMedicalPlanName: employer.newMajorMedicalPlanName,
 			freeBenefit: JSON.stringify(employer.freeBenefit),
 			additionalBenefits: JSON.stringify(employer.additionalBenefits),
+			popsEngagement: req.body.popsEngagement,
 			userId: req.session.user.userID
 		});
 

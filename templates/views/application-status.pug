@@ -1,27 +1,27 @@
 hr.head
 //- p.left Employer information
-form#employerStatus(action='', novalidate='novalidate')
+form#employerStatus(action='/employer/' + locals.data.employer.slug + '/application-status', method='POST', novalidate='novalidate')
   .question
     label(for='selectedBenefits') Has the employer selected benefits?
     label.control.control--radio
-      input#selectedBenefitsYes.radio(type='radio', name='selectedBenefits', value='Yes', checked='checked')
+      input#selectedBenefitsYes.radio(type='radio', name='selectedBenefits', value='Yes', checked=locals.data.employer.selectedBenefits)
       .control__indicator
       |  Yes
     label.control.control--radio
-      input#selectedBenefitsNo.radio(type='radio', name='selectedBenefits', value='No')
+      input#selectedBenefitsNo.radio(type='radio', name='selectedBenefits', value='No', checked=!locals.data.employer.selectedBenefits)
       .control__indicator
       |  No
     label.error(for='selectedBenefits')
   hr
   .question
-    label(for='pops') Have you met employer's 75% employees?
-      span.grey (Selected: xxx)
+    label(for='pops') Have you met #{locals.data.employer.name}'s 75% employees?
+      span.grey (Selected: #{locals.data.employer.popsEngagement})
     label.control.control--radio
-      input#popsYes.radio(type='radio', name='pops', value='Yes', required='required', data-msg='Please choose Yes or No')
+      input#popsYes.radio(type='radio', name='popsDone', value='Yes', required='required', data-msg='Please choose Yes or No', checked=locals.data.employer.popsDone)
       .control__indicator
       |  Yes
     label.control.control--radio
-      input#popsNo.radio(type='radio', name='pops', value='No')
+      input#popsNo.radio(type='radio', name='popsDone', value='No', checked=!locals.data.employer.popsDone)
       .control__indicator
       |  No
     label.error(for='pops')
@@ -29,20 +29,20 @@ form#employerStatus(action='', novalidate='novalidate')
   .question
     label(for='submitted') Has the application been submitted?
     label.control.control--radio
-      input#submittedYes.radio(type='radio', name='submitted', value='Yes', required='required', data-msg='Please choose Yes or No')
+      input#submittedYes.radio(type='radio', name='applicationSubmitted', value='Yes', required='required', data-msg='Please choose Yes or No', checked=locals.data.employer.applicationSubmitted)
       .control__indicator
       |  Yes
     label.control.control--radio
-      input#submittedNo.radio(type='radio', name='submitted', value='No')
+      input#submittedNo.radio(type='radio', name='applicationSubmitted', value='No', checked=!locals.data.employer.applicationSubmitted)
       .control__indicator
       |  No
     label.error(for='pops')
   hr
   .question
     label(for='employerNotes') Notes
-    textarea#employerNotes
+    textarea#employerNotes(name='notesFromProducer')
   .form-footer
     span.primary-actions
-      button.btn-primary Update
+      button.btn-primary(type='submit') Update
     span.secondary-actions
       a(href="") Cancel

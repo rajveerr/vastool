@@ -18,27 +18,41 @@ block content
         button#primaryBtn.icon-right-open(type='submit', onclick='$("#startEmployee").validate();') Start
     .primary-content
       if data.employers && data.employers.length > 0
-        .table-container      
+        .table-container
           table.table-minimal
             caption(style='padding-bottom: 1.5rem;') Application status
             thead
               tr
                 th Employers
                 th Choices complete
-                th 75% 
+                th 75%
                   span.field-tip POPS
                     span.tip-content Percent of People Seen
                 th Submitted
             tbody
               each employer in data.employers
-                tr.modalOpner(href='application-status', name=`${employer.name}`)
+                tr.modalOpner(href='employer/' + employer.slug + '/application-status', name=`${employer.name}`)
                   th #{employer.name}
-                  td.dot.yes
-                    span
-                  td.dot
-                    span
-                  td.dot
-                    span
+                  if (employer.selectedBenefits == true)
+                    td.dot.yes
+                      span
+                  else
+                    td.dot
+                      span
+
+                  if (employer.popsDone == true)
+                    td.dot.yes
+                      span
+                  else
+                    td.dot
+                      span
+
+                  if (employer.applicationSubmitted == true)
+                    td.dot.yes
+                      span
+                  else
+                    td.dot
+                      span
       .table-container
         table.table-minimal.benefits
           caption Aflac All Employee Choices
@@ -46,7 +60,7 @@ block content
             each product in data.products
               tr.modalOpner(href='products/' + product.slug, name=`${product.title}`)
                 th #{product.title}
-                td $#{product.price} 
+                td $#{product.price}
                   abbr.pemth.field-tip pe/mth
                     span.tip-content Per Employee Per Month
     .dialog
