@@ -19,7 +19,6 @@ $table-padding: $base-spacing 1rem;
 .table-container {
   background-color: $table-background;
   padding: $small-spacing/2 $small-spacing;
-  overflow-x: scroll;
   @include media($above-small) {
     padding: $small-spacing $base-spacing;
   }

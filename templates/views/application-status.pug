@@ -14,7 +14,8 @@ form#employerStatus(action='', novalidate='novalidate')
     label.error(for='selectedBenefits')
   hr
   .question
-    label(for='pops') Have you met their 75% employees?
+    label(for='pops') Have you met employer's 75% employees?
+      span.grey (Selected: xxx)
     label.control.control--radio
       input#popsYes.radio(type='radio', name='pops', value='Yes', required='required', data-msg='Please choose Yes or No')
       .control__indicator
@@ -26,7 +27,7 @@ form#employerStatus(action='', novalidate='novalidate')
     label.error(for='pops')
   hr
   .question
-    label(for='submitted') Has the benefits application been submitted?
+    label(for='submitted') Has the application been submitted?
     label.control.control--radio
       input#submittedYes.radio(type='radio', name='submitted', value='Yes', required='required', data-msg='Please choose Yes or No')
       .control__indicator

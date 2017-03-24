@@ -25,7 +25,9 @@ block content
               tr
                 th Employers
                 th Choices complete
-                th 75% POPS
+                th 75% 
+                  span.field-tip POPS
+                    span.tip-content Percent of People Seen
                 th Submitted
             tbody
               each employer in data.employers
@@ -44,6 +46,7 @@ block content
             each product in data.products
               tr.modalOpner(href='products/' + product.slug, name=`${product.title}`)
                 th #{product.title}
-                td $#{product.price}
-                  abbr(title='Per employee per month')  pe/mth
+                td $#{product.price} 
+                  abbr.pemth.field-tip pe/mth
+                    span.tip-content Per Employee Per Month
     .dialog
