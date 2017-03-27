@@ -8,6 +8,7 @@ exports = module.exports = function(req, res) {
 	locals.data = {};
 
 	view.on('init', function(next) {
+		console.log('employerSlug:', req.session.user.employerSlug);
 		next();
 	});
 

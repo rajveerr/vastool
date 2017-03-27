@@ -14,7 +14,8 @@ User.add({
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
 	userID: String,
-	type: String
+	type: String,
+	employerSlug: String
 });
 
 // Provide access to Keystone

@@ -22,19 +22,24 @@ exports = module.exports = function(req, res) {
 
 	var WHITELISTED_EMPLOYERS = [{
 		id: 'EMP503',
-		firstName: 'Employer by Shirley'
+		firstName: 'Employer by Shirley',
+		slug: 'delta'
 	}, {
 		id: 'EMP740',
-		firstName: 'Employer by Rajveer'
+		firstName: 'Employer by Rajveer',
+		slug: 'delta',
 	}, {
 		id: 'EMP366',
-		firstName: 'Employer by Babs'
+		firstName: 'Employer by Babs',
+		slug: 'delta'
 	}, {
 		id: 'EMP954',
-		firstName: 'Employer by Alex'
+		firstName: 'Employer by Alex',
+		slug: 'thoughtworks'
 	}, {
 		id: 'EMP313',
-		firstName: 'Employer by Stefania'
+		firstName: 'Employer by Stefania',
+		slug: 'thoughtworks'
 	}];
 
 	var view = new keystone.View(req, res);
@@ -52,7 +57,7 @@ exports = module.exports = function(req, res) {
 		});
 	}
 
-	function newUser(id, firstName, lastName, type) {
+	function newUser(id, firstName, lastName, type, employerSlug) {
 		return new User.model({
 			userID: id,
 			type: type,
@@ -60,7 +65,8 @@ exports = module.exports = function(req, res) {
 				first: firstName,
 				last: lastName
 			},
-			canAccessKeystone: false
+			isAdmin: false,
+			employerSlug: employerSlug
 		});
 	}
 
@@ -70,7 +76,7 @@ exports = module.exports = function(req, res) {
 	}
 
 	function signInEmployer(employer, success) {
-		var user = newUser(employer.id, employer.firstName, employer.firstName, 'EMPLOYER');
+		var user = newUser(employer.id, employer.firstName, employer.firstName, 'EMPLOYER', employer.slug);
 		keystone.session.signinWithUser(user, req, res, success);
 	}
 
@@ -84,7 +90,7 @@ exports = module.exports = function(req, res) {
 		} else if (employer = findEmployerBy(req.body.id)) {
 			signInEmployer(employer, function(user) {
 				req.session.user = res.locals.user = user;
-				res.render('employer-home');
+				res.redirect('employer-home');
 			});
 		} else {
 			res.status(401);
