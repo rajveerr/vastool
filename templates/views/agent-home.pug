@@ -3,17 +3,19 @@ extends ../layouts/no-header
 block content
   .agent-welcome
     form#container(action='agent-dashboard', novalidate)
-        h1(class='aflac-logo') Aflac : Employer Choice Tool
-        .wrapper
-          .card-center
-            h1 Hello #{locals.user.name.first}
-            a.sign-out(href='/keystone/signout') Sign Out
-            p BIG NEWS! Employers who achieve 75 Percent of People Seen (POPS) can choose one “free for all” benefit, available to 
-              strong all employees. 
-              span Plus, employers have the choice of several additional paid-for benefits for 
-              strong all their employees, regardless of whether they choose other Aflac products, 
-              span with our group rates.
-            .form-footer
-              button.btn-primary(type="submit", style='margin-left: 1rem') Get Started Now!
-              //- span#secondaryBtn.secondary-actions
-                a(href='new-employer') New Employer
+      .logo-container
+        img(src='../images/logo-big.png', title='Aflac : Employer Choice Tool')
+      .collage-with-feather
+        img(src='../images/feather.png', title='Aflac : Employer Choice Tool')
+      .wrapper
+        .card-center
+          h1 Hello #{locals.user.name.first}
+          //- a.sign-out(href='/keystone/signout') Sign Out
+          p BIG NEWS! Employers who achieve 75 Percent of People Seen (POPS) can choose one “free for all” benefit, available to 
+            strong all employees. 
+            span Plus, employers have the choice of several additional paid-for benefits for 
+            strong all their employees, regardless of whether they choose other Aflac products, 
+            span with our group rates.  
+          img(src='../images/lady-with-globe.png')        
+      .strip
+        button.btn-primary(type="submit", style='margin-left: 1rem') Get Started Now!

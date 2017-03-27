@@ -1,48 +1,5 @@
 .agent-verify {
-  .logo-container {
-    position: relative;
-    border-bottom: 20px solid $blue;
-    img {
-      position: relative;
-      max-width: 75%;
-      bottom: -1.4rem;
-      right: -9%;
-      @include media($above-small) {
-        max-width: 50%;
-        bottom: -1.8rem;
-        right: -3%;
-      }
-      @include media($above-mid) {
-        max-width: 32%;
-        bottom: -2rem;
-        right: 0;
-      }
-    }
-    @include media($above-small) {
-      padding-top: 5%;
-    }
-  }
-  .collage-with-feather {
-    @extend .collage;
-    margin-top: 4px;
-    height: 13rem;
-    img {
-      position: absolute;
-      z-index: 1;
-      max-width: 30%;
-      left: 0;
-      top: -6rem;
-      @include media($above-small) {
-        max-width: 20%;
-        left: 16%;
-        top: -6rem;
-      }
-      @include media($above-mid) {
-        max-width: 10%;
-        left: 28%;
-      }
-    }
-  }
+  text-align: center;   
   .login-title {
     font-size: 2.2rem;
     font-family: $thin-font-family;
@@ -51,7 +8,6 @@
       font-size: 3.2rem;
     }
   }
-  text-align: center;
   label.error {
     left: 22%;
   }

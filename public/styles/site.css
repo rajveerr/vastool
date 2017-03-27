@@ -86,15 +86,6 @@ table {
     margin-right: 0; }
 
 /* Atoms */
-.agent-welcome .card-center {
-  padding: 1.69em;
-  background-color: white;
-  box-shadow: 3px 3px 2px #e5e8e9; }
-  .agent-welcome .card-center::after {
-    clear: both;
-    content: "";
-    display: table; }
-
 body {
   color: #4A4A4A;
   font-family: "proximaNovaRegular", Helvetica, Arial, sans-serif;
@@ -1432,11 +1423,11 @@ textarea {
     margin-left: 0.845em; }
 
 /* Templates */
-.collage, .agent-verify .collage-with-feather {
+.collage, .no-header .collage-with-feather {
   position: relative;
   background: transparent url("../images/collage.png") 0 0;
   background-size: 28rem; }
-  .collage:after, .agent-verify .collage-with-feather:after {
+  .collage:after, .no-header .collage-with-feather:after {
     position: absolute;
     content: '';
     top: 0;
@@ -1584,48 +1575,51 @@ textarea {
   .feedbackButton:hover {
     opacity: 1; }
 
+.no-header .logo-container {
+  position: relative;
+  border-bottom: 20px solid #00a7e1;
+  text-align: center; }
+  .no-header .logo-container img {
+    position: relative;
+    max-width: 75%;
+    bottom: -1.4rem;
+    right: -9%; }
+    @media screen and (min-width: 400px) {
+      .no-header .logo-container img {
+        max-width: 50%;
+        bottom: -1.8rem;
+        right: -3%; } }
+    @media screen and (min-width: 1024px) {
+      .no-header .logo-container img {
+        max-width: 32%;
+        bottom: -2rem;
+        right: 0; } }
+  @media screen and (min-width: 400px) {
+    .no-header .logo-container {
+      padding-top: 2%; } }
+
+.no-header .collage-with-feather {
+  margin-top: 4px;
+  height: 9.5rem; }
+  .no-header .collage-with-feather img {
+    position: absolute;
+    z-index: 1;
+    max-width: 30%;
+    left: 0;
+    top: -6rem; }
+    @media screen and (min-width: 400px) {
+      .no-header .collage-with-feather img {
+        max-width: 20%;
+        left: 16%;
+        top: -6rem; } }
+    @media screen and (min-width: 1024px) {
+      .no-header .collage-with-feather img {
+        max-width: 10%;
+        left: 28%; } }
+
 /* Pages */
 .agent-verify {
   text-align: center; }
-  .agent-verify .logo-container {
-    position: relative;
-    border-bottom: 20px solid #00a7e1; }
-    .agent-verify .logo-container img {
-      position: relative;
-      max-width: 75%;
-      bottom: -1.4rem;
-      right: -9%; }
-      @media screen and (min-width: 400px) {
-        .agent-verify .logo-container img {
-          max-width: 50%;
-          bottom: -1.8rem;
-          right: -3%; } }
-      @media screen and (min-width: 1024px) {
-        .agent-verify .logo-container img {
-          max-width: 32%;
-          bottom: -2rem;
-          right: 0; } }
-    @media screen and (min-width: 400px) {
-      .agent-verify .logo-container {
-        padding-top: 5%; } }
-  .agent-verify .collage-with-feather {
-    margin-top: 4px;
-    height: 13rem; }
-    .agent-verify .collage-with-feather img {
-      position: absolute;
-      z-index: 1;
-      max-width: 30%;
-      left: 0;
-      top: -6rem; }
-      @media screen and (min-width: 400px) {
-        .agent-verify .collage-with-feather img {
-          max-width: 20%;
-          left: 16%;
-          top: -6rem; } }
-      @media screen and (min-width: 1024px) {
-        .agent-verify .collage-with-feather img {
-          max-width: 10%;
-          left: 28%; } }
   .agent-verify .login-title {
     font-size: 2.2rem;
     font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
@@ -1646,12 +1640,19 @@ textarea {
 .agent-welcome .aflac-logo {
   margin: 0.845em auto; }
 
+.agent-welcome .collage-with-feather {
+  height: 0; }
+
+.agent-welcome .wrapper {
+  padding-bottom: 0; }
+
 .agent-welcome .card-center {
   position: relative;
   margin: 0 auto;
-  padding: 1.69em;
+  padding: 0.845em 0;
   width: 90%;
-  min-height: 430px; }
+  font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem; }
   .agent-welcome .card-center h1 {
     margin-bottom: 0.845em;
     background: transparent url("../images/stars.png") no-repeat 0 0;
@@ -1661,16 +1662,28 @@ textarea {
     top: 0.845em;
     right: 0.845em;
     color: #A0AAAE;
-    font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
     font-size: 1.6rem; }
+  .agent-welcome .card-center img {
+    display: none; }
   @media screen and (min-width: 400px) {
     .agent-welcome .card-center {
-      width: 80%;
-      padding: 1.69em 4em 1.69em 13em;
-      background: white url("../images/happy-duck.png") no-repeat 0 0; } }
+      width: 90%;
+      padding: 1.69em 25rem 1.69em 2rem;
+      font-size: 2rem; }
+      .agent-welcome .card-center img {
+        display: block;
+        position: absolute;
+        right: -4%;
+        bottom: 0;
+        max-width: 25rem; } }
   @media screen and (min-width: 1024px) {
     .agent-welcome .card-center {
       width: 60%; } }
+
+.agent-welcome .strip {
+  background-color: #F8F8F8;
+  padding: 1.69em;
+  text-align: center; }
 
 .agent-welcome .form-footer {
   border-top: 2px dashed #F8F8F8;

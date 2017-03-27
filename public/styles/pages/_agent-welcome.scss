@@ -6,13 +6,19 @@
   .aflac-logo {
     margin: $small-spacing auto;
   }
+  .collage-with-feather {
+    height: 0;
+  }
+  .wrapper {
+    padding-bottom: 0;
+  }
   .card-center {
-    @extend %card;
     position: relative;
     margin: 0 auto;
-    padding: $base-spacing;
+    padding: $small-spacing 0;
     width: 90%;
-    min-height: 430px;
+    font-family: $thin-font-family;
+    font-size: 1.8rem;
     h1 {
       margin-bottom: $small-spacing;
       background: transparent url('../images/stars.png') no-repeat 0 0;
@@ -23,17 +29,32 @@
       top: $small-spacing;
       right: $small-spacing;
       color: $light-gray;
-      font-family: $thin-font-family;
       font-size: 1.6rem;
     }
+    img {
+      display: none;
+    }
     @include media($above-small) {
-      width: 80%;
-      padding: $base-spacing 4em $base-spacing 13em;
-      background: white url('../images/happy-duck.png') no-repeat 0 0;
+      width: 90%;
+      padding: $base-spacing 25rem $base-spacing 2rem;
+      font-size: 2rem;
+      img {
+        display: block;
+        position: absolute;
+        right: -4%;
+        bottom: 0;
+        max-width: 25rem;
+      }
     }
     @include media($above-mid) {
       width: 60%;
+      // min-height: 34rem;
     }
+  }
+  .strip {
+    background-color: $lightest-gray;
+    padding: $base-spacing;
+    text-align: center;
   }
   .form-footer {
     border-top: 2px dashed $lightest-gray;
