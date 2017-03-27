@@ -4,12 +4,12 @@ block content
   .content-head.with-bg
     .collage-form-container
       .copy-container
-        span#employerName.above-title NEED's FIX #{locals.data.employer.name}
+        span#employerName.above-title #{data.employer.name}
         h1 Start by picking your FREE FOR ALL benefit choice
         p.sub-heading You can choose any ONE of the following free benefits for ALL your employees.
           span.note * After your Aflac representative reaches 75% of your employees
       img(src='images/hands-showing-globe.png')
-  .wrapper.radio-checkbox-list.free-benefits-selection    
+  .wrapper.radio-checkbox-list.free-benefits-selection
     form#freeBenefitsSelection(action='free-products', method='post', novalidate='novalidate')
       .primary-content
         .contain
@@ -36,7 +36,7 @@ block content
           .free-section
             h4 Free Benefit
             ul#freeBenefitChosen
-      
+
     .dialog
 
 block js

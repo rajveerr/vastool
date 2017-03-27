@@ -1,13 +1,14 @@
 extends ../layouts/default
 
 block content
-  .content-head.with-collage
-    .collage-form-container
-      h1
-        input#employerName.inline-edit(type="text", name='employerName', value=`${locals.data.employer.name}`, required='required', data-msg-required='Employer name', data-msg='Please enter a valid name', minlength="2", placeholder="Employer name")
-        a.icon-pencil#editEmployerName(href='javascript:void(0)')
   form#new-employer.wrapper(action='new-employer', method='POST', novalidate='novalidate')
-    .primary-content        
+    .content-head.with-collage
+      .collage-form-container
+        h1
+          input#employerName.inline-edit(type="text", name='employerName', value=`${locals.data.employer.name}`, required='required', data-msg-required='Employer name', data-msg='Please enter a valid name', minlength="2", placeholder="Employer name")
+          a.icon-pencil#editEmployerName(href='javascript:void(0)')
+
+    .primary-content
       .card.border
         .question
           label Number of employees
