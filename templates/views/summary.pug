@@ -1,11 +1,12 @@
 extends ../layouts/default
 
 block content
-  .wrapper.radio-checkbox-list.free-benefits-selection
-    .content-head
+  .content-head.with-bg
+    .collage-form-container(style='padding-top: 2rem;')
       span#employerName.above-title #{locals.data.employer.name}
       h1 Benefits summary
-      p.sub-heading Here’s what you have picked! Find out how this is going to help grow your organization in future.
+      p.sub-heading(style='padding-bottom: 2rem;') Here’s what you have picked! Find out how this is going to help grow your organization in future.
+  .wrapper.radio-checkbox-list.free-benefits-selection
     form#vasBenefitsSummary(action='confirm', method='POST', novalidate='novalidate')
         .primary-content
           table.table-minimal.table-summary
@@ -36,41 +37,50 @@ block content
                   span.perEmployeePerMonth.price.grey #{locals.data.benefitsSummary.totals.perEmployeePerMonth}
                   span.grey =
                   span#totalPremiumAmount.price.total #{locals.data.benefitsSummary.totals.premium}
-          h2 Help us engage with your employees (POPS)
-          p.sub-heading Chose the best option for an Aflac representative to reach 75% of your employees. We want to make sure each one of them is encouraged to keep a healthy lifestyle.
+          .card-blue(style='margin-bottom:2em')
+            h2 Help us engage with your employees (POPS)
+            p.sub-heading New employers who achieve 75 Percent of People Seen (POPS) can choose one “free for all” benefit, available to all employees. 
+            p.sub-heading(style='margin-bottom:0') Plus, employers have the choice of several additional paid-for benefits for all their employees, regardless of whether they choose other Aflac products, with our group rates. 
 
           .radio-checkbox-list.engagement-choice
+            .contain              
+              label.control.control--radio
+                input#popsEngagementGroupEmail.radio(type='radio', name='popsEngagement', value='Group Email', required='required', data-msg='Please select', data-msg-required='Please select')
+                .control__indicator
+                p
+                  span.h4 Group email
+                  span.productDesc We will share Aflac benefits information via a group Email
+              label.control.control--radio
+                input#popsEngagementOfficeVisit.radio(type='radio', name='popsEngagement', value='Office Visit')
+                .control__indicator
+                p
+                  span.h4 Office visit
+                  span.productDesc Come to our office. We will provide space to schedule appointments with employees.
+              label.control.control--radio
+                input#popsEngagementTeleconferenceOrWebcasts.radio(type='radio', name='popsEngagement', value='Teleconference Or Webcasts')
+                .control__indicator
+                p
+                  span.h4 Teleconference/Webcasts
+                  span.productDesc Connect through teleconference or webcasts remotely
+              //- label.control.control--radio
+              //-   input#popsEngagementPaycheckAttachment.radio(type='radio', name='popsEngagement', value='Paycheck Attachment')
+              //-   .control__indicator
+              //-   p
+              //-     span.h4 Paycheck attachment
+              //-     span.productDesc Provide information on benefits attached to the paychecks
             label.hidden(for='popsEngagement') Please select the made of engagament for Aflac agent to engage with your employees
-            label.control.control--radio
-              input#popsEngagementGroupEmail.radio(type='radio', name='popsEngagement', value='Group Email', required='required', data-msg='Please select', data-msg-required='Please select')
-              .control__indicator
-              p
-                span.h4 Group email
-                span.productDesc We will share Aflac benefits information via a group Email
-            hr
-            label.control.control--radio
-              input#popsEngagementOfficeVisit.radio(type='radio', name='popsEngagement', value='Office Visit')
-              .control__indicator
-              p
-                span.h4 Office visit
-                span.productDesc Come to our office. We will provide space to schedule appointments with employees.
-            hr
-            label.control.control--radio
-              input#popsEngagementTeleconferenceOrWebcasts.radio(type='radio', name='popsEngagement', value='Teleconference Or Webcasts')
-              .control__indicator
-              p
-                span.h4 Teleconference/Webcasts
-                span.productDesc Connect through teleconference or webcasts remotely
-            hr
-            label.control.control--radio
-              input#popsEngagementPaycheckAttachment.radio(type='radio', name='popsEngagement', value='Paycheck Attachment')
-              .control__indicator
-              p
-                span.h4 Paycheck attachment
-                span.productDesc Provide information on benefits attached to the paychecks
-        .form-footer
-            span.primary-actions
-              button#primaryBtn(type='submit', onclick="$('#vasBenefitsSummary').validate()") Confirm
-            span.secondary-actions.link-btn
-              a(href="additional-products") Back
+          .form-footer
+              span.primary-actions
+                button#primaryBtn(type='submit', onclick="$('#vasBenefitsSummary').validate()") Confirm
+              span.secondary-actions.link-btn
+                a(href="additional-products") Back
         .dialog
+block js
+  script.
+    $("input[name='popsEngagement']").click(function() {
+      var $selected = $(this);
+      if ($selected.is(':checked')) {
+        $('.control').removeClass('checked');
+        $selected.parent().addClass('checked');
+      }
+    })

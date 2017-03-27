@@ -1137,8 +1137,6 @@ td.dot {
 
 .radio-checkbox-list {
   color: black; }
-  .radio-checkbox-list.engagement-choice {
-    padding: 0 0.4225em; }
   .radio-checkbox-list .control__indicator,
   .radio-checkbox-list input[type='radio'],
   .radio-checkbox-list input[type='checkbox'] {
