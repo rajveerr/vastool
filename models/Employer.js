@@ -17,8 +17,8 @@ Employer.add({
   majorInsurancePlan: {type: String},
   newMajorMedicalPlanName: {type: String},
   freeBenefit: {type: Types.Code, language: 'json'},
-  additionalBenefits: {type: Types.Code, language: 'json'},
-  employeePreferredBenefits: {type: Types.Code, language: 'json'},
+  additionalBenefits: {type: Types.Code, language: 'json', height: 600},
+  employeePreferredBenefits: {type: Types.Code, language: 'json', height: 600, noedit: true},
   popsEngagement: {type: String},
   selectedBenefits: {type: Boolean, default: true},
   popsDone: {type: Boolean},
@@ -26,5 +26,18 @@ Employer.add({
   notesFromProducer: {type: Types.Textarea},
   userId: {type: String}
 });
+
+Employer.schema.post('init', function(employer) {
+  employer.freeBenefit = beautifyJSON(employer.freeBenefit);
+  employer.additionalBenefits = beautifyJSON(employer.additionalBenefits);
+  employer.employeePreferredBenefits = beautifyJSON(employer.employeePreferredBenefits);
+});
+
+function beautifyJSON(jsonString) {
+  if (jsonString) {
+    return JSON.stringify(JSON.parse(jsonString), null, "\t");
+  }
+  return '';
+}
 
 Employer.register();
