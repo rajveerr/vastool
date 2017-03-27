@@ -10,7 +10,7 @@ $large-screen: 53.75em !default;
 $base-font-color: $dark-gray !default;
 $table-border-color: darken($lightest-gray, 10%);
 $table-border: 1px solid $table-border-color;
-$table-background: $lightest-gray;
+$table-background: white;
 $table-hover-background: lighten($table-background, 1%);
 $table-stripe-background: darken($table-background, 4);
 $table-stripe-background-hover: darken($table-stripe-background, 5);
@@ -18,10 +18,6 @@ $table-padding: $base-spacing 1rem;
 
 .table-container {
   background-color: $table-background;
-  padding: $small-spacing/2 $small-spacing;
-  @include media($above-small) {
-    padding: $small-spacing $base-spacing;
-  }
   margin-bottom: $base-spacing;
 }
 .table-minimal {
@@ -30,8 +26,9 @@ $table-padding: $base-spacing 1rem;
   min-width: 100%;
   background-color: $table-background;
   caption {
-    color: $gray;
+    font-family: $bold-font-family;
     text-align: left;
+    color: black;
     margin: $small-spacing 0 $small-spacing/3;
     font-size: 2rem;
   }
@@ -43,6 +40,9 @@ $table-padding: $base-spacing 1rem;
       text-align: left;
       font-family: $base-font-family;
       color: $gray;
+    }
+    th:first-of-type {
+      padding-left: 0;
     }
   }
 
@@ -57,7 +57,7 @@ $table-padding: $base-spacing 1rem;
     th {
       font-family: $semiBold-font-family;
       &:first-of-type {
-        padding-left: $small-spacing;
+        padding-left: 0;
       }
     }
     th,
@@ -74,7 +74,7 @@ $table-padding: $base-spacing 1rem;
         padding: 0.3em 1em;
       }
       &:first-of-type {
-        padding-left: $small-spacing;
+        padding-left: 0;
       }
     }
   }
@@ -122,8 +122,8 @@ td.dot {
   span {
     display: inline-block;
     border-radius: 100%;
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: $light-gray;
   }
   &.yes span {
@@ -171,7 +171,7 @@ td.dot {
     th, td {
       border-style: solid;
       &:first-of-type {
-        padding-left: 1.8rem;
+        padding-left: 0;
         border-top: 1px solid $table-border-color !important;
       }
     }

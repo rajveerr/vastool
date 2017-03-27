@@ -11,7 +11,7 @@ block content
         .primary-content
           each product in data.additionalProducts
 
-            .card-gray
+            .card
               label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
               label.control.control--checkbox
                 input(type='checkbox', name='additionalBenefits', value=`${product.slug}`, data-title=`${product.title}`)

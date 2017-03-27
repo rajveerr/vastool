@@ -1,66 +1,68 @@
 extends ../layouts/default
 
 block content
-  if locals.data.tips && locals.data.tips.length > 0
-    #flashBanner.flash.alert
-      .wrap
-        p We have a new producer tip!
-        .link-options
-          a#tipsModal.modalOpner(href='tips/' + locals.data.tips[0], name='Tip of the day', data-more-tips=`${locals.data.tips}`) See now
-          a.close-banner(href='javascript:void(0)', onClick="$('#flashBanner').fadeOut('fast')") Save for later
-        span.close-banner.icon-cancel(href='javascript:void(0)', onClick="$('#flashBanner').fadeOut('fast')", title='Close this alert')
-  .wrapper.agent-dashboard
-    .content-head
+  .agent-dashboard
+    .content-head.with-collage
+      .collage-form-container
+        form#startEmployee.input-and-button-container(action='new-employer', method='GET', novalidate='novalidate')
+          label.hidden(for='username') Agent ID
+          input#employerName(type="text", name='employerName', required='required', data-msg-required='Please enter employer name', minlength="2", placeholder="Employer name")
+          button#primaryBtn.icon-right-open(type='submit', onclick='$("#startEmployee").validate();') Start
+    if locals.data.tips && locals.data.tips.length > 0
+      #flashBanner.flash.alert
+        .wrap
+          p We have a new producer tip!
+          .link-options
+            a#tipsModal.modalOpner(href='tips/' + locals.data.tips[0], name='Tip of the day', data-more-tips=`${locals.data.tips}`) See now
+            a.close-banner(href='javascript:void(0)', onClick="$('#flashBanner').fadeOut('fast')") Save for later
+          span.close-banner.icon-cancel(href='javascript:void(0)', onClick="$('#flashBanner').fadeOut('fast')", title='Close this alert')
+    .wrapper
       h1 #{locals.user.name.first}'s Dashboard
-      form#startEmployee.input-and-button-container(action='new-employer', method='GET', novalidate='novalidate')
-        label.hidden(for='username') Agent ID
-        input#employerName(type="text", name='employerName', required='required', data-msg-required='Please enter employer name', minlength="2", placeholder="Employer name")
-        button#primaryBtn.icon-right-open(type='submit', onclick='$("#startEmployee").validate();') Start
-    .primary-content
-      if data.employers && data.employers.length > 0
+      .primary-content
+        if data.employers && data.employers.length > 0
+          .table-container
+            table.table-minimal
+              caption(style='padding-bottom: 1.5rem;') Application status
+              thead
+                tr
+                  th Employers
+                  th Choices complete
+                  th 75%
+                    span.field-tip POPS
+                      span.tip-content Percent of People Seen
+                  th Submitted
+              tbody
+                each employer in data.employers
+                  tr.modalOpner(href='employer/' + employer.slug + '/application-status', name=`${employer.name}`)
+                    th #{employer.name}
+                    if (employer.selectedBenefits == true)
+                      td.dot.yes
+                        span
+                    else
+                      td.dot
+                        span
+
+                    if (employer.popsDone == true)
+                      td.dot.yes
+                        span
+                    else
+                      td.dot
+                        span
+
+                    if (employer.applicationSubmitted == true)
+                      td.dot.yes
+                        span
+                    else
+                      td.dot
+                        span
         .table-container
-          table.table-minimal
-            caption(style='padding-bottom: 1.5rem;') Application status
-            thead
-              tr
-                th Employers
-                th Choices complete
-                th 75%
-                  span.field-tip POPS
-                    span.tip-content Percent of People Seen
-                th Submitted
+          table.table-minimal.benefits
+            caption Aflac All Employee Choices
             tbody
-              each employer in data.employers
-                tr.modalOpner(href='employer/' + employer.slug + '/application-status', name=`${employer.name}`)
-                  th #{employer.name}
-                  if (employer.selectedBenefits == true)
-                    td.dot.yes
-                      span
-                  else
-                    td.dot
-                      span
-
-                  if (employer.popsDone == true)
-                    td.dot.yes
-                      span
-                  else
-                    td.dot
-                      span
-
-                  if (employer.applicationSubmitted == true)
-                    td.dot.yes
-                      span
-                  else
-                    td.dot
-                      span
-      .table-container
-        table.table-minimal.benefits
-          caption Aflac All Employee Choices
-          tbody
-            each product in data.products
-              tr.modalOpner(href='products/' + product.slug, name=`${product.title}`)
-                th #{product.title}
-                td $#{product.price}
-                  abbr.pemth.field-tip pe/mth
-                    span.tip-content Per Employee Per Month
+              each product in data.products
+                tr.modalOpner(href='products/' + product.slug, name=`${product.title}`)
+                  th #{product.title}
+                  td $#{product.price}
+                    abbr.pemth.field-tip pe/mth
+                      span.tip-content Per Employee Per Month
     .dialog

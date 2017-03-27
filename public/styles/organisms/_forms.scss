@@ -39,8 +39,7 @@ fieldset {
 .form-footer {
   @include outer-container();
   clear: both;
-  padding: $small-spacing 0;
-  border-top: 2px dotted darken($lightest-gray, 10%);
+  padding-bottom: $small-spacing;
   margin-top: $base-spacing;
   &:last-of-type {
     margin-bottom: 0;
