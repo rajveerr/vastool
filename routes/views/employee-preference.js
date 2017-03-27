@@ -37,7 +37,6 @@ exports = module.exports = function(req, res) {
 					return _.pick(product, ['slug', 'title', 'price']);
 				});
 				var newPreferredBenefits = {
-					ip: req.headers['x-forwarded-for'],
 					datetime: new Date(),
 					preferredBenefits: selectedBenefits
 				};
