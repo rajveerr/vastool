@@ -48,7 +48,7 @@ describe('Product', function() {
 
   });
 
-  describe('getBenefitsForEmployerAsArray', function() {
+  describe('.getBenefitsForEmployerAsArray', function() {
 
     it('should return empty array if benefits for employer is undefined', function() {
       var product = new Product.model({});

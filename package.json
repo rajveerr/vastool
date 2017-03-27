@@ -30,6 +30,6 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node keystone.js",
-    "test": "mocha tests/init.js tests/units/**/*.js"
+    "test": "mocha tests/init.js tests/units/**/*.js tests/units/**/**/*.js"
   }
 }

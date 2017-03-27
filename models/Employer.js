@@ -40,4 +40,9 @@ function beautifyJSON(jsonString) {
   return '';
 }
 
+Employer.schema.methods.getEmployeePreferredBenefitsAsJson = function() {
+  return JSON.parse(this.employeePreferredBenefits);
+};
+
+
 Employer.register();

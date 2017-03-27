@@ -28,20 +28,9 @@ block content
               th Benefit
               th Votes
           tbody
-            tr.modalOpner(href='should open the product details in modal - same as agent dashboard', name='Benefit name')
-              td 1
-              td Health Advocate
-              td 63
-            tr
-              td 2
-              td Career and Talent Coaching
-              td 48
-            tr
-              td 3
-              td Legal Services
-              td 45
-            tr
-              td 4
-              td Care.com
-              td 41
+            each benefit, ranking in data.preferredBenefitsRanking
+              tr.modalOpner(href='products/' + benefit.slug, name=`${benefit.title}`)
+                td #{ranking + 1}
+                td #{benefit.title}
+                td #{benefit.votes}
   .dialog
