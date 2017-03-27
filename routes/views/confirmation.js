@@ -24,11 +24,16 @@ exports = module.exports = function(req, res) {
 			userId: req.session.user.userID
 		});
 
-		employer.save(function(err) {
-			locals.data.employer = req.session.employer;
+		employer.save(function(err, savedEmployer) {
+			locals.data.employer = req.session.employer = savedEmployer;
+			locals.data.surveyUrl = getSurveyUrl(savedEmployer);
 			next(err);
 		});
 	});
+
+	function getSurveyUrl(employer) {
+		return req.protocol + '://' + req.get('host') + '/employer/' + employer.slug + '/employee-preference';
+	}
 
 	view.render('confirmation');
 };
