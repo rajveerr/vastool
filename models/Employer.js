@@ -18,6 +18,7 @@ Employer.add({
   newMajorMedicalPlanName: {type: String},
   freeBenefit: {type: Types.Code, language: 'json'},
   additionalBenefits: {type: Types.Code, language: 'json'},
+  employeePreferredBenefits: {type: Types.Code, language: 'json'},
   popsEngagement: {type: String},
   selectedBenefits: {type: Boolean, default: true},
   popsDone: {type: Boolean},

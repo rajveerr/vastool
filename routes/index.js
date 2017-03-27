@@ -52,6 +52,11 @@ exports = module.exports = function(app) {
 	app.post('/employer/:slug/application-status', middleware.requireUser, routes.views[
 		'application-status']);
 
+	app.get('/employer/:slug/employee-preference', middleware.requireUser, routes.views[
+		'employee-preference']);
+	app.post('/employer/:slug/employee-preference', middleware.requireUser, routes.views[
+		'employee-preference']);
+
 	app.get('/employer-home', middleware.requireUser, routes.views[
 		'employer-home']);
 	app.post('/employer-home', middleware.requireUser, routes.views[
@@ -81,10 +86,5 @@ exports = module.exports = function(app) {
 
 	app.get('/tips/:tip', middleware.requireUser, routes.views['producer_tip']);
 
-	app.get('/employee-preference', middleware.requireUser, routes.views[
-		'employee-preference']);
-	app.post('/employee-preference', middleware.requireUser, routes.views[
-		'employee-preference']);
-
-	app.post('/thank-you', middleware.requireUser, routes.views['thank-you']);
+	app.get('/thank-you', middleware.requireUser, routes.views['thank-you']);
 };
