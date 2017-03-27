@@ -86,11 +86,11 @@ table {
     margin-right: 0; }
 
 /* Atoms */
-.agent-verify .card-center, .agent-welcome .card-center {
+.agent-welcome .card-center {
   padding: 1.69em;
   background-color: white;
   box-shadow: 3px 3px 2px #e5e8e9; }
-  .agent-verify .card-center::after, .agent-welcome .card-center::after {
+  .agent-welcome .card-center::after {
     clear: both;
     content: "";
     display: table; }
@@ -216,7 +216,7 @@ input[type='text'], input[type='number'], input[type='tel'],
 input[type='date'], input[type='password'], .file-upload,
 input[type='tel'], input[type='email'], input[type='search'], textarea {
   border: 0;
-  background: #fff;
+  background: #F8F8F8;
   font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
   color: black;
   padding: 0.845em;
@@ -1432,8 +1432,21 @@ textarea {
     margin-left: 0.845em; }
 
 /* Templates */
-.no-header {
-  background-color: #F8F8F8; }
+.collage, .agent-verify .collage-with-feather {
+  position: relative;
+  background: transparent url("../images/collage.png") 0 0;
+  background-size: 28rem; }
+  .collage:after, .agent-verify .collage-with-feather:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -webkit-radial-gradient(center, ellipse cover, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.48) 69%, rgba(0, 0, 0, 0.48) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.48) 69%, rgba(0, 0, 0, 0.48) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
 
 .wrapper,
 .flash .wrap,
@@ -1572,46 +1585,59 @@ textarea {
     opacity: 1; }
 
 /* Pages */
-.agent-verify .primary-content {
-  text-align: center;
-  padding: 0.845em; }
-
-.agent-verify .aflac-logo {
-  margin: 0.845em auto; }
-
-.agent-verify .card-center {
-  margin: 0 auto;
-  padding: 3em 0.845em;
-  width: 90%; }
-  .agent-verify .card-center h1 {
-    text-align: center; }
-    .agent-verify .card-center h1 span {
-      font-family: "proximaNovaThin", Helvetica, Arial, sans-serif; }
-  .agent-verify .card-center .input-and-button-container {
-    text-align: center; }
-    @media screen and (max-width: 568px) {
-      .agent-verify .card-center .input-and-button-container input {
-        width: 20rem; } }
-  .agent-verify .card-center h1 {
-    margin-bottom: 0.845em;
-    font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif;
-    line-height: 3rem;
-    font-size: 2.4rem; }
-  @media screen and (min-width: 400px) {
-    .agent-verify .card-center {
-      width: 80%;
-      padding: 4em 1.69em; } }
-  @media screen and (min-width: 1024px) {
-    .agent-verify .card-center {
-      width: 60%;
-      padding: 4em 1.69em; } }
-
-.agent-verify label.error {
-  left: 22%; }
-
-.agent-verify .icon-right-open {
-  position: relative;
-  left: -5px; }
+.agent-verify {
+  text-align: center; }
+  .agent-verify .logo-container {
+    position: relative;
+    border-bottom: 20px solid #00a7e1; }
+    .agent-verify .logo-container img {
+      position: relative;
+      max-width: 75%;
+      bottom: -1.4rem;
+      right: -9%; }
+      @media screen and (min-width: 400px) {
+        .agent-verify .logo-container img {
+          max-width: 50%;
+          bottom: -1.8rem;
+          right: -3%; } }
+      @media screen and (min-width: 1024px) {
+        .agent-verify .logo-container img {
+          max-width: 32%;
+          bottom: -2rem;
+          right: 0; } }
+    @media screen and (min-width: 400px) {
+      .agent-verify .logo-container {
+        padding-top: 5%; } }
+  .agent-verify .collage-with-feather {
+    margin-top: 4px;
+    height: 13rem; }
+    .agent-verify .collage-with-feather img {
+      position: absolute;
+      z-index: 1;
+      max-width: 30%;
+      left: 0;
+      top: -6rem; }
+      @media screen and (min-width: 400px) {
+        .agent-verify .collage-with-feather img {
+          max-width: 20%;
+          left: 16%;
+          top: -6rem; } }
+      @media screen and (min-width: 1024px) {
+        .agent-verify .collage-with-feather img {
+          max-width: 10%;
+          left: 28%; } }
+  .agent-verify .login-title {
+    font-size: 2.2rem;
+    font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
+    padding: 1.69em 0 0.845em; }
+    @media screen and (min-width: 400px) {
+      .agent-verify .login-title {
+        font-size: 3.2rem; } }
+  .agent-verify label.error {
+    left: 22%; }
+  .agent-verify .icon-right-open {
+    position: relative;
+    left: -5px; }
 
 .agent-welcome .primary-content {
   text-align: center;

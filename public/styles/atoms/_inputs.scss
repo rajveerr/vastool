@@ -2,7 +2,7 @@ input[type='text'], input[type='number'], input[type='tel'],
 input[type='date'], input[type='password'], .file-upload,
 input[type='tel'], input[type='email'], input[type='search'], textarea {
   border: 0;
-  background: $white;
+  background: $lightest-gray;
   font-family: $thin-font-family;
   color: black;
   padding: $small-spacing;

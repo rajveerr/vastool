@@ -1,7 +1,20 @@
 .no-header {
-  background-color: $lightest-gray;
 }
-
+.collage {
+  position: relative;
+  background: transparent url('../images/collage.png') 0 0;
+  background-size: 28rem;
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.48) 69%,rgba(0,0,0,0.48) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.48) 69%,rgba(0,0,0,0.48) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+}
 .wrapper,
 .flash .wrap,
 .header-container .wrap,

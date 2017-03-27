@@ -1,46 +1,57 @@
 .agent-verify {
-  .primary-content {
-    text-align: center;
-    padding: $small-spacing;
-  }
-  .aflac-logo {
-    margin: $small-spacing auto;
-  }
-  .card-center {
-    @extend %card;
-    margin: 0 auto;
-    padding: 3em $small-spacing;
-    width: 90%;
-    h1 {
-      text-align: center;
-      span {
-        font-family: $thin-font-family;
+  .logo-container {
+    position: relative;
+    border-bottom: 20px solid $blue;
+    img {
+      position: relative;
+      max-width: 75%;
+      bottom: -1.4rem;
+      right: -9%;
+      @include media($above-small) {
+        max-width: 50%;
+        bottom: -1.8rem;
+        right: -3%;
       }
-    }
-    .input-and-button-container {
-      text-align: center;
-      input {
-        @include media($small) {
-          width: 20rem;
-        }
+      @include media($above-mid) {
+        max-width: 32%;
+        bottom: -2rem;
+        right: 0;
       }
-    }
-
-    h1 {
-      margin-bottom: $small-spacing;
-      font-family: $semiBold-font-family;
-      line-height: 3rem;
-      font-size: 2.4rem;
     }
     @include media($above-small) {
-      width: 80%;
-      padding: 4em $base-spacing;
-    }
-    @include media($above-mid) {
-      width: 60%;
-      padding: 4em $base-spacing;
+      padding-top: 5%;
     }
   }
+  .collage-with-feather {
+    @extend .collage;
+    margin-top: 4px;
+    height: 13rem;
+    img {
+      position: absolute;
+      z-index: 1;
+      max-width: 30%;
+      left: 0;
+      top: -6rem;
+      @include media($above-small) {
+        max-width: 20%;
+        left: 16%;
+        top: -6rem;
+      }
+      @include media($above-mid) {
+        max-width: 10%;
+        left: 28%;
+      }
+    }
+  }
+  .login-title {
+    font-size: 2.2rem;
+    font-family: $thin-font-family;
+    padding: $base-spacing 0 $small-spacing;
+    @include media($above-small) {
+      font-size: 3.2rem;
+    }
+  }
+  text-align: center;
   label.error {
     left: 22%;
   }
