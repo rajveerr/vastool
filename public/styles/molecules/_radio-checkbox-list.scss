@@ -26,13 +26,14 @@
       padding: $base-spacing $base-spacing $base-spacing/2 $base-spacing*3;
     }
     &.checked {
-      background-color: lighten(yellow, 48%);
+      border-color: $blue !important;
+      background-color: lighten($blue, 52%);
       &:hover {
-        background-color: lighten(yellow, 48%);
+        background-color: lighten($blue, 52%);
       }
     }
     &:hover {
-      background-color: darken($lightest-gray, 5%)
+      background-color: $lightest-gray;
     }
     .h4 {
         color: $dark-gray;
@@ -48,10 +49,11 @@
       @extend %dollar-sign;
     }
     .pemth {
-      padding-left: 1rem;
+      display: inline-block;
+      margin-left: 1.5rem;
       color: orange;
       font-size: 2rem;
-      font-family: $base-font-family;
+      font-family: $thin-font-family;
     }
     p {
       margin-left: $small-spacing;
@@ -76,11 +78,23 @@
   		@extend .icon-dot-3;
   		&:before {
   			position: absolute;
-        width: 4rem;
-        height: 4rem;
+        width: 3rem;
+        height: 3rem;
+        padding-left: 2px;
   			font-family: "fontello";
         font-size: 2.5rem;
   		}
+    }
+  }
+  .contain .control {
+    border-width: 2px;
+    border-style: solid;
+    border-color: $lightest-gray $lightest-gray white;
+    &:hover {
+      border-bottom-color: $lightest-gray;
+    }
+    &:last-child {
+      border-bottom-color: $lightest-gray;
     }
   }
   hr {
@@ -88,9 +102,6 @@
   }
   .error {
     left: $base-spacing*4;
-  }
-  .pemth {
-    margin-left: $small-spacing/3;
   }
 }
 .free-benefits-selection {

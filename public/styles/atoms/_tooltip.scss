@@ -2,6 +2,7 @@
 .field-tip {
     position: relative;
     cursor: help;
+    z-index: 1;
 }
 .field-tip .tip-content {
     position:absolute;

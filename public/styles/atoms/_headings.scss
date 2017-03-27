@@ -1,6 +1,7 @@
 h1 {
   position: relative;
   font-size: 3rem;
+  line-height: 0.99;
   margin-bottom: $small-spacing/2;
   font-family: $bold-font-family;
   color: black;
@@ -38,6 +39,7 @@ h3 {
 }
 
 .sub-heading {
+  font-size: 1.9rem;
   .note {
     display: block;
     font-family: $thin-font-family;

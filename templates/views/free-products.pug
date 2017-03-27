@@ -1,16 +1,19 @@
 extends ../layouts/default
 
 block content
-  .wrapper.radio-checkbox-list.free-benefits-selection
-    .content-head
-      span#employerName.above-title #{locals.data.employer.name}
-      h1 Start by picking your FREE FOR ALL benefit choice
-      p.sub-heading You can choose any ONE of the following free benefits for ALL your employees.
-        span.note * After your Aflac representative reaches 75% of your employees
+  .content-head.with-bg
+    .collage-form-container
+      .copy-container
+        span#employerName.above-title NEED's FIX #{locals.data.employer.name}
+        h1 Start by picking your FREE FOR ALL benefit choice
+        p.sub-heading You can choose any ONE of the following free benefits for ALL your employees.
+          span.note * After your Aflac representative reaches 75% of your employees
+      img(src='images/hands-showing-globe.png')
+  .wrapper.radio-checkbox-list.free-benefits-selection    
     form#freeBenefitsSelection(action='free-products', method='post', novalidate='novalidate')
       .primary-content
-        each product in data.products
-          .card
+        .contain
+          each product in data.products
             label.control.control--radio
               input.radio(type='radio', name='freeBenefit', value=`${product.slug}`, required='required', data-msg='Please choose a free benefit', data-title=`${product.title}`)
               .control__indicator
@@ -23,19 +26,17 @@ block content
                   strong &bull; Best for:
                   | #{product.bestFor}
                 span.bullet &bull; 79% of employers pick this benefit
-            hr
-
-          label.error(for='freeBenefit')
-
-      .card-blue.secondary-content#benefitChosenCard(style='display: none')
-          .free-section
-            h4 Free Benefit
-            ul#freeBenefitChosen
-      .form-footer
+        label.error(for='freeBenefit')
+        .form-footer
           span.primary-actions
             button#primaryBtn.icon-right-open(type='submit', onclick='$("#freeBenefitsSelection").validate();') Next
           span.secondary-actions.link-btn
             a(href="/new-employer") Back
+      .card-blue.secondary-content#benefitChosenCard(style='display: none')
+          .free-section
+            h4 Free Benefit
+            ul#freeBenefitChosen
+      
     .dialog
 
 block js
