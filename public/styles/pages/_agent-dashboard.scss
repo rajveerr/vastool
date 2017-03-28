@@ -4,13 +4,47 @@
   }
 }
 
-.agent-dashboard {  
+.agent-dashboard {
   .table-minimal {
     th {
       text-align: center;
       &:first-child {
         text-align: left;
       }
+    }
+  }
+  .products-container {
+    @include outer-container;
+    padding: $small-spacing 0 0;
+    .item {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: $small-spacing;
+      padding: 0 $small-spacing;
+      cursor: pointer;
+      &:hover .benefit {
+          background-color: darken($blue, 5%)
+      }
+      strong {
+        display: block;
+        color: $blue;
+        margin-bottom: 0.5rem;
+      }
+      @include media($small) {
+          @include span-columns(6);
+          @include omega();
+      }
+      @include media($mid) {
+          @include span-columns(4);
+          @include omega();
+      }
+      @include media($wide) {
+          @include span-columns(4);
+          @include omega();
+      }
+    }
+    .benefit {
+      margin-top: $small-spacing;
     }
   }
 }

@@ -17,8 +17,19 @@ block content
             a.close-banner(href='javascript:void(0)', onClick="$('#flashBanner').fadeOut('fast')") Save for later
           span.close-banner.icon-cancel(href='javascript:void(0)', onClick="$('#flashBanner').fadeOut('fast')", title='Close this alert')
     .wrapper
-      h1 #{locals.user.name.first}'s Dashboard
       .primary-content
+        h1 #{locals.user.name.first}'s Dashboard
+        p.sub-heading(style='padding-bottom:1rem') This is where you can create new Employers, track their application status, stay connected with Aflac's producers board and much more.
+        .products-container
+          h2 Aflac All Employee Choices
+          each product in data.products
+            .item.modalOpner(href='products/' + product.slug, name=`${product.title}`)
+              .benefit(class=`${product.slug}`)
+                .icon
+              strong #{product.title}
+              .price $#{product.price}
+                abbr.pemth.field-tip pe/mth
+                  span.tip-content Per Employee Per Month
         if data.employers && data.employers.length > 0
           .table-container
             table.table-minimal
@@ -54,15 +65,5 @@ block content
                         span
                     else
                       td.dot
-                        span
-        .table-container
-          table.table-minimal.benefits
-            caption Aflac All Employee Choices
-            tbody
-              each product in data.products
-                tr.modalOpner(href='products/' + product.slug, name=`${product.title}`)
-                  th(style='width:50%') #{product.title}
-                  td $#{product.price}
-                    abbr.pemth.field-tip pe/mth
-                      span.tip-content Per Employee Per Month
+                        span        
     .dialog

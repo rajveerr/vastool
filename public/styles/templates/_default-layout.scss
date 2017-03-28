@@ -70,7 +70,7 @@
       input {
         width: 91%;
         font-size: 2.5rem;
-        padding: 1.48rem;
+        padding: 1.44rem;
         background-color: white;
       }
       button {
@@ -288,5 +288,75 @@
   @include media($above-small) {
     max-width: 50rem;
     left: 16%;
+  }
+}
+
+.benefit {
+  position: relative;
+  display: inline-block;
+  width: 8rem;
+  height: 8rem;
+  background-color: $blue;
+  border-radius: 100%;
+  .icon {
+    position: absolute;
+    top: 2rem;
+    left: 1.5rem;
+    width: 6rem;
+    height: 6rem;
+    background-repeat: no-repeat;
+    background-size: 4.3rem;
+
+  }
+}
+[class^="health"],
+[class*="health"] {
+  .icon {
+    background-image: url('../images/icon-health.png');
+    top: 2.1rem;
+    left: 1.8rem;
+  }
+}
+[class^="telemedicine"],
+[class*="telemedicine"] {
+  .icon {
+    background-image: url('../images/icon-telemedicine.png');
+    background-size: 3rem;
+    top: 1.5rem;
+    left: 2.5rem;
+  }
+}
+[class^="career"],
+[class*="career"] {
+  .icon {
+    background-image: url('../images/icon-career.png');
+    background-size: 3.2rem;
+    top: 1.8rem;
+    left: 2.4rem;
+  }
+}
+[class^="loan"],
+[class*="loan"] {
+  .icon {
+    background-image: url('../images/icon-loan.png');
+    background-size: 4.6rem;
+  }
+}
+[class^="wellness"],
+[class*="wellness"] {
+  .icon {
+    background-image: url('../images/icon-wellness.png');
+    background-size: 3.8rem;
+    top: 1.4rem;
+    left: 2rem;
+  }
+}
+[class^="family-care"],
+[class*="family-care"] {
+  .icon {
+    background-image: url('../images/icon-carecom.png');
+    background-size: 4rem;
+    top: 1.8rem;
+    left: 1.8rem;
   }
 }

@@ -176,11 +176,11 @@ h1 {
 
 h2 {
   font-size: 2.6rem;
-  font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif;
-  margin-bottom: 0.4225em; }
+  font-family: "proximaNovaBold", Helvetica, Arial, sans-serif;
+  margin-bottom: 0.4225em;
+  color: black; }
 
 h3 {
-  color: #4A4A4A;
   font-size: 1.7rem;
   margin-bottom: 0.845em; }
 
@@ -879,7 +879,7 @@ hr {
     text-align: left;
     color: black;
     margin: 0.845em 0 0.28167em;
-    font-size: 2rem; }
+    font-size: 2.6rem; }
   .table-minimal thead th,
   .table-minimal thead td {
     border-bottom: 0;
@@ -1535,7 +1535,7 @@ textarea {
     .content-head.with-collage .input-and-button-container input {
       width: 91%;
       font-size: 2.5rem;
-      padding: 1.48rem;
+      padding: 1.44rem;
       background-color: white; }
     .content-head.with-collage .input-and-button-container button {
       position: absolute;
@@ -1739,6 +1739,61 @@ textarea {
       max-width: 50rem;
       left: 16%; } }
 
+.benefit {
+  position: relative;
+  display: inline-block;
+  width: 8rem;
+  height: 8rem;
+  background-color: #00a7e1;
+  border-radius: 100%; }
+  .benefit .icon {
+    position: absolute;
+    top: 2rem;
+    left: 1.5rem;
+    width: 6rem;
+    height: 6rem;
+    background-repeat: no-repeat;
+    background-size: 4.3rem; }
+
+[class^="health"] .icon,
+[class*="health"] .icon {
+  background-image: url("../images/icon-health.png");
+  top: 2.1rem;
+  left: 1.8rem; }
+
+[class^="telemedicine"] .icon,
+[class*="telemedicine"] .icon {
+  background-image: url("../images/icon-telemedicine.png");
+  background-size: 3rem;
+  top: 1.5rem;
+  left: 2.5rem; }
+
+[class^="career"] .icon,
+[class*="career"] .icon {
+  background-image: url("../images/icon-career.png");
+  background-size: 3.2rem;
+  top: 1.8rem;
+  left: 2.4rem; }
+
+[class^="loan"] .icon,
+[class*="loan"] .icon {
+  background-image: url("../images/icon-loan.png");
+  background-size: 4.6rem; }
+
+[class^="wellness"] .icon,
+[class*="wellness"] .icon {
+  background-image: url("../images/icon-wellness.png");
+  background-size: 3.8rem;
+  top: 1.4rem;
+  left: 2rem; }
+
+[class^="family-care"] .icon,
+[class*="family-care"] .icon {
+  background-image: url("../images/icon-carecom.png");
+  background-size: 4rem;
+  top: 1.8rem;
+  left: 1.8rem; }
+
 /* Pages */
 .agent-verify {
   text-align: center; }
@@ -1824,6 +1879,57 @@ textarea {
   text-align: center; }
   .agent-dashboard .table-minimal th:first-child {
     text-align: left; }
+
+.agent-dashboard .products-container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.845em 0 0; }
+  .agent-dashboard .products-container::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .agent-dashboard .products-container .item {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 0.845em;
+    padding: 0 0.845em;
+    cursor: pointer; }
+    .agent-dashboard .products-container .item:hover .benefit {
+      background-color: #0094c8; }
+    .agent-dashboard .products-container .item strong {
+      display: block;
+      color: #00a7e1;
+      margin-bottom: 0.5rem; }
+    @media screen and (max-width: 568px) {
+      .agent-dashboard .products-container .item {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+        margin-right: 0; }
+        .agent-dashboard .products-container .item:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 569px) {
+      .agent-dashboard .products-container .item {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        margin-right: 0; }
+        .agent-dashboard .products-container .item:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 1025px) {
+      .agent-dashboard .products-container .item {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        margin-right: 0; }
+        .agent-dashboard .products-container .item:last-child {
+          margin-right: 0; } }
+  .agent-dashboard .products-container .benefit {
+    margin-top: 0.845em; }
 
 /* Icons */
 @font-face {
