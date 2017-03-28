@@ -14,7 +14,7 @@ exports = module.exports = function(req, res) {
 		Employer.model
 			.findOne({slug: req.session.user.employerSlug})
 			.then(function(employer) {
-				if (employer) {
+				if (employer && employer.employeePreferredBenefits) {
 					var preferredBenefits = new PreferredBenefits(employer.getEmployeePreferredBenefitsAsJson());
 					locals.data.preferredBenefitsRanking = preferredBenefits.rank();
 				} else {

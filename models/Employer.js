@@ -41,7 +41,11 @@ function beautifyJSON(jsonString) {
 }
 
 Employer.schema.methods.getEmployeePreferredBenefitsAsJson = function() {
-  return JSON.parse(this.employeePreferredBenefits);
+  if (this.employeePreferredBenefits) {
+    return JSON.parse(this.employeePreferredBenefits);
+  } else {
+    return [];
+  }
 };
 
 

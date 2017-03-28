@@ -20,8 +20,8 @@ block content
         input#employerName(type="text", name='employerName', required='required', data-msg-required='Please enter employer name', minlength="2", placeholder="Your Company Name")
         button#primaryBtn.icon-right-open(type='submit', onclick='$("#startEmployee").validate();') Start
 
-      if ranking in data.preferredBenefitsRanking
-        hr(style='clear:both')  
+      if data.preferredBenefitsRanking.length > 0
+        hr(style='clear:both')
         .table-container
           table.table-minimal
             caption Employee Preferences Result
