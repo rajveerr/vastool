@@ -5,17 +5,17 @@ require('sinon-as-promised');
 var expect = chai.expect;
 
 var keystone = require('keystone');
-var ProductService = require('../../../services/product-service');
+var SummaryService = require('../../../services/summary-service');
 
-describe('product-service', function() {
+describe('SummaryService', function() {
 
   var Product;
-  var productService;
+  var summaryService;
   var numberOfEmployees = 10;
 
   beforeEach(function() {
     Product = keystone.list('Product');
-    productService = new ProductService(Product);
+    summaryService = new SummaryService(Product);
   });
 
   afterEach(function() {
@@ -38,7 +38,7 @@ describe('product-service', function() {
           {slug: 'add3'},
         ]);
 
-      return productService
+      return summaryService
           .getBenefitsSummary(freeProducts, additionalProducts, numberOfEmployees)
           .then(function(benefitsSummary) {
               expect(benefitsSummary).to.not.be.undefined;
@@ -58,7 +58,7 @@ describe('product-service', function() {
           {slug: 'add2'}
         ]);
 
-      return productService
+      return summaryService
         .getBenefitsSummary(freeProduct, additionalProducts, numberOfEmployees)
         .then(function(benefitsSummary) {
           expect(benefitsSummary.freeBenefit).to.not.be.undefined;
@@ -66,29 +66,6 @@ describe('product-service', function() {
           expect(benefitsSummary.additionalBenefits).to.have.length(2);
           expect(benefitsSummary.additionalBenefits[0].slug).to.be.eql('add1');
           expect(benefitsSummary.additionalBenefits[1].slug).to.be.eql('add2');
-        });
-    });
-
-    it('should return total of all benefits', function() {
-      var freeProduct = 'free1';
-      var additionalProducts = ['add1', 'add2', 'add3'];
-
-      sinon.mock(Product.model)
-        .expects('find').withArgs({slug: {$in: ['free1', 'add1', 'add2', 'add3']} })
-        .chain('exec')
-        .resolves([
-          {slug: 'free1'},
-          {slug: 'add1', price: 0.21},
-          {slug: 'add2', price: 0.80},
-          {slug: 'add3', price: 1.13}
-        ]);
-
-      return productService
-        .getBenefitsSummary(freeProduct, additionalProducts, numberOfEmployees)
-        .then(function(benefitsSummary) {
-          expect(benefitsSummary.totals).to.not.be.undefined;
-          expect(benefitsSummary.totals.perEmployeePerMonth).to.be.eql(2.14);
-          expect(benefitsSummary.totals.premium).to.be.eql(21.40);
         });
     });
 

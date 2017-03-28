@@ -1,17 +1,17 @@
 var keystone = require('keystone');
 var _ = require('lodash');
-var ProductService = require('../../services/product-service');
+var SummaryService = require('../../services/summary-service');
 
 exports = module.exports = function(req, res) {
 
 	var view = new keystone.View(req, res);
-	var productService = new ProductService(keystone.list('Product'));
+	var summaryService = new SummaryService(keystone.list('Product'));
 
 	var locals = res.locals;
 	locals.data = {};
 
 	view.on('get', function(next) {
-		productService
+		summaryService
 			.getBenefitsSummary(
 				req.session.employer.freeBenefit.slug,
 				_.map(req.session.employer.additionalBenefits, 'slug'),

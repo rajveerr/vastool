@@ -1,6 +1,7 @@
 var _ = require('lodash');
+var BenefitsSummary = require('../models/domain/BenefitsSummary');
 
-var ProductService = function(Product) {
+var SummaryService = function(Product) {
 
   this.getBenefitsSummary = function(freeProductSlug,
                                      additionalProductSlugs,
@@ -17,20 +18,11 @@ var ProductService = function(Product) {
     .then(function(products) {
       var freeProduct = _.find(products, ['slug', freeProductSlug]);
       var additionalProducts = _.difference(products, [freeProduct]);
-      var totalPerEmployeePerMonth = parseFloat(_.sumBy(additionalProducts, 'price'));
-      var premium = totalPerEmployeePerMonth * numberOfEmployees;
 
-      return benefitsSummary = {
-        freeBenefit: freeProduct,
-        additionalBenefits: additionalProducts,
-        totals: {
-          perEmployeePerMonth: parseFloat(totalPerEmployeePerMonth.toFixed(2)),
-          premium : parseFloat(premium.toFixed(2))
-        }
-      };
+      return new BenefitsSummary(freeProduct, additionalProducts, numberOfEmployees);
     });
   }
 
 };
 
-module.exports = ProductService;
+module.exports = SummaryService;
