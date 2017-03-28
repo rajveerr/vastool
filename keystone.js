@@ -5,13 +5,18 @@ require('dotenv').config();
 // Require keystone
 var keystone = require('keystone');
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
+const MONGO_DB_URL = 'mongodb://vas:Aflac2017@ds011860.mlab.com:11860/heroku_l3wq2whs';
+
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
 var bourbon = require("node-bourbon").includePaths,
-	neat = require("node-neat").includePaths,
-	refills = require("node-refills").includePaths;
+		neat = require("node-neat").includePaths,
+		refills = require("node-refills").includePaths;
 
 keystone.init({
 	'name': 'VAS Admin',
@@ -31,7 +36,11 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'session store': 'mongo',
+	'session store': function(session) {
+		return new MongoStore({
+        url: MONGO_DB_URL
+    })
+	},
 	'signout redirect': '/',
 	'cookie secret': 'w~K8=&5r%U2]EZ'
 });
@@ -60,7 +69,6 @@ keystone.set('nav', {
 	Tips: 'producer-tips'
 });
 
-keystone.set('mongo',
-	'mongodb://vas:Aflac2017@ds011860.mlab.com:11860/heroku_l3wq2whs');
+keystone.set('mongo', MONGO_DB_URL);
 
 keystone.start();
