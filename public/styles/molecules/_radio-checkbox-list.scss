@@ -33,12 +33,21 @@
     &.checked {
       border-color: $blue !important;
       background-color: lighten($blue, 52%);
+      .ball {
+        background: radial-gradient(circle at 50% 40%, #fcfcfc, #cae6ff 66%, #348fff 100%);
+      }
       &:hover {
         background-color: lighten($blue, 52%);
+        .ball {
+          background: radial-gradient(circle at 50% 40%, #fcfcfc, #cae6ff 66%, #348fff 100%);
+        }
       }
     }
     &:hover {
       background-color: $lightest-gray;
+      .ball {
+        background: radial-gradient(circle at 50% 40%, #fcfcfc, #cae6ff 66%, #348fff 100%);
+      }
     }
     .h4 {
         color: $dark-gray;

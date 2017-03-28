@@ -1192,10 +1192,16 @@ td.dot {
     .radio-checkbox-list .control.checked {
       border-color: #00a7e1 !important;
       background-color: #ebfaff; }
+      .radio-checkbox-list .control.checked .ball {
+        background: radial-gradient(circle at 50% 40%, #fcfcfc, #cae6ff 66%, #348fff 100%); }
       .radio-checkbox-list .control.checked:hover {
         background-color: #ebfaff; }
+        .radio-checkbox-list .control.checked:hover .ball {
+          background: radial-gradient(circle at 50% 40%, #fcfcfc, #cae6ff 66%, #348fff 100%); }
     .radio-checkbox-list .control:hover {
       background-color: #F8F8F8; }
+      .radio-checkbox-list .control:hover .ball {
+        background: radial-gradient(circle at 50% 40%, #fcfcfc, #cae6ff 66%, #348fff 100%); }
     .radio-checkbox-list .control .h4 {
       color: #4A4A4A;
       font-size: 2.4rem;
@@ -1811,7 +1817,7 @@ textarea {
   margin-bottom: 0.5rem;
   border-radius: 50%;
   position: relative;
-  background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #98a1ab 100%); }
+  background: radial-gradient(circle at 50% 40%, #fcfcfc, #e8f3fd 66%, #9bc8ff 100%); }
   .ball:before {
     content: "";
     position: absolute;
@@ -1937,6 +1943,8 @@ textarea {
     cursor: pointer; }
     .agent-dashboard .products-container .item:hover strong {
       text-decoration: underline; }
+    .agent-dashboard .products-container .item:hover .ball {
+      background: radial-gradient(circle at 50% 40%, #fcfcfc, #cae6ff 66%, #348fff 100%); }
     .agent-dashboard .products-container .item strong {
       display: block;
       color: #00a7e1;

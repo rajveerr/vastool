@@ -26,6 +26,9 @@
         strong {
           text-decoration: underline;
         }
+        .ball {
+          background: radial-gradient(circle at 50% 40%, #fcfcfc, #cae6ff 66%, #348fff 100%);
+        }
       }
       strong {
         display: block;
