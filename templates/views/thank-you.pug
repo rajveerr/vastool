@@ -3,7 +3,10 @@ extends ../layouts/default
 block content
   .wrapper
     .content-head
-      span#employerName.above-title COMPANY NAME
+      //- span#employerName.above-title #{data.employer.name}
       h1 Thank you!
       p.sub-heading We appriciate your support in helping us make the right decision.
       .dialog
+block js
+  script.
+    $("img.feedbackButton").hide();

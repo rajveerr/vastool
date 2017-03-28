@@ -9,24 +9,22 @@ block content
       p.sub-heading We will offer the benefits which get prefered by majority of our employees.
     form#vasBenefitsSelection(action='/employer/' + data.employer.slug + '/employee-preference', method='POST', novalidate='novalidate')
         .primary-content
-          each product in data.products
-
-            .card
+          .contain
+            each product in data.products
               label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
               label.control.control--checkbox
                 input(type='checkbox', name='preferredBenefits', value=`${product.slug}`, required='required', data-msg='Please choose the benefits you prefer to have', data-title=`${product.title}`)
                 .control__indicator
                 p
                   span.h4 #{product.title}
-                  span.price #{product.price}
-                  span.pemth pe/mth
+                  //- span.price #{product.price}
+                  //- span.pemth pe/mth
                   span.productDesc #{product.shortDescription}
                     span.see-more.modalOpner(href='products/' + product.slug, name=`${product.title}`)
                   span.bullet
                     strong &bull; Best for:
                     | #{product.bestFor}
                   span.bullet &bull; 48% of employers pick this benefit
-              hr
 
           label.error(for='freeBenefit')
 
@@ -40,6 +38,7 @@ block content
         .dialog
 block js
   script.
+    $("img.feedbackButton").hide();
     $("input[name='preferredBenefits']").on('change', function() {
       $('.control').removeClass('checked');
       var checkedValues = $("input[name='preferredBenefits']:checkbox:checked");
