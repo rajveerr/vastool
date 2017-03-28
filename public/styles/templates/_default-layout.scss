@@ -182,6 +182,9 @@
   background-color: lighten($orange, 47%);
   color: $orange;
   margin-top: $base-spacing;
+  h2 {
+    color: $orange;
+  }
   h4 {
     margin-bottom: $small-spacing/2;
     font-family: $bold-font-family;
@@ -291,27 +294,27 @@
   }
 }
 
-.benefit {
+.icon-benefit {
   position: relative;
   display: inline-block;
   width: 8rem;
   height: 8rem;
   background-color: $blue;
   border-radius: 100%;
-  .icon {
+  &:after {
+    content: '';
     position: absolute;
     top: 2rem;
     left: 1.5rem;
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     background-repeat: no-repeat;
     background-size: 4.3rem;
-
   }
 }
 [class^="health"],
 [class*="health"] {
-  .icon {
+  .icon-benefit:after {
     background-image: url('../images/icon-health.png');
     top: 2.1rem;
     left: 1.8rem;
@@ -319,7 +322,7 @@
 }
 [class^="telemedicine"],
 [class*="telemedicine"] {
-  .icon {
+  .icon-benefit:after {
     background-image: url('../images/icon-telemedicine.png');
     background-size: 3rem;
     top: 1.5rem;
@@ -328,7 +331,7 @@
 }
 [class^="career"],
 [class*="career"] {
-  .icon {
+  .icon-benefit:after {
     background-image: url('../images/icon-career.png');
     background-size: 3.2rem;
     top: 1.8rem;
@@ -337,14 +340,14 @@
 }
 [class^="loan"],
 [class*="loan"] {
-  .icon {
+  .icon-benefit:after {
     background-image: url('../images/icon-loan.png');
     background-size: 4.6rem;
   }
 }
 [class^="wellness"],
 [class*="wellness"] {
-  .icon {
+  .icon-benefit:after {
     background-image: url('../images/icon-wellness.png');
     background-size: 3.8rem;
     top: 1.4rem;
@@ -353,7 +356,7 @@
 }
 [class^="family-care"],
 [class*="family-care"] {
-  .icon {
+  .icon-benefit:after {
     background-image: url('../images/icon-carecom.png');
     background-size: 4rem;
     top: 1.8rem;

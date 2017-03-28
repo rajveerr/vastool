@@ -22,7 +22,7 @@
       margin-bottom: $small-spacing;
       padding: 0 $small-spacing;
       cursor: pointer;
-      &:hover .benefit {
+      &:hover .icon-benefit {
           background-color: darken($blue, 5%)
       }
       strong {
@@ -43,7 +43,7 @@
           @include omega();
       }
     }
-    .benefit {
+    .icon-benefit {
       margin-top: $small-spacing;
     }
   }

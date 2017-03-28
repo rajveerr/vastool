@@ -1,40 +1,44 @@
 extends ../layouts/default
 
 block content
-  .wrapper.radio-checkbox-list.free-benefits-selection
-    .content-head
-      span#employerName.above-title #{data.employer.name}
-      h1 Aflac's ALL EMPLOYEE choices
-      p.sub-heading We are excited to share a new range of health benefits that you can take advantage of. Help us understand which of the following benefits will help you most by chosing them below.
-      p.sub-heading We will offer the benefits which get prefered by majority of our employees.
+  .content-head.with-bg
+    .collage-form-container
+      .copy-container
+        span#employerName.above-title #{data.employer.name}
+        h1 Aflac's ALL EMPLOYEE choices
+        
+  .wrapper.radio-checkbox-list.free-benefits-selection    
     form#vasBenefitsSelection(action='/employer/' + data.employer.slug + '/employee-preference', method='POST', novalidate='novalidate')
         .primary-content
+          p.sub-heading We are excited to share a new range of health benefits that you can take advantage of. Help us understand which of the following benefits will help you most by chosing them below.
+          p.sub-heading(style='padding-bottom: 2rem') We will offer the benefits which get prefered by majority of our employees.
           .contain
             each product in data.products
               label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
-              label.control.control--checkbox
+              label.control.control--checkbox(class=`${product.slug}`)
                 input(type='checkbox', name='preferredBenefits', value=`${product.slug}`, required='required', data-msg='Please choose the benefits you prefer to have', data-title=`${product.title}`)
-                .control__indicator
+                //- .control__indicator
+                .icon-benefit
                 p
                   span.h4 #{product.title}
                   //- span.price #{product.price}
                   //- span.pemth pe/mth
                   span.productDesc #{product.shortDescription}
-                    span.see-more.modalOpner(href='products/' + product.slug, name=`${product.title}`)
+                    span.see-more.modalOpner(href='/products/' + product.slug, name=`${product.title}`)
                   span.bullet
                     strong &bull; Best for:
                     | #{product.bestFor}
                   span.bullet &bull; 48% of employers pick this benefit
-
+          .form-footer
+              span.primary-actions
+                button#primaryBtn(type='submit', onclick='$("#vasBenefitsSelection").validate();') Confirm
           label.error(for='freeBenefit')
 
         .card-blue.secondary-content#benefitChosenCard(style='display: none')
           .vas-section
             h4 I want
             ul#vasBenefitChosen
-        .form-footer
-            span.primary-actions
-              button#primaryBtn(type='submit', onclick='$("#vasBenefitsSelection").validate();') Confirm
+        
         .dialog
 block js
   script.

@@ -1169,6 +1169,13 @@ td.dot {
       .radio-checkbox-list input[type='radio'],
       .radio-checkbox-list input[type='checkbox'] {
         left: 1.69em; } }
+  .radio-checkbox-list .icon-benefit {
+    position: absolute;
+    top: 32%;
+    left: 2.8rem; }
+    @media screen and (max-width: 568px) {
+      .radio-checkbox-list .icon-benefit {
+        display: none; } }
   .radio-checkbox-list .control {
     display: block;
     margin-right: 0;
@@ -1177,11 +1184,11 @@ td.dot {
     min-height: 1.8rem;
     font-size: 1.6rem;
     font-family: "proximaNovaRegular", Helvetica, Arial, sans-serif;
-    padding: 0.845em 1.69em 0.4225em 3.38em; }
+    padding: 0.845em 1.69em 0.4225em 0.845em; }
     @media screen and (min-width: 400px) {
       .radio-checkbox-list .control {
         font-size: 1.8rem;
-        padding: 1.69em 1.69em 0.845em 5.07em; } }
+        padding: 1.69em 1.69em 0.845em 6.76em; } }
     .radio-checkbox-list .control.checked {
       border-color: #00a7e1 !important;
       background-color: #ebfaff; }
@@ -1645,6 +1652,8 @@ textarea {
     clear: both;
     content: "";
     display: table; }
+  .card-blue h2 {
+    color: #FA9806; }
   .card-blue h4 {
     margin-bottom: 0.4225em;
     font-family: "proximaNovaBold", Helvetica, Arial, sans-serif; }
@@ -1739,56 +1748,57 @@ textarea {
       max-width: 50rem;
       left: 16%; } }
 
-.benefit {
+.icon-benefit {
   position: relative;
   display: inline-block;
   width: 8rem;
   height: 8rem;
   background-color: #00a7e1;
   border-radius: 100%; }
-  .benefit .icon {
+  .icon-benefit:after {
+    content: '';
     position: absolute;
     top: 2rem;
     left: 1.5rem;
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     background-repeat: no-repeat;
     background-size: 4.3rem; }
 
-[class^="health"] .icon,
-[class*="health"] .icon {
+[class^="health"] .icon-benefit:after,
+[class*="health"] .icon-benefit:after {
   background-image: url("../images/icon-health.png");
   top: 2.1rem;
   left: 1.8rem; }
 
-[class^="telemedicine"] .icon,
-[class*="telemedicine"] .icon {
+[class^="telemedicine"] .icon-benefit:after,
+[class*="telemedicine"] .icon-benefit:after {
   background-image: url("../images/icon-telemedicine.png");
   background-size: 3rem;
   top: 1.5rem;
   left: 2.5rem; }
 
-[class^="career"] .icon,
-[class*="career"] .icon {
+[class^="career"] .icon-benefit:after,
+[class*="career"] .icon-benefit:after {
   background-image: url("../images/icon-career.png");
   background-size: 3.2rem;
   top: 1.8rem;
   left: 2.4rem; }
 
-[class^="loan"] .icon,
-[class*="loan"] .icon {
+[class^="loan"] .icon-benefit:after,
+[class*="loan"] .icon-benefit:after {
   background-image: url("../images/icon-loan.png");
   background-size: 4.6rem; }
 
-[class^="wellness"] .icon,
-[class*="wellness"] .icon {
+[class^="wellness"] .icon-benefit:after,
+[class*="wellness"] .icon-benefit:after {
   background-image: url("../images/icon-wellness.png");
   background-size: 3.8rem;
   top: 1.4rem;
   left: 2rem; }
 
-[class^="family-care"] .icon,
-[class*="family-care"] .icon {
+[class^="family-care"] .icon-benefit:after,
+[class*="family-care"] .icon-benefit:after {
   background-image: url("../images/icon-carecom.png");
   background-size: 4rem;
   top: 1.8rem;
@@ -1895,7 +1905,7 @@ textarea {
     margin-bottom: 0.845em;
     padding: 0 0.845em;
     cursor: pointer; }
-    .agent-dashboard .products-container .item:hover .benefit {
+    .agent-dashboard .products-container .item:hover .icon-benefit {
       background-color: #0094c8; }
     .agent-dashboard .products-container .item strong {
       display: block;
@@ -1928,7 +1938,7 @@ textarea {
         margin-right: 0; }
         .agent-dashboard .products-container .item:last-child {
           margin-right: 0; } }
-  .agent-dashboard .products-container .benefit {
+  .agent-dashboard .products-container .icon-benefit {
     margin-top: 0.845em; }
 
 /* Icons */

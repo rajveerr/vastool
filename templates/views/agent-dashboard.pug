@@ -24,8 +24,8 @@ block content
           h2 Aflac All Employee Choices
           each product in data.products
             .item.modalOpner(href='products/' + product.slug, name=`${product.title}`)
-              .benefit(class=`${product.slug}`)
-                .icon
+              div(class=`${product.slug}`)
+                .icon-benefit
               strong #{product.title}
               .price $#{product.price}
                 abbr.pemth.field-tip pe/mth
@@ -33,7 +33,7 @@ block content
         if data.employers && data.employers.length > 0
           .table-container
             table.table-minimal
-              caption(style='padding-bottom: 1.5rem;') Application status
+              caption Application status
               thead
                 tr
                   th Employers

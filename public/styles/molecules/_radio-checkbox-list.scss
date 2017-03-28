@@ -9,6 +9,14 @@
       left: $base-spacing;
     }
   }
+  .icon-benefit {
+    position: absolute;
+    top: 32%;
+    left: 2.8rem;
+    @include media($small) {
+      display: none;
+    }
+  }
   .control {
     display: block;
     margin-right: 0;
@@ -17,10 +25,10 @@
     min-height: 1.8rem;
     font-size: 1.6rem;
     font-family: $base-font-family;
-    padding: $small-spacing $base-spacing $small-spacing/2 $base-spacing*2;
+    padding: $small-spacing $base-spacing $small-spacing/2 $small-spacing;
     @include media($above-small) {
       font-size: 1.8rem;
-      padding: $base-spacing $base-spacing $base-spacing/2 $base-spacing*3;
+      padding: $base-spacing $base-spacing $base-spacing/2 $base-spacing*4;
     }
     &.checked {
       border-color: $blue !important;

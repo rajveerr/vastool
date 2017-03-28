@@ -14,9 +14,10 @@ block content
         .primary-content
           .contain
             each product in data.additionalProducts
-              label.control.control--checkbox
+              label.control.control--checkbox(class=`${product.slug}`)
                 input(type='checkbox', name='additionalBenefits', value=`${product.slug}`, data-title=`${product.title}`)
-                .control__indicator
+                //- .control__indicator
+                .icon-benefit
                 p
                   span.h4 #{product.title}
                   span.price #{product.price}

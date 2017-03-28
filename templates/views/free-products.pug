@@ -14,9 +14,10 @@ block content
       .primary-content
         .contain
           each product in data.products
-            label.control.control--radio
+            label.control.control--radio(class=`${product.slug}`)
               input.radio(type='radio', name='freeBenefit', value=`${product.slug}`, required='required', data-msg='Please choose a free benefit', data-title=`${product.title}`)
-              .control__indicator
+              //- .control__indicator
+              .icon-benefit
               p
                 span.h4 #{product.title}
                 span.free FREE!
