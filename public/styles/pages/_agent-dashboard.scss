@@ -22,8 +22,10 @@
       margin-bottom: $small-spacing;
       padding: 0 $small-spacing;
       cursor: pointer;
-      &:hover .icon-benefit {
-          background-color: darken($blue, 5%)
+      &:hover {
+        strong {
+          text-decoration: underline;
+        }
       }
       strong {
         display: block;
