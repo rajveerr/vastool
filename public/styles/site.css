@@ -1557,19 +1557,32 @@ textarea {
     margin-bottom: 0.845em; }
   .content-head.with-bg img {
     display: none; }
+  .content-head.with-bg ul {
+    font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
+    line-height: 1.7; }
   @media screen and (min-width: 400px) {
     .content-head.with-bg .copy-container {
       padding: 1.69em 20rem 0.845em 2rem; }
+      .content-head.with-bg .copy-container.employees {
+        padding-right: 35%;
+        padding-top: 3rem; }
     .content-head.with-bg img {
       display: block;
       position: absolute;
+      right: 0; }
+    .content-head.with-bg img.img-products {
       top: -3px;
       right: 0;
-      max-width: 18rem; } }
+      max-width: 18rem; }
+    .content-head.with-bg img.employees {
+      max-width: 33rem;
+      bottom: 0; } }
   @media screen and (min-width: 1024px) {
-    .content-head.with-bg img {
+    .content-head.with-bg img.img-products {
       top: -5.2rem;
-      right: 3rem; } }
+      right: 3rem; }
+    .content-head.with-bg img.employees {
+      max-width: 40rem; } }
 
 @media screen and (min-width: 1024px) {
   .primary-content {

@@ -105,22 +105,40 @@
     img {
       display: none;
     }
+    ul {
+      font-family: $thin-font-family;
+      line-height: 1.7;
+    }
     @include media($above-small) {
       .copy-container {
         padding: $base-spacing 20rem $small-spacing 2rem;
+        &.employees {
+          padding-right: 35%;
+          padding-top: 3rem;
+        }
       }
       img {
         display: block;
         position: absolute;
+        right: 0;
+      }
+      img.img-products {
         top: -3px;
         right: 0;
         max-width: 18rem;
       }
+      img.employees {
+        max-width: 33rem;
+        bottom: 0;
+      }
     }
     @include media($above-mid) {
-      img {
+      img.img-products {
         top: -5.2rem;
         right: 3rem;
+      }
+      img.employees {
+        max-width: 40rem;
       }
 
     }
