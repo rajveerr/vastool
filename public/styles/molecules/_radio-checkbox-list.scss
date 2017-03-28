@@ -1,5 +1,5 @@
 .radio-checkbox-list {
-  color: black;  
+  color: black;
   .control__indicator,
   input[type='radio'],
   input[type='checkbox'], {
@@ -46,11 +46,10 @@
       @extend %dollar-sign;
     }
     .pemth {
-      display: inline-block;
-      margin-left: 1.5rem;
       color: orange;
       font-size: 2rem;
       font-family: $thin-font-family;
+      margin-left: 1.5rem;
     }
     p {
       margin-left: $small-spacing;
@@ -108,4 +107,10 @@
     padding-left: $small-spacing/2;
     color: orange;
   }
+}
+
+.pemth {
+  font-family: $thin-font-family;
+  display: inline-block;
+  margin-left: $small-spacing/3;
 }

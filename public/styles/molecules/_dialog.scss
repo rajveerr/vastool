@@ -6,12 +6,12 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.8);
   padding-top: $base-spacing;
   overflow-y: scroll;
   .ui-dialog-titlebar,
   .ui-dialog-content {
-    background-color: $lightest-gray;
+    background-color: white;
     left: 10%;
     padding: 0 $base-spacing;
     margin: 0 $base-spacing;
@@ -38,22 +38,26 @@
   .ui-dialog-titlebar-close {
     position: absolute;
     font-size: 3rem;
-    top: 2rem;
-    right: 2rem;
+    top: 3rem;
+    right: 3rem;
     padding: 0;
     min-width: 0;
     min-height: 0;
     background: transparent;
-    color: darken($medium-gray, 30%);
-    @extend .icon-cancel;
+    &:after {
+      content: 'X';
+      color: darken($lightest-gray, 22%);
+    }
+    &:hover:after {
+      color: white;
+    }
     @include media($above-small) {
-      top: 3.8rem;
-      right: 4rem;
-      font-size: 4rem;
+      top: 0.5rem;
+      right: 0.5rem;
     }
     @include media($above-mid) {
-      top: 3.8rem;
-      right: $base-spacing*4;
+      top: 2rem;
+      right: 2rem;
     }
   }
   .ui-button-text {

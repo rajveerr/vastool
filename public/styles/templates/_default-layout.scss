@@ -71,6 +71,7 @@
         width: 91%;
         font-size: 2.5rem;
         padding: 1.48rem;
+        background-color: white;
       }
       button {
         position: absolute;
@@ -147,6 +148,10 @@
     padding: 0;
   }
   &.border {
+    border: 4px solid $blue;
+  }
+  &.blue {
+    background-color: lighten($blue, 52%);
     border: 4px solid $blue;
   }
 }
@@ -255,5 +260,15 @@
         left: 28%;
       }
     }
+  }
+}
+.share {
+  max-width: 100%;
+  position: relative;
+  bottom: -7px;
+  left: 0;
+  @include media($above-small) {
+    max-width: 50rem;
+    left: 16%;
   }
 }

@@ -61,7 +61,7 @@ block content
             tbody
               each product in data.products
                 tr.modalOpner(href='products/' + product.slug, name=`${product.title}`)
-                  th #{product.title}
+                  th(style='width:50%') #{product.title}
                   td $#{product.price}
                     abbr.pemth.field-tip pe/mth
                       span.tip-content Per Employee Per Month

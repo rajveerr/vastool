@@ -1,12 +1,20 @@
 extends ../layouts/default
 
 block content
-  .wrapper.radio-checkbox-list.free-benefits-selection
-    .content-head
+  .wrapper
+    .primary-content
       span#employerName.above-title #{data.employer.name}
       h1 Thank you!
-      p.sub-heading Your Aflac agent will follow up with to make sure you get the best of chosen products as soon as possible.
+      p.sub-heading(style='margin-bottom:0;') We have receieved your benefits choice! Your Aflac agent will stay in touch to guide you with further steps.
+      img.share(src="/images/share.png")
+      .card.blue
+        h2 Share with Employees!
+        p.sub-heading If you want to make a more informed decision, share the link below with your Employees for them to vote for the benefits based on their preferene.
+        input#surveyUrl.inline-edit(type='text', style="font-size: 1.8rem; margin-bottom: 1.5rem;", value=`${data.surveyUrl}`)
+        p.sub-heading(style='margin-bottom:0') It's very easy to come back again and check the results.
+        
+      
+      
       .dialog
 
-      p
-        input#surveyUrl(value=`${data.surveyUrl}`)
+      

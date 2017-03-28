@@ -7,6 +7,7 @@ block content
         h1
           input#employerName.inline-edit(type="text", name='employerName', value=`${locals.data.employer.name}`, required='required', data-msg-required='Employer name', data-msg='Please enter a valid name', minlength="2", placeholder="Employer name")
           a.icon-pencil#editEmployerName(href='javascript:void(0)')
+          label.error(for='employerName')
     .wrapper
       .primary-content
         .card.border

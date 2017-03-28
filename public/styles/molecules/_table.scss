@@ -11,7 +11,7 @@ $base-font-color: $dark-gray !default;
 $table-border-color: darken($lightest-gray, 10%);
 $table-border: 1px solid $table-border-color;
 $table-background: white;
-$table-hover-background: lighten($table-background, 1%);
+$table-hover-background: white;
 $table-stripe-background: darken($table-background, 4);
 $table-stripe-background-hover: darken($table-stripe-background, 5);
 $table-padding: $base-spacing 1rem;
@@ -19,6 +19,8 @@ $table-padding: $base-spacing 1rem;
 .table-container {
   background-color: $table-background;
   margin-bottom: $base-spacing;
+  max-height: 40rem;
+  overflow-y: scroll;
 }
 .table-minimal {
   border-collapse: separate;
@@ -55,6 +57,8 @@ $table-padding: $base-spacing 1rem;
       border-top-color: transparent;
     }
     th {
+      text-decoration: underline;
+      cursor: pointer;
       font-family: $semiBold-font-family;
       &:first-of-type {
         padding-left: 0;
@@ -141,7 +145,10 @@ td.dot {
   }
   thead {
     th, td {
-      padding: 0 1.8rem;
+      padding: 0;
+    }
+    td {
+      color: black;
     }
     tr:last-of-type th {
       padding-bottom: $small-spacing;
@@ -161,7 +168,7 @@ td.dot {
   }
   tbody {
     tr:hover > td, tr:hover > th {
-      background-color: transparent;
+      // background-color: $light-gray;
     }
     tr:last-of-type {
       th, td {
@@ -170,6 +177,7 @@ td.dot {
     }
     th, td {
       border-style: solid;
+      padding-right: 0;
       &:first-of-type {
         padding-left: 0;
         border-top: 1px solid $table-border-color !important;
@@ -180,6 +188,7 @@ td.dot {
       font-size: 2.2rem;
       text-align: left;
       color: $gray;
+      text-decoration: none;
     }
     td {
       text-align: right;
@@ -189,20 +198,23 @@ td.dot {
     font-family: $thin-font-family;
     padding-top: $small-spacing;
   }
-  .free,
-  .price {
-    font-family: $base-font-family;
-    text-align: right;
+  .free {
     color: orange;
+  }
+  .free,
+  .price,
+  #numberOfEmployees {
+    font-size: 2.2rem;
+    font-family: $bold-font-family;
+    text-align: right;
+  }
+  .grey,
+  #numberOfEmployees {
+    font-family: $thin-font-family;
   }
   .price {
     text-align: right;
     @extend %dollar-sign;
-  }
-  .pemth {
-    font-family: $thin-font-family;
-    color: orange;
-    padding-left: $small-spacing/3;
   }
   .grey {
     display: inline-block;
