@@ -950,6 +950,9 @@ td.dot {
   td.dot.yes span {
     background-color: #00a7e1; }
 
+.votes thead th {
+  text-align: left !important; }
+
 .table-summary {
   background-color: transparent;
   padding: 0 0.4225em;
@@ -1188,7 +1191,7 @@ td.dot {
       left: 1rem;
       color: orange;
       font-size: 2.2rem;
-      font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif; }
+      font-family: "proximaNovaBold", Helvetica, Arial, sans-serif; }
     .radio-checkbox-list .control .pemth {
       color: orange;
       font-size: 2rem;
