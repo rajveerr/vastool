@@ -23,19 +23,19 @@ exports = module.exports = function(req, res) {
 	var WHITELISTED_EMPLOYERS = [{
 		id: 'EMP503',
 		firstName: 'Employer by Shirley',
-		slug: 'delta'
+		slug: 'diggidi'
 	}, {
 		id: 'EMP740',
 		firstName: 'Employer by Rajveer',
-		slug: 'delta',
+		slug: 'groupon',
 	}, {
 		id: 'EMP366',
 		firstName: 'Employer by Babs',
-		slug: 'delta'
+		slug: 'vice'
 	}, {
 		id: 'EMP954',
 		firstName: 'Employer by Alex',
-		slug: 'thoughtworks'
+		slug: 'delta'
 	}, {
 		id: 'EMP313',
 		firstName: 'Employer by Stefania',
@@ -76,7 +76,8 @@ exports = module.exports = function(req, res) {
 	}
 
 	function signInEmployer(employer, success) {
-		var user = newUser(employer.id, employer.firstName, employer.firstName, 'EMPLOYER', employer.slug);
+		var user = newUser(employer.id, employer.firstName, employer.firstName,
+			'EMPLOYER', employer.slug);
 		keystone.session.signinWithUser(user, req, res, success);
 	}
 
