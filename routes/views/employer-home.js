@@ -14,9 +14,12 @@ exports = module.exports = function(req, res) {
 		Employer.model
 			.findOne({slug: req.session.user.employerSlug})
 			.then(function(employer) {
-				var preferredBenefits = new PreferredBenefits(employer.getEmployeePreferredBenefitsAsJson());
-				locals.data.preferredBenefitsRanking = preferredBenefits.rank();
-
+				if (employer) {
+					var preferredBenefits = new PreferredBenefits(employer.getEmployeePreferredBenefitsAsJson());
+					locals.data.preferredBenefitsRanking = preferredBenefits.rank();
+				} else {
+					locals.data.preferredBenefitsRanking = [];
+				}
 				next();
 			})
 			.catch(function(err) {
