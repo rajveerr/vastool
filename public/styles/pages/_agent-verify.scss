@@ -1,13 +1,5 @@
 .agent-verify {
-  text-align: center;   
-  .login-title {
-    font-size: 2.2rem;
-    font-family: $thin-font-family;
-    padding: $base-spacing 0 $small-spacing;
-    @include media($above-small) {
-      font-size: 3.2rem;
-    }
-  }
+  text-align: center;
   label.error {
     left: 22%;
   }
@@ -15,4 +7,21 @@
     position: relative;
     left: -5px;
   }
+  .login-title {
+    padding: $base-spacing 0 $small-spacing;
+  }
+}
+
+.login-title {
+  font-size: 2.2rem;
+  font-family: $thin-font-family;
+  padding: $small-spacing 0 $small-spacing/2;
+  @include media($above-small) {
+    font-size: 3.2rem;
+  }
+}
+
+
+.form-container {
+  text-align: center;
 }

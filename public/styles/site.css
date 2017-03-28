@@ -950,8 +950,15 @@ td.dot {
   td.dot.yes span {
     background-color: #00a7e1; }
 
-.votes thead th {
-  text-align: left !important; }
+.votes {
+  margin: 0 1.69em;
+  min-width: 0; }
+  .votes thead th {
+    text-align: left !important; }
+  @media screen and (min-width: 400px) {
+    .votes {
+      margin: 0 10%;
+      min-width: 80%; } }
 
 .table-summary {
   background-color: transparent;
@@ -1735,18 +1742,24 @@ textarea {
 /* Pages */
 .agent-verify {
   text-align: center; }
-  .agent-verify .login-title {
-    font-size: 2.2rem;
-    font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
-    padding: 1.69em 0 0.845em; }
-    @media screen and (min-width: 400px) {
-      .agent-verify .login-title {
-        font-size: 3.2rem; } }
   .agent-verify label.error {
     left: 22%; }
   .agent-verify .icon-right-open {
     position: relative;
     left: -5px; }
+  .agent-verify .login-title {
+    padding: 1.69em 0 0.845em; }
+
+.login-title {
+  font-size: 2.2rem;
+  font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
+  padding: 0.845em 0 0.4225em; }
+  @media screen and (min-width: 400px) {
+    .login-title {
+      font-size: 3.2rem; } }
+
+.form-container {
+  text-align: center; }
 
 .agent-welcome .primary-content {
   text-align: center;
