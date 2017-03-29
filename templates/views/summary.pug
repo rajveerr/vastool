@@ -12,13 +12,13 @@ block content
           table.table-minimal.table-summary
             thead
               tr
-                td.title(colspan='2') FREE FOR ALL Benefit
+                td.title(colspan='2') COMPLIMENTARY FOR ALL Benefit
               tr
                 th#selectedFreeBenefit(class=`${locals.data.benefitsSummary.freeBenefit.slug}`)
                   .icon-benefit
                     .ball
                   | #{locals.data.benefitsSummary.freeBenefit.title}
-                td.free FREE!
+                td.free COMPLIMENTARY!
               tr#vasBenefitRowStart
                 td.title(colspan='2') New All Employee Benefits
               each product in data.benefitsSummary.additionalBenefits
@@ -45,7 +45,7 @@ block content
                   span#totalPremiumAmount.price.total #{locals.data.benefitsSummary.totals.premium}
           .card-blue(style='margin-bottom:2em')
             h2 Help us engage with your employees (POPS)
-            p.sub-heading New employers who achieve 75 Percent of People Seen (POPS) can choose one “free for all” benefit, available to all employees. 
+            p.sub-heading New employers who achieve 75 Percent of People Seen (POPS) can choose one “complimentary for all” benefit, available to all employees. 
             p.sub-heading(style='margin-bottom:0') Plus, employers have the choice of several additional paid-for benefits for all their employees, regardless of whether they choose other Aflac products, with our group rates. 
 
           .radio-checkbox-list.engagement-choice

@@ -354,6 +354,15 @@
     left: 2rem;
   }
 }
+[class^="legal"],
+[class*="legal"] {
+  .icon-benefit:after {
+    background-image: url('../images/icon-legal.png');
+    background-size: 3.8rem;
+    top: 1.4rem;
+    left: 2rem;
+  }
+}
 [class^="family-care"],
 [class*="family-care"] {
   .icon-benefit:after {

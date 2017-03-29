@@ -6,7 +6,7 @@ block content
       .copy-container
         span#employerName.above-title #{data.employer.name}
         h1 Choose additional ALL EMPLOYEE benefits
-        p.sub-heading You’ve picked “#{data.freeProduct.title}” as your FREE FOR ALL benefit.
+        p.sub-heading You’ve picked “#{data.freeProduct.title}” as your COMPLIMENTARY FOR ALL benefit.
         p.sub-heading(style='padding-bottom: 2rem;') You can also choose as many of these Aflac group plan benefits for ALL your employees, regardless of whether they select other Aflac products.
       img.img-products(src='images/hands-showing-globe.png')
   .wrapper.radio-checkbox-list.free-benefits-selection
@@ -31,20 +31,20 @@ block content
                     | #{product.bestFor}
                   span.bullet &bull; 48% of employers pick this benefit
 
-          label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
-          .form-footer
-              span.primary-actions
-                button#primaryBtn.icon-right-open(type='submit') Next
-              span.secondary-actions.link-btn
-                a(href="/free-products") Back
+          label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees          
         .card-blue.secondary-content#benefitChosenCard
           .free-section
-            h4 Free Benefit
+            h4 Complimentary Benefit
             ul
               li#freeBenefitChosen #{locals.data.freeProduct.title}
           .vas-section(style='display: none')
             h4 VAS Benefit
             ul#vasBenefitChosen
+        .form-footer
+            span.primary-actions
+              button#primaryBtn.icon-right-open(type='submit') Next
+            span.secondary-actions.link-btn
+              a(href="/free-products") Back
         .dialog
 block js
   script.

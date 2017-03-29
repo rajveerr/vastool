@@ -65,6 +65,9 @@ fieldset {
     margin-top: $base-spacing;
     border-top: 2px dotted darken($lightest-gray, 10%);
   }
+  @include media($above-mid) {
+    padding-right: 28.8rem;
+  }
 }
 
 legend {

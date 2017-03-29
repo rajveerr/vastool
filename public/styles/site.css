@@ -1267,7 +1267,7 @@ td.dot {
 .free-benefits-selection .free {
   font-family: "proximaNovaBold", Helvetica, Arial, sans-serif;
   font-size: 2rem;
-  padding-left: 0.4225em;
+  margin-left: 0.4225em;
   color: orange; }
 
 .pemth {
@@ -1393,6 +1393,9 @@ fieldset {
     padding: 0.845em 0 0;
     margin-top: 1.69em;
     border-top: 2px dotted #dfdfdf; }
+  @media screen and (min-width: 1024px) {
+    .form-footer {
+      padding-right: 28.8rem; } }
 
 legend {
   font-weight: "proximaNovaRegular", Helvetica, Arial, sans-serif;
@@ -1813,6 +1816,13 @@ textarea {
 [class^="wellness"] .icon-benefit:after,
 [class*="wellness"] .icon-benefit:after {
   background-image: url("../images/icon-wellness.png");
+  background-size: 3.8rem;
+  top: 1.4rem;
+  left: 2rem; }
+
+[class^="legal"] .icon-benefit:after,
+[class*="legal"] .icon-benefit:after {
+  background-image: url("../images/icon-legal.png");
   background-size: 3.8rem;
   top: 1.4rem;
   left: 2rem; }
