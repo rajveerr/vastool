@@ -1811,7 +1811,9 @@ textarea {
 [class^="loan"] .icon-benefit:after,
 [class*="loan"] .icon-benefit:after {
   background-image: url("../images/icon-loan.png");
-  background-size: 4.6rem; }
+  background-size: 4.6rem;
+  top: 2.3rem;
+  left: 1.6rem; }
 
 [class^="wellness"] .icon-benefit:after,
 [class*="wellness"] .icon-benefit:after {
@@ -1823,9 +1825,9 @@ textarea {
 [class^="legal"] .icon-benefit:after,
 [class*="legal"] .icon-benefit:after {
   background-image: url("../images/icon-legal.png");
-  background-size: 3.8rem;
-  top: 1.4rem;
-  left: 2rem; }
+  background-size: 4.4rem;
+  top: 2rem;
+  left: 1.8rem; }
 
 [class^="family-care"] .icon-benefit:after,
 [class*="family-care"] .icon-benefit:after {
@@ -1964,7 +1966,8 @@ textarea {
     text-align: center;
     margin-bottom: 0.845em;
     padding: 0 0.845em;
-    cursor: pointer; }
+    cursor: pointer;
+    min-height: 18rem; }
     .agent-dashboard .products-container .item:hover strong {
       text-decoration: underline; }
     .agent-dashboard .products-container .item:hover .ball {

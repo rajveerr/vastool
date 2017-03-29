@@ -343,6 +343,8 @@
   .icon-benefit:after {
     background-image: url('../images/icon-loan.png');
     background-size: 4.6rem;
+    top: 2.3rem;
+    left: 1.6rem;
   }
 }
 [class^="wellness"],
@@ -358,9 +360,9 @@
 [class*="legal"] {
   .icon-benefit:after {
     background-image: url('../images/icon-legal.png');
-    background-size: 3.8rem;
-    top: 1.4rem;
-    left: 2rem;
+    background-size: 4.4rem;
+    top: 2rem;
+    left: 1.8rem;
   }
 }
 [class^="family-care"],
