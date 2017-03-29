@@ -29,6 +29,7 @@
     @include media($above-small) {
       font-size: 1.8rem;
       padding: $base-spacing $base-spacing $base-spacing/2 $base-spacing*4;
+
     }
     &.checked {
       border-color: $blue !important;
@@ -115,6 +116,11 @@
   }
   .error {
     left: $base-spacing*4;
+  }
+  &.engagement-choice .control {
+    @include media($above-small) {
+      padding-left: $base-spacing*3;
+    }
   }
 }
 .free-benefits-selection {

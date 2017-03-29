@@ -14,13 +14,19 @@ block content
               tr
                 td.title(colspan='2') FREE FOR ALL Benefit
               tr
-                th#selectedFreeBenefit #{locals.data.benefitsSummary.freeBenefit.title}
+                th#selectedFreeBenefit(class=`${locals.data.benefitsSummary.freeBenefit.slug}`)
+                  .icon-benefit
+                    .ball
+                  | #{locals.data.benefitsSummary.freeBenefit.title}
                 td.free FREE!
               tr#vasBenefitRowStart
                 td.title(colspan='2') New All Employee Benefits
               each product in data.benefitsSummary.additionalBenefits
                 tr
-                  th #{product.title}
+                  th(class=`${product.slug}`)
+                    .icon-benefit
+                      .ball
+                    | #{product.title}
                   td.price
                     span.has-plus #{product.price}
                     //- span.pemth.field-tip pe/mth
@@ -31,7 +37,7 @@ block content
                 td.perEmployeePerMonth.price.pepp-total #{locals.data.benefitsSummary.totals.perEmployeePerMonth}
               tr
                 th Total premium per month
-                td.total-premium
+                td.total-premium(style='width: 35%;')
                   span#numberOfEmployees.grey #{locals.data.employer.numberOfEmployees}
                   span.grey *
                   span.perEmployeePerMonth.price.grey #{locals.data.benefitsSummary.totals.perEmployeePerMonth}

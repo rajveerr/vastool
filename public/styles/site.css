@@ -967,7 +967,12 @@ td.dot {
   @media screen and (max-width: 568px) {
     .table-summary {
       padding: 0; } }
+  .table-summary .icon-benefit {
+    top: -1rem !important;
+    left: -1.5rem !important;
+    transform: scale(0.6); }
   .table-summary thead th, .table-summary thead td {
+    position: relative;
     padding: 0; }
   .table-summary thead td {
     color: black; }
@@ -977,15 +982,21 @@ td.dot {
     font-family: "proximaNovaLight", Helvetica, Arial, sans-serif;
     color: black;
     font-size: 2.6rem;
-    padding: 0.4225em 1.8rem 2rem; }
+    padding: 0.4225em 1.8rem 2rem 6rem; }
+    .table-summary thead th:first-of-type {
+      padding-left: 6rem; }
     @media screen and (max-width: 568px) {
       .table-summary thead th {
-        font-size: 2rem; } }
+        font-size: 2rem;
+        padding-left: 0; }
+        .table-summary thead th:first-of-type {
+          padding-left: 0; } }
   .table-summary thead .title {
     font-size: 1.6rem; }
   .table-summary tbody tr:last-of-type th, .table-summary tbody tr:last-of-type td {
     border-bottom: 1px solid #dfdfdf; }
   .table-summary tbody th, .table-summary tbody td {
+    position: relative;
     border-style: solid;
     padding-right: 0; }
     .table-summary tbody th:first-of-type, .table-summary tbody td:first-of-type {
@@ -1249,6 +1260,9 @@ td.dot {
     margin: 0; }
   .radio-checkbox-list .error {
     left: 6.76em; }
+  @media screen and (min-width: 400px) {
+    .radio-checkbox-list.engagement-choice .control {
+      padding-left: 5.07em; } }
 
 .free-benefits-selection .free {
   font-family: "proximaNovaBold", Helvetica, Arial, sans-serif;
