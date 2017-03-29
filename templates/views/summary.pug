@@ -4,8 +4,8 @@ block content
   .content-head.with-bg
     .collage-form-container(style='padding-top: 2rem;')
       span#employerName.above-title #{locals.data.employer.name}
-      h1 Benefits summary
-      p.sub-heading(style='padding-bottom: 2rem;') Here’s what you have picked! Find out how this is going to help grow your organization in future.
+      h1 Your New Benefits Summary
+      p.sub-heading(style='padding-bottom: 2rem;') Here’s what you have picked!
   .wrapper.radio-checkbox-list.free-benefits-selection
     form#vasBenefitsSummary(action='confirm', method='POST', novalidate='novalidate')
         .primary-content
@@ -20,7 +20,7 @@ block content
                   | #{locals.data.benefitsSummary.freeBenefit.title}
                 td.free COMPLIMENTARY!
               tr#vasBenefitRowStart
-                td.title(colspan='2') New All Employee Benefits
+                td.title(colspan='2') New Everwell Advantage Employee Benefits
               each product in data.benefitsSummary.additionalBenefits
                 tr
                   th(class=`${product.slug}`)
@@ -44,18 +44,18 @@ block content
                   span.grey =
                   span#totalPremiumAmount.price.total #{locals.data.benefitsSummary.totals.premium}
           .card-blue(style='margin-bottom:2em')
-            h2 Help us engage with your employees (POPS)
+            h2 Help us engage with your employees
             p.sub-heading New employers who achieve 75 Percent of People Seen (POPS) can choose one “complimentary for all” benefit, available to all employees. 
             p.sub-heading(style='margin-bottom:0') Plus, employers have the choice of several additional paid-for benefits for all their employees, regardless of whether they choose other Aflac products, with our group rates. 
 
           .radio-checkbox-list.engagement-choice
             .contain              
               label.control.control--radio
-                input#popsEngagementGroupEmail.radio(type='radio', name='popsEngagement', value='Group Email', required='required', data-msg='Please select', data-msg-required='Please select')
+                input#popsEngagementGroupEmail.radio(type='radio', name='popsEngagement', value='Group Email')
                 .control__indicator
                 p
                   span.h4 Group email
-                  span.productDesc We will share Aflac benefits information via a group Email
+                  span.productDesc We will share Aflac benefits information via a group Email and invite your employees to meet with your Aflac representative
               label.control.control--radio
                 input#popsEngagementOfficeVisit.radio(type='radio', name='popsEngagement', value='Office Visit')
                 .control__indicator
@@ -67,19 +67,18 @@ block content
                 .control__indicator
                 p
                   span.h4 Teleconference/Webcasts
-                  span.productDesc Connect through teleconference or webcasts remotely
-              //- label.control.control--radio
-              //-   input#popsEngagementPaycheckAttachment.radio(type='radio', name='popsEngagement', value='Paycheck Attachment')
-              //-   .control__indicator
-              //-   p
-              //-     span.h4 Paycheck attachment
-              //-     span.productDesc Provide information on benefits attached to the paychecks
-            label.hidden(for='popsEngagement') Please select the made of engagament for Aflac agent to engage with your employees
-          .form-footer
-              span.primary-actions
-                button#primaryBtn(type='submit', onclick="$('#vasBenefitsSummary').validate()") Confirm
-              span.secondary-actions.link-btn
-                a(href="additional-products") Back
+                  span.productDesc Connect your employees through teleconference or webcasts remotely. We will send an invitation.
+              label.control.control--radio
+                input#provideYourEmployeeCensus.radio(type='radio', name='popsEngagement', value='Employee Census')
+                .control__indicator
+                p
+                  span.h4 Employee census
+                  span.productDesc Provide your employee census with contact details, and we will reach out to your employees individually
+        .form-footer
+            span.primary-actions
+              button#primaryBtn(type='submit', onclick="$('#vasBenefitsSummary').validate()") Confirm
+            span.secondary-actions.link-btn
+              a(href="additional-products") Back
         .dialog
 block js
   script.

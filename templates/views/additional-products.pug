@@ -6,8 +6,7 @@ block content
       .copy-container
         span#employerName.above-title #{data.employer.name}
         h1 Choose additional ALL EMPLOYEE benefits
-        p.sub-heading You’ve picked “#{data.freeProduct.title}” as your COMPLIMENTARY FOR ALL benefit.
-        p.sub-heading(style='padding-bottom: 2rem;') You can also choose as many of these Aflac group plan benefits for ALL your employees, regardless of whether they select other Aflac products.
+        p.sub-heading(style='padding-bottom: 2rem;') You’ve picked “#{data.freeProduct.title}” as your complimentary benefit for all employees. You can also choose as many of these Everwell Advantage Benefits for ALL your employees.
       img.img-products(src='images/hands-showing-globe.png')
   .wrapper.radio-checkbox-list.free-benefits-selection
     form#vasBenefitsSelection(action='additional-products',method='post' , novalidate='novalidate')
@@ -27,9 +26,9 @@ block content
                   span.productDesc #{product.shortDescription}
                     span.see-more.modalOpner(href='products/' + product.slug, name=`${product.title}`)
                   span.bullet
-                    strong &bull; Best for:
+                    strong &bull; Best for 
                     | #{product.bestFor}
-                  span.bullet &bull; 48% of employers pick this benefit
+                  span.bullet &bull; XX% of employers pick this benefit
 
           label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees          
         .card-blue.secondary-content#benefitChosenCard
@@ -38,7 +37,7 @@ block content
             ul
               li#freeBenefitChosen #{locals.data.freeProduct.title}
           .vas-section(style='display: none')
-            h4 VAS Benefit
+            h4 Everwell Advantage Benefit
             ul#vasBenefitChosen
         .form-footer
             span.primary-actions

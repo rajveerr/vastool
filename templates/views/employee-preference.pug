@@ -11,7 +11,7 @@ block content
     form#vasBenefitsSelection(action='/employer/' + data.employer.slug + '/employee-preference', method='POST', novalidate='novalidate')
         .primary-content
           p.sub-heading We are excited to share a new range of health benefits that you can take advantage of. Help us understand which of the following benefits will help you most by chosing them below.
-          p.sub-heading(style='padding-bottom: 2rem') We will offer the benefits which get prefered by majority of our employees.
+          p.sub-heading(style='padding-bottom: 2rem') Vote NOW!
           .contain
             each product in data.products
               label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
