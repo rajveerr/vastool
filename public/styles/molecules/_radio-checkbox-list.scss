@@ -51,9 +51,9 @@
       }
     }
     .h4 {
-        color: $dark-gray;
+        color: black;
         font-size: 2.4rem;
-        font-family: $semiBold-font-family;
+        font-family: $bold-font-family;
     }
     .price {
       position: relative;
@@ -88,7 +88,8 @@
     .see-more {
       position: relative;
       display: inline;
-      left: $small-spacing;
+      top: -0.1rem;
+      left: 0.3rem;
   		@extend .icon-dot-3;
   		&:before {
   			position: absolute;

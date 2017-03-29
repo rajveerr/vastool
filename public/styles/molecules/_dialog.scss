@@ -25,12 +25,20 @@
   .ui-dialog-content {
     padding-bottom: $base-spacing;
   }
+  strong {
+    display: inline-block;
+    padding: 0 1rem;
+    &.title {
+      font-size: 1.333em;
+      font-family: $bold-font-family;
+    }
+  }
   .ui-dialog-titlebar {
     min-height: 2.5rem;
     .ui-dialog-title {
         font-family: $bold-font-family;
         display: block;
-        font-size: 3rem;
+        font-size: 3.4rem;
         padding: $small-spacing 0;
     }
 
@@ -79,9 +87,6 @@
   hr.content {
     margin: $small-spacing 0;
     border-bottom: 2px dotted darken($lightest-gray, 10%);
-  }
-  p {
-    font-family: $semiBold-font-family;
   }
   h3 {
     width: 100%;

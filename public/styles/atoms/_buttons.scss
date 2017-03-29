@@ -47,12 +47,12 @@ a.btn-link:visited {
 }
 
 .btn-secondary {
-  background-color: darken($medium-gray, 20%);
-  color: $white;
+  background-color: $lightest-gray;
+  color: $blue;
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: darken($medium-gray, 10%);
+    background-color: darken($lightest-gray, 10%);
   }
   &.icon-left-open {
    padding-left: 2.5em !important;

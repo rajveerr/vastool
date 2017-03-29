@@ -2,6 +2,9 @@
 ul,
 ol {
 	margin: 0;
+	li {
+		line-height: 1.5;
+	}
 }
 
 dl {
@@ -54,6 +57,8 @@ hr {
 	.item {
 		@include span-columns(24);
 		margin-bottom: $base-spacing;
+		text-transform: uppercase;
+		color: $blue;
 		@include media($mid) {
 				@include span-columns(4);
 				@include omega;

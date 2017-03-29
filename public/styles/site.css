@@ -87,7 +87,7 @@ table {
 
 /* Atoms */
 body {
-  color: #4A4A4A;
+  color: #000;
   font-family: "proximaNovaRegular", Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
   line-height: 1.3;
@@ -109,7 +109,8 @@ h6 {
   margin: 0 0 0.845em; }
 
 p {
-  margin: 0 0 0.845em; }
+  margin: 0 0 0.845em;
+  line-height: 1.5; }
 
 strong {
   font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif; }
@@ -134,7 +135,7 @@ hr {
 .card-container {
   padding: 1.69em;
   background-color: white;
-  color: #7d7d7d;
+  color: #333333;
   font-size: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 1.69em; }
@@ -183,6 +184,9 @@ h2 {
 h3 {
   font-size: 1.7rem;
   margin-bottom: 0.845em; }
+
+h4 {
+  font-family: "proximaNovaBold", Helvetica, Arial, sans-serif; }
 
 .sub-heading {
   font-size: 1.9rem; }
@@ -276,7 +280,7 @@ input[type=date] {
   border: 0;
   background-color: #fff;
   font-family: "proximaNovaLight", Helvetica, Arial, sans-serif;
-  color: #646464;
+  color: #1a1a1a;
   padding: 0.845em;
   min-width: 100%;
   min-height: 2rem;
@@ -314,17 +318,17 @@ input[type=number]::-webkit-outer-spin-button {
   height: 34px;
   width: 34px;
   border-radius: 50%;
-  border: 4px solid #a3a3a3;
+  border: 4px solid #595959;
   background-color: white; }
 
 .control:hover input ~ .control__indicator {
-  border: 4px solid #4A4A4A; }
+  border: 4px solid #000; }
 
 .control:hover .control__indicator:before {
-  color: #4A4A4A; }
+  color: #000; }
 
 .control input:checked ~ .control__indicator {
-  border: 4px solid #4A4A4A; }
+  border: 4px solid #000; }
 
 .control input:checked:focus ~ .control__indicator {
   background-color: white; }
@@ -340,7 +344,7 @@ input[type=number]::-webkit-outer-spin-button {
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  background-color: #4A4A4A; }
+  background-color: #000; }
 
 .control--radio input:disabled ~ .control__indicator:after {
   background-color: #7b7b7b; }
@@ -445,7 +449,7 @@ select {
   min-height: 5.2rem;
   font-size: 2rem;
   font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
-  color: #646464;
+  color: #1a1a1a;
   padding: 0 2.535em 0 0.845em;
   border-color: #f8f8f8;
   background-color: #fff;
@@ -541,11 +545,11 @@ a.btn-link:visited {
     display: none !important; }
 
 .btn-secondary {
-  background-color: #98a3a7;
-  color: #fff; }
+  background-color: #F8F8F8;
+  color: #00a7e1; }
   .btn-secondary:hover, .btn-secondary:focus {
     text-decoration: none;
-    background-color: #b3bbbf; }
+    background-color: #dfdfdf; }
   .btn-secondary.icon-left-open {
     padding-left: 2.5em !important; }
     .btn-secondary.icon-left-open:before {
@@ -594,6 +598,9 @@ a {
 ul,
 ol {
   margin: 0; }
+  ul li,
+  ol li {
+    line-height: 1.5; }
 
 dl {
   margin: 0 0 1.69em 0; }
@@ -647,7 +654,9 @@ hr {
     display: block;
     margin-right: 1.16509%;
     width: 100%;
-    margin-bottom: 1.69em; }
+    margin-bottom: 1.69em;
+    text-transform: uppercase;
+    color: #00a7e1; }
     .graphis-list .item:last-child {
       margin-right: 0; }
     @media screen and (min-width: 569px) {
@@ -679,14 +688,14 @@ hr {
 
 .question-answer-list {
   background-color: white;
-  color: #7d7d7d;
+  color: #333333;
   font-size: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
   .question-answer-list dt {
     padding: 0.845em 0.845em 0 0.845em; }
   .question-answer-list dd {
     padding: 0.21125em 0.845em 0.845em 0.845em;
-    color: #4a4a4a;
+    color: black;
     border-bottom: 1px solid #F8F8F8;
     font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif; }
     .question-answer-list dd em {
@@ -1106,12 +1115,18 @@ td.dot {
       max-width: 100%; }
   .ui-dialog .ui-dialog-content {
     padding-bottom: 1.69em; }
+  .ui-dialog strong {
+    display: inline-block;
+    padding: 0 1rem; }
+    .ui-dialog strong.title {
+      font-size: 1.333em;
+      font-family: "proximaNovaBold", Helvetica, Arial, sans-serif; }
   .ui-dialog .ui-dialog-titlebar {
     min-height: 2.5rem; }
     .ui-dialog .ui-dialog-titlebar .ui-dialog-title {
       font-family: "proximaNovaBold", Helvetica, Arial, sans-serif;
       display: block;
-      font-size: 3rem;
+      font-size: 3.4rem;
       padding: 0.845em 0; }
   .ui-dialog .ui-dialog-titlebar-close {
     position: absolute;
@@ -1149,8 +1164,6 @@ td.dot {
   .ui-dialog hr.content {
     margin: 0.845em 0;
     border-bottom: 2px dotted #dfdfdf; }
-  .ui-dialog p {
-    font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif; }
   .ui-dialog h3 {
     width: 100%;
     font-size: 1.8rem;
@@ -1214,9 +1227,9 @@ td.dot {
       .radio-checkbox-list .control:hover .ball {
         background: radial-gradient(circle at 50% 40%, #fcfcfc, #cae6ff 66%, #348fff 100%); }
     .radio-checkbox-list .control .h4 {
-      color: #4A4A4A;
+      color: black;
       font-size: 2.4rem;
-      font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif; }
+      font-family: "proximaNovaBold", Helvetica, Arial, sans-serif; }
     .radio-checkbox-list .control .price {
       position: relative;
       left: 1rem;
@@ -1240,7 +1253,8 @@ td.dot {
     .radio-checkbox-list .control .see-more {
       position: relative;
       display: inline;
-      left: 0.845em; }
+      top: -0.1rem;
+      left: 0.3rem; }
       .radio-checkbox-list .control .see-more:before {
         position: absolute;
         width: 3rem;
@@ -1285,9 +1299,9 @@ td.dot {
     float: left;
     font-size: 2.5rem;
     padding: 6px 14px;
-    color: #b0b0b0; }
+    color: #666666; }
     .header-container .icon-menu.active {
-      background-color: #4A4A4A;
+      background-color: #000;
       color: white; }
 
 .aflac-logo {
@@ -1405,7 +1419,7 @@ legend {
 label {
   font-family: "proximaNovaSbold", Helvetica, Arial, sans-serif;
   display: block;
-  color: #646464;
+  color: #1a1a1a;
   padding-bottom: 0.4225em; }
   label.error {
     font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
@@ -1452,7 +1466,7 @@ textarea {
   font-family: "proximaNovaLight", Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
   margin-top: 0.845em;
-  color: #a3a3a3; }
+  color: #595959; }
   .question-tip:before {
     position: absolute;
     font-size: 4rem;
