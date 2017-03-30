@@ -27,12 +27,14 @@ block content
                   span.productDesc #{product.shortDescription}
                     span.see-more.modalOpner(href='/products/' + product.slug, name=`${product.title}`)
                   span.bullet
-                    strong &bull; Best for:
+                    strong Best for
                     | #{product.bestFor}
-                  span.bullet &bull; 48% of employers pick this benefit
-          .form-footer
-              span.primary-actions
-                button#primaryBtn(type='submit', onclick='$("#vasBenefitsSelection").validate();') Confirm
+                  span.bullet 
+                    strong XX% 
+                    | of employers pick this benefit
+        .form-footer
+          span.primary-actions
+            button#primaryBtn(type='submit', onclick='$("#vasBenefitsSelection").validate();') Confirm
           label.error(for='freeBenefit')
 
         .card-blue.secondary-content#benefitChosenCard(style='display: none')

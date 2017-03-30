@@ -155,7 +155,7 @@ abbr,
 h1 {
   position: relative;
   font-size: 3rem;
-  line-height: 0.99;
+  line-height: 1;
   margin-bottom: 0.4225em;
   font-family: "proximaNovaBold", Helvetica, Arial, sans-serif;
   color: black; }
@@ -1155,10 +1155,14 @@ td.dot {
   .ui-dialog hr.head {
     margin: -1rem 0 3rem;
     border-bottom: 2px dotted #dfdfdf; }
+  .ui-dialog .check-list, .ui-dialog .card-blue .free-section ul, .card-blue .free-section .ui-dialog ul, .ui-dialog
+  .card-blue .vas-section ul,
+  .card-blue .vas-section .ui-dialog ul {
+    padding-left: 0.6rem; }
   .ui-dialog ul {
     margin-bottom: 1.69em; }
     .ui-dialog ul li {
-      margin-bottom: 0.4225em; }
+      margin-bottom: 0.845em; }
   .ui-dialog .product-redlines {
     margin-bottom: 1.69em; }
   .ui-dialog hr.content {
@@ -1249,7 +1253,8 @@ td.dot {
     .radio-checkbox-list .control .productDesc {
       padding: 0.8rem 0 0.845em 0; }
     .radio-checkbox-list .control .bullet {
-      padding: 0 0 0.4225em 0.4225em; }
+      padding: 0 0 0.4225em 0;
+      font-size: 1.6rem; }
     .radio-checkbox-list .control .see-more {
       position: relative;
       display: inline;
@@ -1274,9 +1279,11 @@ td.dot {
     margin: 0; }
   .radio-checkbox-list .error {
     left: 6.76em; }
-  @media screen and (min-width: 400px) {
-    .radio-checkbox-list.engagement-choice .control {
-      padding-left: 5.07em; } }
+  .radio-checkbox-list.engagement-choice .control {
+    padding-left: 3.38em; }
+    @media screen and (min-width: 400px) {
+      .radio-checkbox-list.engagement-choice .control {
+        padding-left: 5.07em; } }
 
 .free-benefits-selection .free {
   font-family: "proximaNovaBold", Helvetica, Arial, sans-serif;
@@ -1479,7 +1486,8 @@ textarea {
 
 .footer-content {
   border-top: 5px solid #F8F8F8;
-  padding: 0.845em 1.69em 0 !important;
+  margin-top: 1.69em !important;
+  padding: 0.845em 1.69em 1.69em !important;
   font-size: 1.2rem; }
   .footer-content .copyright {
     float: left;
@@ -1618,7 +1626,7 @@ textarea {
     .content-head.with-bg .copy-container {
       padding: 1.69em 20rem 0.845em 2rem; }
       .content-head.with-bg .copy-container.employees {
-        padding-right: 35%;
+        padding-right: 39%;
         padding-top: 3rem; }
     .content-head.with-bg img {
       display: block;

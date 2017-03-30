@@ -75,10 +75,13 @@
     margin: -1rem 0 3rem;
     border-bottom: 2px dotted darken($lightest-gray, 10%);
   }
+  .check-list {
+    padding-left: 0.6rem;
+  }
   ul {
     margin-bottom: $base-spacing;
     li {
-      margin-bottom: $small-spacing/2;
+      margin-bottom: $small-spacing;
     }
   }
   .product-redlines {

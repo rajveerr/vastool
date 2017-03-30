@@ -58,7 +58,6 @@ hr {
 		@include span-columns(24);
 		margin-bottom: $base-spacing;
 		text-transform: uppercase;
-		color: $blue;
 		@include media($mid) {
 				@include span-columns(4);
 				@include omega;

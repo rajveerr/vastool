@@ -26,9 +26,11 @@ block content
                   span.productDesc #{product.shortDescription}
                     span.see-more.modalOpner(href='products/' + product.slug, name=`${product.title}`)
                   span.bullet
-                    strong &bull; Best for 
+                    strong Best for 
                     | #{product.bestFor}
-                  span.bullet &bull; XX% of employers pick this benefit
+                  span.bullet
+                    strong XX% 
+                    | of employers pick this benefit
 
           label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees          
         .card-blue.secondary-content#benefitChosenCard
