@@ -15,11 +15,10 @@
 }
 
 select {
-  min-height: 5.2rem;
   font-size: 2rem;
   font-family: $thin-font-family;
   color: lighten($dark-gray, 10%);
-  padding: 0 $small-spacing*3 0 $small-spacing;
+  padding: 0.75em $small-spacing*3 0.75em $small-spacing;
   border-color: lighten($lightest-gray, 0);
   background-color: $base-background-color;
   -webkit-appearance: none;

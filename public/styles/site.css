@@ -446,11 +446,10 @@ input[type=number]::-webkit-outer-spin-button {
     top: 2.3rem; }
 
 select {
-  min-height: 5.2rem;
   font-size: 2rem;
   font-family: "proximaNovaThin", Helvetica, Arial, sans-serif;
   color: #1a1a1a;
-  padding: 0 2.535em 0 0.845em;
+  padding: 0.75em 2.535em 0.75em 0.845em;
   border-color: #f8f8f8;
   background-color: #fff;
   -webkit-appearance: none;
@@ -655,8 +654,7 @@ hr {
     margin-right: 1.16509%;
     width: 100%;
     margin-bottom: 1.69em;
-    text-transform: uppercase;
-    color: #00a7e1; }
+    text-transform: uppercase; }
     .graphis-list .item:last-child {
       margin-right: 0; }
     @media screen and (min-width: 569px) {
@@ -672,7 +670,7 @@ hr {
       margin-bottom: 5rem; }
     .graphis-list .item img {
       display: block;
-      zoom: 40%;
+      max-width: 6.8rem !important;
       margin: 0 auto;
       margin-bottom: 1rem; }
   .graphis-list.light-content {
@@ -1989,7 +1987,7 @@ textarea {
     margin-bottom: 0.845em;
     padding: 0 0.845em;
     cursor: pointer;
-    min-height: 18rem; }
+    min-height: 18.2rem; }
     .agent-dashboard .products-container .item:hover strong {
       text-decoration: underline; }
     .agent-dashboard .products-container .item:hover .ball {
