@@ -12,8 +12,8 @@ form#employerStatus(action='/employer/' + locals.data.employer.slug + '/applicat
       .control__indicator
       |  No
     label.error(for='selectedBenefits')
-  hr
-  .question
+  //- hr
+  //- .question
     label(for='pops') Have you met #{locals.data.employer.name}'s 75% employees?
       span.grey (Selected: #{locals.data.employer.popsEngagement})
     label.control.control--radio

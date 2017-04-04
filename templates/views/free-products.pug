@@ -6,8 +6,8 @@ block content
       .copy-container
         span#employerName.above-title #{data.employer.name}
         h1 Start by picking your complimentary benefit choice*
-        p.sub-heading You can choose any ONE of the following benefits, compliments of Aflac, for ALL your employees.
-          span.note * After your Aflac representative reaches 75% of your employees
+        p.sub-heading(style='padding-bottom: 1.5rem;') You can choose any ONE of the following benefits, compliments of Aflac, for ALL your employees.
+          //- span.note * After your Aflac representative reaches 75% of your employees
       img.img-products(src='images/hands-showing-globe.png')
   .wrapper.radio-checkbox-list.free-benefits-selection
     form#freeBenefitsSelection(action='free-products', method='post', novalidate='novalidate')
