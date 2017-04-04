@@ -12,15 +12,15 @@ block content
           table.table-minimal.table-summary
             thead
               tr
-                td.title(colspan='2') COMPLIMENTARY FOR ALL Benefit
+                td.title(colspan='2') COMPLIMENTARY BENEFIT FOR ALL 
               tr
                 th#selectedFreeBenefit(class=`${locals.data.benefitsSummary.freeBenefit.slug}`)
                   .icon-benefit
                     .ball
                   | #{locals.data.benefitsSummary.freeBenefit.title}
-                td.free COMPLIMENTARY!
+                td.free(style='font-size:2.2rem') $0.00
               tr#vasBenefitRowStart
-                td.title(colspan='2') New Everwell Advantage Employee Benefits
+                td.title(colspan='2') PAID BENEFITS FOR ALL
               each product in data.benefitsSummary.additionalBenefits
                 tr
                   th(class=`${product.slug}`)

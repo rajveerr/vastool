@@ -6,7 +6,7 @@ block content
       .copy-container
         span#employerName.above-title #{data.employer.name}
         h1 Choose additional ALL EMPLOYEE benefits
-        p.sub-heading(style='padding-bottom: 2rem;') You’ve picked “#{data.freeProduct.title}” as your complimentary benefit for all employees. You can also choose as many of these Everwell Advantage Benefits for ALL your employees.
+        p.sub-heading(style='padding-bottom: 2rem;') You’ve picked “#{data.freeProduct.title}” as your complimentary benefit for all employees. You can also choose as many of these Paid Benefits for ALL your employees.
       img.img-products(src='images/hands-showing-globe.png')
   .wrapper.radio-checkbox-list.free-benefits-selection
     form#vasBenefitsSelection(action='additional-products',method='post' , novalidate='novalidate')
@@ -39,7 +39,7 @@ block content
             ul
               li#freeBenefitChosen #{locals.data.freeProduct.title}
           .vas-section(style='display: none')
-            h4 Everwell Advantage Benefit
+            h4 Paid Benefit
             ul#vasBenefitChosen
         .form-footer
             span.primary-actions
