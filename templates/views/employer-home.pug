@@ -9,29 +9,40 @@ block content
           
       img.employees(src='images/employees.png')
   .wrapper.agent-dashboard
-    .form-container
+    .primary-content
       .login-title Offer Aflac Benefits to 
         strong ALL 
         | your employees
-      form#startEmployee.input-and-button-container(action='new-employer', method='GET', novalidate='novalidate')
+      form#startEmployee.input-and-button-container(action='new-employer', method='GET', novalidate='novalidate', style='padding-left: 1rem;')
         label.hidden(for='username') Agent ID
         input#employerName(type="text", name='employerName', required='required', data-msg-required='Please enter employer name', minlength="2", placeholder="Your Company Name")
         button#primaryBtn.icon-right-open(type='submit', onclick='$("#startEmployee").validate();', style='left: -5px') Start
-
-    if data.preferredBenefitsRanking.length > 0
-      hr(style='clear:both')
-      .table-container
-        table.table-minimal.votes
-          caption Employee Preferences Result
-          thead
-            tr
-              th Rank
-              th Benefit
-              th Votes
-          tbody
-            each benefit, ranking in data.preferredBenefitsRanking
-              tr.modalOpner(href='products/' + benefit.slug, name=`${benefit.title}`)
-                td #{ranking + 1}
-                td #{benefit.title}
-                td #{benefit.votes}
+      hr(style='margin-top: 5rem;')
+      if data.preferredBenefitsRanking.length > 0        
+        .table-container
+          table.table-minimal.votes
+            caption Employee Preferences Result
+            thead
+              tr
+                th Rank
+                th Benefit
+                th Votes
+            tbody
+              each benefit, ranking in data.preferredBenefitsRanking
+                tr.modalOpner(href='products/' + benefit.slug, name=`${benefit.title}`)
+                  td #{ranking + 1}
+                  td #{benefit.title}
+                  td #{benefit.votes}
+          hr(style='clear:both')
+      .products-container
+        h2 Aflac All Employee Choices
+        each product in data.products
+          .item.modalOpner(href='products/' + product.slug, name=`${product.title}`)
+            div(class=`${product.slug}`)
+              .icon-benefit
+                .ball
+            strong #{product.title}
+            .price $#{product.price}
+              abbr.pemth.field-tip pe/mth
+                span.tip-content Per Employee Per Month
   .dialog

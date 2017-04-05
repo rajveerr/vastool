@@ -136,13 +136,11 @@ td.dot {
 }
 
 .votes {
-  margin: 0 $base-spacing;
   min-width: 0;
   thead th {
     text-align: left !important;
   }
   @include media($above-small) {
-    margin: 0 10%;
     min-width: 80%;
   }
 }

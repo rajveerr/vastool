@@ -9,9 +9,10 @@ block content
         
   .wrapper.radio-checkbox-list.free-benefits-selection    
     form#vasBenefitsSelection(action='/employer/' + data.employer.slug + '/employee-preference', method='POST', novalidate='novalidate')
-        .primary-content
+        .primary-content(style='margin-bottom: 0;')
           p.sub-heading We are excited to share a new range of health benefits that you can take advantage of. Help us understand which of the following benefits will help you most by chosing them below.
           p.sub-heading(style='padding-bottom: 2rem') Vote NOW!
+        .primary-content
           .contain
             each product in data.products
               label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
@@ -32,16 +33,14 @@ block content
                   //- span.bullet 
                     strong XX% 
                     | of employers pick this benefit
-        .form-footer
-          span.primary-actions
-            button#primaryBtn(type='submit', onclick='$("#vasBenefitsSelection").validate();') Confirm
-          label.error(for='freeBenefit')
-
         .card-blue.secondary-content#benefitChosenCard(style='display: none')
           .vas-section
             h4 I want
             ul#vasBenefitChosen
-        
+        .form-footer
+          span.primary-actions
+            button#primaryBtn(type='submit', onclick='$("#vasBenefitsSelection").validate();') Confirm
+          label.error(for='freeBenefit')
         .dialog
 block js
   script.

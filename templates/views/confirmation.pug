@@ -8,8 +8,10 @@ block content
       p.sub-heading(style='margin-bottom:0;') We have received your benefits choice! Your Aflac representative will keep in touch to guide you with further steps.
       if user.type == 'AGENT'
         div(style='padding: 3rem 0 4rem;')
-          button.btn-primary(onclick="javascript:window.location.href='/agent-dashboard'", style='') Return to Dashboard
+          button.btn-primary(onclick="javascript:window.location.href='/agent-dashboard'") Return to Dashboard
       if user.type == 'EMPLOYER'
+        div(style='padding: 3rem 0 4rem;')
+          button.btn-primary(onclick="javascript:window.location.href='/employer-home'") Return to Dashboard
         img.share(src="/images/share.png")
         .card.blue
           h2 Share with Employees!

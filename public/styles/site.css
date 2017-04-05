@@ -958,13 +958,11 @@ td.dot {
     background-color: #00a7e1; }
 
 .votes {
-  margin: 0 1.69em;
   min-width: 0; }
   .votes thead th {
     text-align: left !important; }
   @media screen and (min-width: 400px) {
     .votes {
-      margin: 0 10%;
       min-width: 80%; } }
 
 .table-summary {
