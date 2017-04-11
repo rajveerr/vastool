@@ -6,7 +6,7 @@ block content
       .copy-container
         span#employerName.above-title #{data.employer.name}
         h1 Choose additional ALL EMPLOYEE benefits
-        p.sub-heading(style='padding-bottom: 2rem;') You’ve picked “#{data.freeProduct.title}” as your complimentary benefit for all employees. You can also choose as many of these Paid Benefits for ALL your employees.
+        p.sub-heading(style='padding-bottom: 2rem;') You’ve picked “#{data.freeProduct.title}” as your no-cost access option*. You can also choose as many of these Paid Benefits for ALL your employees.
       img.img-products(src='images/hands-showing-globe.png')
   .wrapper.radio-checkbox-list.free-benefits-selection
     form#vasBenefitsSelection(action='additional-products',method='post' , novalidate='novalidate')
@@ -35,11 +35,11 @@ block content
           label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees          
         .card-blue.secondary-content#benefitChosenCard
           .free-section
-            h4 Complimentary Benefit
+            h4 No-cost Access
             ul
               li#freeBenefitChosen #{locals.data.freeProduct.title}
           .vas-section(style='display: none')
-            h4 Paid Benefit
+            h4 Additional Benefits
             ul#vasBenefitChosen
         .form-footer
             span.primary-actions

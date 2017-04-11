@@ -19,7 +19,7 @@ block content
     .wrapper
       .primary-content
         h1 Dashboard
-        p.sub-heading(style='padding-bottom:1rem') This is where you can create new Employers, track their application status, stay connected with Aflac's producers board and much more.
+        p.sub-heading(style='padding-bottom:1rem') This is where you can create new Employers, track their application status.
         if data.employers && data.employers.length > 0
           .table-container
             table.table-minimal
@@ -28,9 +28,7 @@ block content
                 tr
                   th Employers
                   th Choices complete
-                  //- th 75%
-                    span.field-tip POPS
-                      span.tip-content Percent of People Seen
+                  th Offers core Group product
                   th Submitted
               tbody
                 each employer in data.employers
@@ -43,10 +41,10 @@ block content
                       td.dot
                         span
 
-                    //- if (employer.popsDone == true)
+                    if (employer.popsDone == true)
                       td.dot.yes
                         span
-                    //- else
+                    else
                       td.dot
                         span
 
@@ -57,7 +55,7 @@ block content
                       td.dot
                         span 
         .products-container
-          h2 Aflac All Employee Choices
+          h2 Aflac’s Value Added Services
           each product in data.products
             .item.modalOpner(href='products/' + product.slug, name=`${product.title}`)
               div(class=`${product.slug}`)

@@ -4,7 +4,9 @@ block content
   .content-head.with-bg
     .collage-form-container
       .copy-container.employees
-        h1 Now all your employees get Aflac benefits at our group rates and you can choose one, compliments of Aflac
+        h1 Now all your employees can get Aflac value added services at our group rates, and you can pick one, at no cost
+          span.field-tip(style='top: -1rem;') * 
+            span.tip-content(style='font-weight: normal !important') *For employers who meet the conditions including offering Aflac core Group products, Aflac will provide access to the value added service at no cost.  Usage costs may apply; see benefit description for details.
         p(style='padding-bottom: 8rem') Introducing a new family of Aflac benefits        
           
       img.employees(src='images/employees.png')
@@ -35,7 +37,7 @@ block content
                   td #{benefit.votes}
           hr(style='clear:both')
       .products-container
-        h2 Aflac All Employee Choices
+        h2 Aflac’s Value Added Services
         each product in data.products
           .item.modalOpner(href='products/' + product.slug, name=`${product.title}`)
             div(class=`${product.slug}`)

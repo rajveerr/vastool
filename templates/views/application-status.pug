@@ -12,10 +12,9 @@ form#employerStatus(action='/employer/' + locals.data.employer.slug + '/applicat
       .control__indicator
       |  No
     label.error(for='selectedBenefits')
-  //- hr
-  //- .question
-    label(for='pops') Have you met #{locals.data.employer.name}'s 75% employees?
-      span.grey (Selected: #{locals.data.employer.popsEngagement})
+  hr
+  .question
+    label(for='pops') Is #{locals.data.employer.name} offering Aflac core Group product?
     label.control.control--radio
       input#popsYes.radio(type='radio', name='popsDone', value='Yes', required='required', data-msg='Please choose Yes or No', checked=locals.data.employer.popsDone)
       .control__indicator
