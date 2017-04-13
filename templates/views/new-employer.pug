@@ -15,7 +15,7 @@ block content
             label Number of employees
             input#numberOfEmployees(type='number', name='numberOfEmployees', required='required', data-msg='Number of employees')
           .question
-            label Estimated average age of Employees?
+            label Estimated average age of employees?
               span (Optional)
             input#everageAgeOfEmployees(type='number', name='everageAgeOfEmployees')
           .question
@@ -34,7 +34,7 @@ block content
               .select-wrapper
                 label.hidden(for='majorMedicalPlanName') Select name of Major Medical insurance plan
                 select#majorMedicalPlanName(name='majorMedicalPlanName', required='required')
-                  option(value='none') Select your Major Medical name
+                  option(value='none') Select your Major Medical plan
                   for medicalPlan in data.medicalPlans
                     option #{medicalPlan}
                   option(value='notListed')#notInTheList Not listed

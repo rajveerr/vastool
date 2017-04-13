@@ -55,7 +55,7 @@ block content
                       td.dot
                         span 
         .products-container
-          h2 Aflac’s Value Added Services
+          h2 Aflac Value Added Services
           each product in data.products
             .item.modalOpner(href='products/' + product.slug, name=`${product.title}`)
               div(class=`${product.slug}`)
