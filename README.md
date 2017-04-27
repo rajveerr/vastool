@@ -11,14 +11,27 @@ Requirements:
 - Bourbon (UI Library) https://bourbon.io
 
 Commands:
-- npm install (install all dependencies)
-- node keystone (to run the application)
-- npm test (to run tests)
+
+Install all dependencies
+```sh
+npm install
+```
+Run the application
+```sh
+node keystone 
+```
+
+Run tests
+```sh
+npm test
+```
 
 Folder Structure:
-Based on 
-- /models
-- /routes
-- /services 
-- /templates (Keystone .pug templates files)
-- /public (css/images/JQuery)
+
+```sh
+/models
+/routes
+/services 
+/templates (Keystone .pug templates files)
+/public (css/images/JQuery)
+```
